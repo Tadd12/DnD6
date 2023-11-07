@@ -2,22 +2,23 @@ class_name CharacterBase
 extends Object
 
 # Character specific static Properties
-var Name
-var Race
+var name
+var race # : Race
 
 # Character specific semi static Properties
-var Attributes = {'strength': 0, 
+var attributes = {'strength': 0, 
 				  'dexterity': 0,
 				  'intelligence': 0,
 				  'wisdom': 0,
 				  'constitution': 0,
 				  'charisma': 0}
 
-var Skills = {}  # Skill(str): Bonus(int)  0 = No bonus but available
+var skills = {}  # Skill(str): Bonus(int)  0 = No bonus but available
 
-var Inventory = []
+var inventory = []
 var maxHP = 10
 var maxSpellPoints = {}  # Level(int): Number(int)
+
 
 class ClassArmor:
 	func _init():
@@ -30,23 +31,24 @@ class ClassArmor:
 		# TODO after creating ArmorBaseClass
 		return 10 # Standard if no armor is selected
 
-var Armor = ClassArmor.new()
 
-var Actions = 1
-var BonusActions = 1
+var armor = ClassArmor.new()
+
+var actions = 1
+var bonusActions = 1
 
 # Character specific Temporary Properties
-var CurrentEffects = []
-var InFight = false
-var SpellPoints = {}
+var currentEffects = []
+var inFight = false
+var spellPoints = {}
 
-var tempAction = Actions
-var tempBonusAction = BonusActions
+var tempAction = actions
+var tempBonusAction = bonusActions
 
 var tempHP = 10
 
 # Properties
-var HP: int:
+var healthPoints: int:
 	get:
 		return tempHP
 	set(val):
@@ -56,46 +58,53 @@ var HP: int:
 		elif tempHP <= 0:
 			onDeath()
 
-var ArmorClass: int:
+var armorClass: int:
 	get:
-		return Armor.getArmorPoints() + Attributes['dexterity']
+		return armor.getArmorPoints() + attributes['dexterity']
 
 
-func _init(name, strength, dexterity, intelligence, wisdom, constitution, charisma,
-		   skills, race, hp):
-	Name = name
-	Attributes = {'strength': strength, 
+func _init(pName, strength, dexterity, intelligence, wisdom, constitution, charisma,
+		   pSkills, pRace, hp):
+	name = pName
+	attributes = {'strength': strength, 
 				  'dexterity': dexterity,
 				  'intelligence': intelligence,
 				  'wisdom': wisdom,
 				  'constitution': constitution,
 				  'charisma': charisma}
-	Skills = skills
-	Race = race
+	skills = pSkills
+	race = pRace
 	maxHP = hp
-	HP = hp
+	healthPoints = hp
+
 
 func TalkTo(Char):
 	# Trigger talking Sequence
 	pass
 
 func TakeItem(item):
-	Inventory.append(item)
+	'''This a Doc string that explains the Method'''
+	inventory.append(item)
+
 
 func TakeAShortBreak():
-	if not InFight:
-		HP = HP + maxHP/2
+	if not inFight:
+		healthPoints = healthPoints + maxHP/2
+
 
 # Fight specific functions
 func nextRound():
-	Actions = 1
-	BonusActions = 1
+	actions = 1
+	bonusActions = 1
+
 
 func Attack(CharObj, Attack):
 	pass
-	
+
+
 func UseSpell(CharObj, Spell):
 	pass
+
 
 func onDeath():
 	pass
