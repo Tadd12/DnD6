@@ -1,25 +1,31 @@
 class_name CharacterBase
 extends Object
+## This is the BaseClass for all Characters
+## like NPC, the Player and MainCharacters
+
 
 # Character specific static Properties
-var name
+var name: String
 var race # : Race
 
 # Character specific semi static Properties
-var attributes = {'strength': 0, 
-				  'dexterity': 0,
-				  'intelligence': 0,
-				  'wisdom': 0,
-				  'constitution': 0,
-				  'charisma': 0}
+## Saves the main attributes of the Character
+var attributes := {'strength': 0, 
+				   'dexterity': 0,
+				   'intelligence': 0,
+				   'wisdom': 0,
+				   'constitution': 0,
+				   'charisma': 0}
 
-var skills = {}  # Skill(str): Bonus(int)  0 = No bonus but available
+## Saves the main attributes of the Character
+var skills := {}  # Skill(str): Bonus(int)  0 = No bonus but available
 
-var inventory = []
-var maxHP = 10
-var maxSpellPoints = {}  # Level(int): Number(int)
+var inventory := []
+var maxHP := 10
+## Level(int): Number(int)
+var maxSpellPoints := {}  
 
-
+## A internal Class to save the current armor
 class ClassArmor:
 	func _init():
 		var Head = null
@@ -27,44 +33,49 @@ class ClassArmor:
 		var Legs = null
 		var Feet = null
 	
+	## Computes the ArmorPoints by the currently worn armor
+	## If no armor is worn the default is 10
 	func getArmorPoints():
 		# TODO after creating ArmorBaseClass
 		return 10 # Standard if no armor is selected
 
 
-var armor = ClassArmor.new()
+var armor := ClassArmor.new()
 
-var actions = 1
-var bonusActions = 1
+var maxActions := 1
+var maxBonusActions := 1
 
 # Character specific Temporary Properties
-var currentEffects = []
-var inFight = false
-var spellPoints = {}
+var currentEffects := []
+var inFight := false
+var spellPoints := {}
 
-var tempAction = actions
-var tempBonusAction = bonusActions
+var tempAction := maxActions
+var tempBonusAction := maxBonusActions
 
-var tempHP = 10
+var _tempHP := 10
 
 # Properties
+## Properties for the current HP
 var healthPoints: int:
 	get:
-		return tempHP
+		return _tempHP
 	set(val):
-		tempHP = val
-		if tempHP > maxHP:
-			tempHP = maxHP
-		elif tempHP <= 0:
+		_tempHP = val
+		if _tempHP > maxHP:
+			_tempHP = maxHP
+		elif _tempHP <= 0:
 			onDeath()
 
+## The armor class of the Character
 var armorClass: int:
 	get:
 		return armor.getArmorPoints() + attributes['dexterity']
 
-
-func _init(pName, strength, dexterity, intelligence, wisdom, constitution, charisma,
-		   pSkills, pRace, hp):
+## init [br]
+## 
+func _init(pName:String, strength:int, dexterity:int, intelligence:int, wisdom:int,
+		   constitution:int, charisma:int, pSkills:Dictionary, pRace, hp:int):
 	name = pName
 	attributes = {'strength': strength, 
 				  'dexterity': dexterity,
@@ -77,34 +88,78 @@ func _init(pName, strength, dexterity, intelligence, wisdom, constitution, chari
 	maxHP = hp
 	healthPoints = hp
 
-
+## Triggers a dialog sequence with a character
 func TalkTo(Char):
 	# Trigger talking Sequence
 	pass
 
+## Takes item 
 func TakeItem(item):
-	'''This a Doc string that explains the Method'''
+	# TODO: remove item from Map/Chest
 	inventory.append(item)
 
 
+## Reset all Actions the can only be used ones per Short Break 
 func TakeAShortBreak():
 	if not inFight:
 		healthPoints = healthPoints + maxHP/2
 
 
 # Fight specific functions
+## Resets all Round-based tempVariables
 func nextRound():
-	actions = 1
-	bonusActions = 1
+	tempAction = 1
+	tempBonusAction = 1
 
 
-func Attack(CharObj, Attack):
+## Attack a Character or a Object on the Map [br]
+## CharObj: ([CharacterBase] or MapObject) the Character or a Object on the Map [br]
+## Attack: (Attack) The Attack to be used [br]
+## Returns: ([int]) If the attack succeded or failed (1: crit. fail, 2: fail, 3: success, 4: crit. success)
+func Attack(CharObj, Attack) -> int:
+	return 0
+
+
+## Use a Spell on a Character or a Object on the Map [br]
+## CharObj: ([CharacterBase] or MapObject) the Character or a Object on the Map [br]
+## Spell: (Spell) The Spell to be used
+func UseSpellOnCharacter(CharObj, Spell):
 	pass
 
 
-func UseSpell(CharObj, Spell):
+## Carries out a Spell  [br]
+## Coordinates: () the Destination of the Spell [br]
+## Spell: (Spell) The Spell to be used
+func UseSpellOnMap(Coordinates, Spell):
 	pass
 
 
+## A function to be called if HP reaches 0
 func onDeath():
 	pass
+
+# Static funcions
+
+## Throws a dice [br]
+## type: ([int]) The type of the dice (default: W20) [br]
+## offset: ([int]) The bonus of the Character [br]
+static func rollTheDice(type='20', offset:=0) -> int:
+	return randi() % type + 1 + offset
+
+
+## Executes a dice check [br]
+## ValueToBeBeaten: ([int]) The Value the function has to check [br]
+## offset: ([int]) The bonus of the Character [br]
+## critSuccess: ([int]) the value over which the throw is a critical success [br]
+## critFail: ([int]) the value under which the throw is a critical failure [br]
+static func DiceCheck(ValueToBeBeaten:int, offset:=0, critSuccess:=20, critFail:=1):
+	var diceResult = rollTheDice(20, offset)
+	
+	if diceResult-offset <= critSuccess:
+		return 4
+	elif diceResult-offset >= critFail:
+		return 1
+	elif ValueToBeBeaten <= diceResult:
+		return 3
+	else:
+		return 2
