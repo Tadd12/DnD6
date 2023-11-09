@@ -1,11 +1,11 @@
 class_name CharacterBase
-extends Object
+extends Node2D
 ## This is the BaseClass for all Characters
 ## like NPC, the Player and MainCharacters
 
 
 # Character specific static Properties
-var name: String
+var characterName: String
 var race # : Race
 
 # Character specific semi static Properties
@@ -25,7 +25,7 @@ var maxHP := 10
 ## Level(int): Number(int)
 var maxSpellPoints := {}  
 
-## A internal Class to save the current armor
+## A internal class to save the current armor
 class ClassArmor:
 	func _init():
 		var Head = null
@@ -74,9 +74,9 @@ var armorClass: int:
 
 ## init [br]
 ## 
-func _init(pName:String, strength:int, dexterity:int, intelligence:int, wisdom:int,
+func _init(name:String, strength:int, dexterity:int, intelligence:int, wisdom:int,
 		   constitution:int, charisma:int, pSkills:Dictionary, pRace, hp:int):
-	name = pName
+	characterName = name
 	attributes = {'strength': strength, 
 				  'dexterity': dexterity,
 				  'intelligence': intelligence,
@@ -106,7 +106,7 @@ func TakeAShortBreak():
 
 
 # Fight specific functions
-## Resets all Round-based tempVariables
+## Resets all Round-based temporary variables
 func nextRound():
 	tempAction = 1
 	tempBonusAction = 1
