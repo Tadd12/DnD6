@@ -6,7 +6,6 @@
 [node name="GuiInventory" type="Node2D"]
 
 [node name="Inventory" type="ItemList" parent="."]
-anchors_preset = -1
 offset_right = 571.0
 offset_bottom = 648.0
 script = ExtResource("1_ym2jk")

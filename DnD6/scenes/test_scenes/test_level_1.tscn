@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy5tsi83pwkwm"]
+[gd_scene load_steps=4 format=3 uid="uid://cy5tsi83pwkwm"]
 
-[ext_resource type="Script" path="res://scenes/test_scenes/test_level_1.gd" id="1_0xheh"]
 [ext_resource type="Texture2D" uid="uid://cw8kktjh4rjf0" path="res://icon.svg" id="1_4cd1x"]
 [ext_resource type="Script" path="res://scenes/test_scenes/scripts/MoveSprite.gd" id="2_saevx"]
 [ext_resource type="PackedScene" uid="uid://c0encdvisgifm" path="res://scenes/test_scenes/player.tscn" id="3_qp1fv"]
 
 [node name="TestLevel1" type="Node2D"]
-script = ExtResource("1_0xheh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(167, 206)
