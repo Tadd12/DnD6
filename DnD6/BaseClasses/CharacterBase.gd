@@ -35,7 +35,7 @@ class ClassArmor:
 	
 	## Computes the ArmorPoints by the currently worn armor
 	## If no armor is worn the default is 10
-	func getArmorPoints():
+	func getArmorPoints() -> int:
 		# TODO after creating ArmorBaseClass
 		return 10 # Standard if no armor is selected
 

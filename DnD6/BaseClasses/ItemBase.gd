@@ -27,4 +27,12 @@ func _init(pName, pWeight, effects=null, icon=null):
 func getMetadata():
 	return {'Name': itemName,
 			'Weight': weight}
+
+func open_world_usage(user: CharacterBase) -> bool:
+	return false
+
+func encounter_usage(user: CharacterBase) -> bool:
+	return false
+	
+
 # static
