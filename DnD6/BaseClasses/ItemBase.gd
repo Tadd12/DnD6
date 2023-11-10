@@ -17,6 +17,14 @@ func _init(pName, pWeight, effects=null, icon=null):
 	if effects != null:
 		self.listOfEffects = effects
 	if icon != null:
-		self.inventoryIcon = icon
+		if icon is ImageTexture:
+			self.inventoryIcon = icon
+		if icon is String:
+			self.inventoryIcon = ImageTexture.create_from_image(
+				Image.load_from_file(icon))
 
+
+func getMetadata():
+	return {'Name': itemName,
+			'Weight': weight}
 # static

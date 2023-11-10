@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbi0ep2fkcdeh"]
+
+[ext_resource type="Script" path="res://Inventory.gd" id="1_au04e"]
+[ext_resource type="Script" path="res://scenes/test_scenes/ItemOutput.gd" id="2_uc7ty"]
+
+[node name="GuiInventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inventory" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.498
+anchor_bottom = 1.0
+offset_right = 0.303955
+offset_bottom = 4.0
+script = ExtResource("1_au04e")
+
+[node name="ItemOutput" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 3.0
+offset_right = -4.0
+offset_bottom = -2.0
+script = ExtResource("2_uc7ty")
+
+[connection signal="item_selected" from="Inventory" to="ItemOutput" method="_on_inventory_item_selected"]
