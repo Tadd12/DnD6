@@ -7,9 +7,10 @@ var itemName: String
 ## The Weight of the Item
 var weight: float
 ## The icon to be shown in the inventory 
-var inventoryIcon: ImageTexture = ImageTexture.create_from_image(Image.load_from_file("res://Sprites//MissingIcon.png"))
+@export var inventoryIcon: Texture2D
 ##
-var listOfEffects: Array
+@export var listOfEffects: Array
+
 
 func _init(pName, pWeight, effects=null, icon=null):
 	self.itemName = pName
@@ -24,7 +25,7 @@ func _init(pName, pWeight, effects=null, icon=null):
 				Image.load_from_file(icon))
 
 
-func getMetadata():
+func getMetadata() -> Dictionary:
 	return {'Name': itemName,
 			'Weight': weight}
 

@@ -16,7 +16,7 @@ func _process(delta):
 
 
 func addItem(Item:ItemBase):
-	var idx = add_item(Item.itemName, Item.inventoryIcon)
+	var idx := add_item(Item.itemName, Item.inventoryIcon)
 	set_item_metadata(idx, Item.getMetadata())
 
 
