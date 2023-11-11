@@ -15,7 +15,7 @@ func _init():
 func _ready():
 	print("Ready")
 	inventory.append(load("res://Items/Apple/apple.tscn").instantiate())
-
+	inventory.append(load("res://Items/HealthPotion/health_potion.tscn").instantiate())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

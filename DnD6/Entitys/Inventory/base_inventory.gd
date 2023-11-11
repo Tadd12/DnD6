@@ -5,5 +5,5 @@ var contens := {}
 
 func add_item(item: ItemBase):
 	if contens.has(item):
-			contens.[item] += 1
+			contens[item] += 1
 	
