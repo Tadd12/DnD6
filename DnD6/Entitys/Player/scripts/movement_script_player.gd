@@ -32,7 +32,7 @@ func _process(delta):
 	elif Input.is_action_just_pressed("inventory"):
 		self._closeInventory()
 	
-
+	
 	var pos := Vector2.ZERO
 	if Input.is_action_pressed("up"):
 		pos.y -= speed * delta
@@ -59,7 +59,7 @@ func _openInventory():
 	var inventoryScene = preload("res://Entitys/Player/GuiInventory.tscn").instantiate()
 	inventoryScene.get_child(0)._setItems(self.inventory)
 	rootNode.add_child(inventoryScene)
-
+	
 func _closeInventory():
 	var inventoryScene = $"../GuiInventory"
 	var root = get_parent()

@@ -109,12 +109,10 @@ func TakeItem(item):
 	# TODO: remove item from Map/Chest
 	inventory.append(item)
 
-
 ## Reset all Actions the can only be used ones per Short Break 
 func TakeAShortBreak():
 	if not inFight:
 		hp = hp + max_hp/2
-
 
 # Fight specific functions
 ## Resets all Round-based temporary variables
