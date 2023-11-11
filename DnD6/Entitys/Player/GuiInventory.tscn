@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dg54nomcsdk26"]
 
 [ext_resource type="Script" path="res://Inventory.gd" id="1_ym2jk"]
-[ext_resource type="Script" path="res://scenes/test_scenes/ItemOutput.gd" id="2_03ffm"]
+[ext_resource type="Script" path="res://Entitys/Player/ItemOutput.gd" id="2_03ffm"]
 
 [node name="GuiInventory" type="Node2D"]
 
@@ -20,4 +20,5 @@ offset_right = 1152.0
 offset_bottom = 648.0
 script = ExtResource("2_03ffm")
 
+[connection signal="item_activated" from="Inventory" to="Inventory" method="_on_item_activated"]
 [connection signal="item_selected" from="Inventory" to="ItemOutput" method="_on_inventory_item_selected"]
