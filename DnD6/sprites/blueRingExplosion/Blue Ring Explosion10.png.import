@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyj65qe13ji7u"
-path="res://.godot/imported/Blue Ring Explosion6.png-c62fa51eebaaf6df06701e52e711a4e6.ctex"
+uid="uid://dlux4tukka66e"
+path="res://.godot/imported/Blue Ring Explosion10.png-15bd30f5ce478c31cb1cc9be6dcd98ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/blue_ring_explosion/Blue Ring Explosion6.png"
-dest_files=["res://.godot/imported/Blue Ring Explosion6.png-c62fa51eebaaf6df06701e52e711a4e6.ctex"]
+source_file="res://sprites/blueRingExplosion/Blue Ring Explosion10.png"
+dest_files=["res://.godot/imported/Blue Ring Explosion10.png-15bd30f5ce478c31cb1cc9be6dcd98ee.ctex"]
 
 [params]
 
