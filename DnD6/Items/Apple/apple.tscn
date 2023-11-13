@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://7hvyyfm5s2yc" path="res://Sprites/ItemSprites/Apple.png" id="2_2yny0"]
 [ext_resource type="PackedScene" uid="uid://cvmqs6cddkgoo" path="res://Effects/Heal/heal.tscn" id="3_nmsqf"]
 
-[node name="Apple" type="Node2D"]
+[node name="Apple" type="Node"]
 script = ExtResource("1_rnlxu")
 itemName = "Apple"
 weight = 1.0

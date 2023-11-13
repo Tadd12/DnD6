@@ -4,8 +4,11 @@ var speed            := 200
 var Direction        := "Left"
 var basic_projectile := preload("res://Entitys/Player/mage_projectile_basic.tscn")
 @onready var player_sprite: Sprite2D = $PlayerSprite
+@export var test := 2
 
-var inventoryOpen = false
+@export var showInventory:ShowInventory 
+@export var inventory:BaseInventory
+
 
 func _init():
 	super('Bluera', 0, 0, 0, 0, 0, 0, {}, '', 20)
@@ -14,8 +17,10 @@ func _init():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Ready")
-	inventory.append(load("res://Items/Apple/apple.tscn").instantiate())
-	inventory.append(load("res://Items/HealthPotion/health_potion.tscn").instantiate())
+	inventory.add_itemlist([
+		load("res://Items/Apple/apple.tscn").instantiate(),
+		load("res://Items/HealthPotion/health_potion.tscn").instantiate()
+	])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -27,10 +32,8 @@ func _process(delta):
 		p.rotate(mouse_pos.angle())
 		add_sibling(p)
 		
-	if Input.is_action_just_pressed("inventory") and not inventoryOpen:
-		self._openInventory()
-	elif Input.is_action_just_pressed("inventory"):
-		self._closeInventory()
+	if Input.is_action_just_pressed("inventory"):
+		showInventory.toggle_inventory()
 	
 	
 	var pos := Vector2.ZERO
@@ -53,15 +56,3 @@ func _process(delta):
 	position += pos
 
 
-func _openInventory():
-	inventoryOpen = true
-	var rootNode = get_node("/root").get_child(0)
-	var inventoryScene = preload("res://Entitys/Player/GuiInventory.tscn").instantiate()
-	inventoryScene.get_child(0)._setItems(self.inventory)
-	rootNode.add_child(inventoryScene)
-	
-func _closeInventory():
-	var inventoryScene = $"../GuiInventory"
-	var root = get_parent()
-	root.remove_child(inventoryScene)
-	inventoryOpen = false

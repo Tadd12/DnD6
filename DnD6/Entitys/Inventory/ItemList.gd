@@ -9,8 +9,8 @@ func _ready():
 	self.allow_reselect = true
 	self.fixed_icon_size = Vector2i(100, 100)
 
-func add_item(Item:ItemBase):
-	var idx := super.add_item(Item.itemName, Item.inventoryIcon)
+func add_new_item(Item:ItemBase):
+	var idx := add_item(Item.itemName, Item.inventoryIcon)
 	set_item_metadata(idx, Item.getMetadata())
 	
 #func remove_item(Item:ItemBase):

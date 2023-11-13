@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0encdvisgifm"]
+[gd_scene load_steps=5 format=3 uid="uid://c0encdvisgifm"]
 
 [ext_resource type="Texture2D" uid="uid://gqheqj3vb6kj" path="res://Sprites/Mage _Female_Sprite.png" id="1_88u2r"]
 [ext_resource type="Script" path="res://Entitys/Player/scripts/movement_script_player.gd" id="1_cssfc"]
+[ext_resource type="PackedScene" uid="uid://jd2ixy2kx4nk" path="res://Entitys/Inventory/base_inventory.tscn" id="3_aktdg"]
+[ext_resource type="PackedScene" uid="uid://di0f4v74d6y57" path="res://Entitys/Inventory/show_inventory.tscn" id="4_bqvm7"]
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" node_paths=PackedStringArray("showInventory", "inventory")]
 script = ExtResource("1_cssfc")
+showInventory = NodePath("ShowInventory")
+inventory = NodePath("BaseInventory")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_88u2r")
+
+[node name="BaseInventory" parent="." instance=ExtResource("3_aktdg")]
+
+[node name="ShowInventory" parent="." node_paths=PackedStringArray("inventory") instance=ExtResource("4_bqvm7")]
+inventory = NodePath("../BaseInventory")

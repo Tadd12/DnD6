@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://br8nbqytclfdo"]
+
+[ext_resource type="Script" path="res://Items/Mushroom/mushroom.gd" id="1_44lgg"]
+[ext_resource type="Texture2D" uid="uid://yt841vsp1uv3" path="res://Sprites/ItemSprites/mushroom_item.png" id="2_w5q34"]
+[ext_resource type="Script" path="res://Effects/Damage/damage.gd" id="3_37rld"]
+
+[node name="Mushroom" type="Node"]
+script = ExtResource("1_44lgg")
+test = ExtResource("3_37rld")
+itemName = "Mushroom"
+weight = 0.1
+inventoryIcon = ExtResource("2_w5q34")
+effects = {
+"damage": ExtResource("3_37rld")
+}

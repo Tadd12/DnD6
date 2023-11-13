@@ -4,13 +4,15 @@ extends Node2D
 ## like NPC, the Player and MainCharacters
 
 
-signal recover_health(hp_event: HealthChangedEvent)
-signal overheal(entity: CharacterBase, max_hp: float, new_hp: float)
-signal damaged(hp_event: HealthChangedEvent)
+signal recoverHealth(HP_event: HealthChangedEvent)
+signal overheal(entity: CharacterBase, maxHP: float, newHP: float)
+signal damaged(HP_event: HealthChangedEvent)
 signal death(entity: CharacterBase, cause)
 
+@export var inventory: InventoryBase
+
 # Character specific static Properties
-var character_name: String
+var characterName: String
 var race # : Race
 
 # Character specific semi static Properties
@@ -22,12 +24,16 @@ var attributes := {'strength': 0,
 				   'constitution': 0,
 				   'charisma': 0}
 
-var max_hp := 10.0
+var maxHP := 10.0
+
+var maxWeight: float:
+	get:
+		return 20
 
 ## Saves the main attributes of the Character
 var skills := {}  # Skill(str): Bonus(int)  0 = No bonus but available
 
-var inventory := []
+
 ## Level(int): Number(int)
 var maxSpellPoints := {}  
 
@@ -59,24 +65,23 @@ var spellPoints := {}
 var tempAction := maxActions
 var tempBonusAction := maxBonusActions
 
-var hp:= max_hp
+var hp:= maxHP
 
-func recover_hp(amount: float, cause):
-	var new_hp = hp + amount
-	if not hp == max_hp:
-		recover_health.emit(HealthChangedEvent.new(hp, minf(max_hp, new_hp), amount, self, cause))
-	if new_hp > max_hp:
-		overheal.emit(self, max_hp, new_hp)	
-	hp = minf(max_hp, new_hp)
+func recoverHP(amount: float, cause):
+	if not hp == maxHP:
+		recoverHealth.emit(HealthChangedEvent.new(hp, minf(maxHP, newHP), amount, self, cause))
+	if newHP > maxHP:
+		overheal.emit(self, maxHP, overflow, cause)	
+	hp = minf(maxHP, newHP)
 	
-func remove_hp(amount: float, cause):
+func removeHP(amount: float, cause):
 	minf(1.0, amount)
-	var new_hp := maxf(0, hp - amount)
-	damaged.emit(HealthChangedEvent.new(hp, new_hp, amount, self, cause))
-	if new_hp == 0:
+	var newHP := maxf(0, hp - amount)
+	damaged.emit(HealthChangedEvent.new(hp, newHP, amount, self, cause))
+	if newHP == 0:
 		death.emit(self, cause)
 		
-	hp = new_hp
+	hp = newHP
 
 ## The armor class of the Character
 var armorClass: int:
@@ -86,8 +91,8 @@ var armorClass: int:
 ## init [br]
 ## 
 func _init(pName:String, strength:int, dexterity:int, intelligence:int, wisdom:int,
-		   constitution:int, charisma:int, pSkills:Dictionary, pRace, ihp:int):
-	self.character_name = pName
+		   constitution:int, charisma:int, pSkills:Dictionary, pRace, iHP:int):
+	self.characterName = pName
 	self.attributes = {'strength': strength, 
 				  'dexterity': dexterity,
 				  'intelligence': intelligence,
@@ -96,8 +101,8 @@ func _init(pName:String, strength:int, dexterity:int, intelligence:int, wisdom:i
 				  'charisma': charisma}
 	self.skills = pSkills
 	self.race = pRace
-	self.max_hp = ihp
-	self.hp = ihp
+	self.maxHP = iHP
+	self.hp = iHP
 
 ## Triggers a dialog sequence with a character
 func TalkTo(Char):
@@ -105,14 +110,14 @@ func TalkTo(Char):
 	pass
 
 ## Takes item 
-func TakeItem(item):
+func TakeItem(item: ItemBase):
 	# TODO: remove item from Map/Chest
 	inventory.append(item)
 
 ## Reset all Actions the can only be used ones per Short Break 
 func TakeAShortBreak():
 	if not inFight:
-		hp = hp + max_hp/2
+		hp = hp + maxHP/2
 
 # Fight specific functions
 ## Resets all Round-based temporary variables
@@ -142,7 +147,7 @@ func UseSpellOnMap(Coordinates, Spell):
 	pass
 
 
-## A function to be called if HP reaches 0
+## A function to be called if hp reaches 0
 func onDeath():
 	pass
 

@@ -24,4 +24,3 @@ func _setItems(items: Array ):
 	self.clear()
 	for item in items:
 		addItem(item)
-	
