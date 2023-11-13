@@ -2,7 +2,7 @@ extends CharacterBase
 
 var speed = 200
 var Direction = "Left"
-var basicProjectile = preload("res://scenes/testScenes/mageProjectileBasic.tscn")
+var basicProjectile = preload("res://entities/Player/mageProjectileBasic.tscn")
 @onready var playerSprite: Sprite2D = $PlayerSprite
 
 
