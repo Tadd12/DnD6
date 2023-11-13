@@ -1,21 +1,26 @@
 extends Node
-class_name BaseInventory
+class_name InventoryBase
 
+
+@onready var parent := get_parent()
 #desc holds the items as the key and the itemcount as the value
 var contens := {}
-
 var items: Array:
 	get:
 		return contens.keys()
-#desc inventory size
-@export var size := 20
+
+var total_weight:= 0
+
+var max_weight: float:
+	get:
+		return parent.
 
 #desc Increses the itemcount of the item by one and returns its index. 
 # If the item can't be placed in the inventory the return value is -1
 func add_single_item(item: ItemBase) -> int:
 	if contens.has(item):
 			contens[item] += 1
-	elif contens.size() < size:
+	elif :
 		contens[item] = 1
 	return items.rfind(item)
 	
