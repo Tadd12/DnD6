@@ -1,20 +1,31 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0encdvisgifm"]
 
 [ext_resource type="Texture2D" uid="uid://gqheqj3vb6kj" path="res://Sprites/Mage _Female_Sprite.png" id="1_88u2r"]
-[ext_resource type="Script" path="res://Entitys/Player/scripts/movement_script_player.gd" id="1_cssfc"]
-[ext_resource type="PackedScene" uid="uid://jd2ixy2kx4nk" path="res://Entitys/Inventory/base_inventory.tscn" id="3_aktdg"]
-[ext_resource type="PackedScene" uid="uid://di0f4v74d6y57" path="res://Entitys/Inventory/show_inventory.tscn" id="4_bqvm7"]
+[ext_resource type="Script" path="res://Entitys/Player/player.gd" id="1_nnx13"]
 
-[node name="Player" type="Node2D" node_paths=PackedStringArray("showInventory", "inventory")]
-script = ExtResource("1_cssfc")
-showInventory = NodePath("ShowInventory")
-inventory = NodePath("BaseInventory")
+[sub_resource type="SpriteFrames" id="SpriteFrames_3w5sg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_88u2r")
+}],
+"loop": true,
+"name": &"NoMovement",
+"speed": 5.0
+}]
 
-[node name="PlayerSprite" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_88u2r")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4be4l"]
+size = Vector2(100, 120)
 
-[node name="BaseInventory" parent="." instance=ExtResource("3_aktdg")]
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_nnx13")
 
-[node name="ShowInventory" parent="." node_paths=PackedStringArray("inventory") instance=ExtResource("4_bqvm7")]
-inventory = NodePath("../BaseInventory")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.13, 0.13)
+sprite_frames = SubResource("SpriteFrames_3w5sg")
+animation = &"NoMovement"
+frame_progress = 0.703864
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 2)
+shape = SubResource("RectangleShape2D_4be4l")
