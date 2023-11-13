@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi5boaihp6u3v"]
+
+[ext_resource type="Script" path="res://Items/HealthPotion/health_potion.gd" id="1_tbt2h"]
+[ext_resource type="Texture2D" uid="uid://c07j2nmxxvcjv" path="res://Sprites/ItemSprites/HealthPosionW20.png" id="2_bcb1o"]
+
+[node name="HealthPotion" type="Node2D"]
+script = ExtResource("1_tbt2h")
+itemName = "Health Potion"
+weight = 1.0
+inventoryIcon = ExtResource("2_bcb1o")
