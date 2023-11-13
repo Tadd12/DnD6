@@ -1,5 +1,5 @@
 class_name ItemBase
-extends Node2D
+extends Node
 
 @export_group("Properties")
 ## Name of the Item

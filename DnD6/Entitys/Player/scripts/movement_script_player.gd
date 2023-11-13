@@ -4,6 +4,7 @@ var speed            := 200
 var Direction        := "Left"
 var basic_projectile := preload("res://Entitys/Player/mage_projectile_basic.tscn")
 @onready var player_sprite: Sprite2D = $PlayerSprite
+@export var test := 2
 
 var inventoryOpen = false
 
