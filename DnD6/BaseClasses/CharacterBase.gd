@@ -28,10 +28,9 @@ var maxSpellPoints := {}
 ## A internal class to save the current armor
 class ClassArmor:
 	func _init():
-		var Head = null
-		var Cheat = null
-		var Legs = null
-		var Feet = null
+		var armor = {}
+		for type in ArmorBase.ArmorType:
+			armor[type] = null
 	
 	## Computes the ArmorPoints by the currently worn armor
 	## If no armor is worn the default is 10
@@ -39,6 +38,15 @@ class ClassArmor:
 		# TODO after creating ArmorBaseClass
 		return 10 # Standard if no armor is selected
 
+	func setArmor(armor:ArmorBase, type:ArmorBase.ArmorType):
+		# TODO: Check armorType
+		pass
+		
+	func getArmor() -> Array:
+		var arrayArmor = []
+		for a in self.armor:
+			arrayArmor.append(self.armor[a])
+		return arrayArmor
 
 var armor := ClassArmor.new()
 

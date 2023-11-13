@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cw8kktjh4rjf0" path="res://icon.svg" id="1_4cd1x"]
 [ext_resource type="Script" path="res://scenes/test_scenes/scripts/MoveSprite.gd" id="2_saevx"]
-[ext_resource type="PackedScene" path="res://scenes/test_scenes/player.tscn" id="3_qp1fv"]
+[ext_resource type="PackedScene" uid="uid://c0encdvisgifm" path="res://scenes/test_scenes/player.tscn" id="3_qp1fv"]
 
 [node name="TestLevel1" type="Node2D"]
 

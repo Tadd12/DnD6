@@ -3,7 +3,7 @@ extends ItemList
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.max_columns = 2
+	self.max_columns = 4
 	self.icon_mode = ICON_MODE_TOP
 	self.max_text_lines = 1
 	self.allow_reselect = true

@@ -1,5 +1,5 @@
 class_name ItemBase
-extends Node2D
+extends Resource
 
 # Proprties
 ## Name of the Item
