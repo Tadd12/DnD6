@@ -14,7 +14,7 @@ func _init():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Ready")
-	self.inventory = [ItemBase.new("HealthPotion", 0.1, null, "res://Sprites//HealthPosionW20.png"),
+	self.inventory = [ItemBase.new("HealthPotion", 0.1, null, "res://Sprites/ItemSprites/HealthPosionW20.png"),
 					  ItemBase.new("Sword", 1.0)]
 
 

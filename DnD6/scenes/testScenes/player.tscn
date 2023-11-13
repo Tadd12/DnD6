@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0encdvisgifm"]
 
-[ext_resource type="Texture2D" path="res://sprites/Character/MageFemaleSprite.png" id="1_88u2r"]
+[ext_resource type="Texture2D" uid="uid://cukgev1cx1df" path="res://sprites/Character/MageFemaleSprite.png" id="1_88u2r"]
 [ext_resource type="Script" path="res://scenes/testScenes/scripts/movementScriptPlayer.gd" id="1_cssfc"]
 
 [node name="Player" type="Node2D"]

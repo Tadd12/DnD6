@@ -7,7 +7,7 @@ var itemName: String
 ## The Weight of the Item
 var weight: float
 ## The icon to be shown in the inventory 
-var inventoryIcon: ImageTexture = ImageTexture.create_from_image(Image.load_from_file("res://Sprites//MissingIcon.png"))
+var inventoryIcon: ImageTexture = ImageTexture.create_from_image(Image.load_from_file("res://Sprites/ItemSprites/MissingIcon.png"))
 ##
 var listOfEffects: Array
 
