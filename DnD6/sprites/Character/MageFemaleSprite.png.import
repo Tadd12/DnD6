@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2c1b1u2yltse"
-path="res://.godot/imported/blue_fire_projectile.png-384e4140017ce22c7bb540a698b7713a.ctex"
+uid="uid://cukgev1cx1df"
+path="res://.godot/imported/MageFemaleSprite.png-982e014e65668a33a60dd5ac5732fe39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Projektiles/blue_fire_projectile.png"
-dest_files=["res://.godot/imported/blue_fire_projectile.png-384e4140017ce22c7bb540a698b7713a.ctex"]
+source_file="res://sprites/Character/MageFemaleSprite.png"
+dest_files=["res://.godot/imported/MageFemaleSprite.png-982e014e65668a33a60dd5ac5732fe39.ctex"]
 
 [params]
 
