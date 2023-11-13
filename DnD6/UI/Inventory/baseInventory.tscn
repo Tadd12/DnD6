@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://jd2ixy2kx4nk"]
-
-[ext_resource type="Script" path="res://Entities/Inventory/inventoryBase.gd" id="1_ailit"]
-
-[node name="BaseInventory" type="Node2D"]
-script = ExtResource("1_ailit")
