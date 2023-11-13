@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://o2gdfvcj4pk4"]
+
+[ext_resource type="Script" path="res://Items/Apple/apple.gd" id="1_rnlxu"]
+[ext_resource type="Texture2D" uid="uid://7hvyyfm5s2yc" path="res://Sprites/ItemSprites/Apple.png" id="2_2yny0"]
+[ext_resource type="PackedScene" uid="uid://cvmqs6cddkgoo" path="res://Effects/Heal/heal.tscn" id="3_nmsqf"]
+
+[node name="Apple" type="Node"]
+script = ExtResource("1_rnlxu")
+itemName = "Apple"
+weight = 1.0
+inventoryIcon = ExtResource("2_2yny0")
+effects = {
+"heal": ExtResource("3_nmsqf")
+}

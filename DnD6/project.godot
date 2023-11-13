@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DnD6"
-run/main_scene="res://scenes/test_scenes/test_level_1.tscn"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
 
@@ -19,6 +19,11 @@ config/icon="res://Sprites/icon.svg"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+
+[editor_plugins]
+
+enabled=PackedStringArray()
 
 [input]
 

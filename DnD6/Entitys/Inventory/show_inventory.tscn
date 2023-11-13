@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://di0f4v74d6y57"]
+
+[ext_resource type="Script" path="res://Entitys/Inventory/show_inventory.gd" id="1_xp537"]
+[ext_resource type="Script" path="res://Entitys/Inventory/ItemList.gd" id="2_mh1xf"]
+
+[node name="ShowInventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xp537")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 641.0
+script = ExtResource("2_mh1xf")

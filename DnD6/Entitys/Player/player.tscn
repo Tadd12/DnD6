@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0encdvisgifm"]
+
+[ext_resource type="Texture2D" uid="uid://gqheqj3vb6kj" path="res://Sprites/Mage _Female_Sprite.png" id="1_88u2r"]
+[ext_resource type="Script" path="res://Entitys/Player/player.gd" id="1_nnx13"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3w5sg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_88u2r")
+}],
+"loop": true,
+"name": &"NoMovement",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4be4l"]
+size = Vector2(100, 120)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_nnx13")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.13, 0.13)
+sprite_frames = SubResource("SpriteFrames_3w5sg")
+animation = &"NoMovement"
+frame_progress = 0.703864
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 2)
+shape = SubResource("RectangleShape2D_4be4l")
