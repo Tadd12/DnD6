@@ -27,7 +27,7 @@ func toggle_inventory_interface(external_inventory_owner = null, keep_open = fal
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
-	if external_inventory_owner:
+	if external_inventory_owner and inventory_interface.visible:
 		inventory_interface.set_external_inventory(external_inventory_owner)
 	else:
 		inventory_interface.clear_external_inventory()

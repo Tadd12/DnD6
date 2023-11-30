@@ -1,6 +1,6 @@
 extends PanelContainer
 
-const Slot = preload("res://UI/Inventory/slot.tscn")
+const Slot = preload("res://UI/Inventory/Slot/slot.tscn")
 
 @onready var item_grid = $MarginContainer/ScrollContainer/ItemGrid
 

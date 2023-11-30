@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cukgev1cx1df" path="res://Sprites/Character/MageFemaleSprite.png" id="2_8tdp2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ja4m2"]
-radius = 194.023
+radius = 172.012
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7b4ur"]
 size = Vector2(122, 133)

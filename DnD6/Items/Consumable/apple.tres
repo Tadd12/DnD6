@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bwrjqrs6aful7"]
 
-[ext_resource type="Script" path="res://UI/Inventory/item_data.gd" id="1_wcbow"]
+[ext_resource type="Script" path="res://GameMechanics/DataClasses/Item/item_data.gd" id="1_wcbow"]
 [ext_resource type="Texture2D" uid="uid://7hvyyfm5s2yc" path="res://Sprites/ItemSprites/Apple.png" id="2_2iwti"]
 
 [resource]

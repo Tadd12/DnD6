@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://buj5lerpiexgg"]
 
-[ext_resource type="Script" path="res://UI/Inventory/inventory.gd" id="1_bsjtl"]
+[ext_resource type="Script" path="res://UI/Inventory/Inventory/inventory.gd" id="1_kl67o"]
 
 [node name="Inventory" type="PanelContainer"]
 anchors_preset = 6
@@ -16,7 +16,7 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-script = ExtResource("1_bsjtl")
+script = ExtResource("1_kl67o")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
