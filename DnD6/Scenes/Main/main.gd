@@ -1,7 +1,7 @@
 extends Node
 
-@onready var player = $Game/Player
-@onready var inventory_interface = $UI/InventoryInterface
+@onready var player := $Game/Player
+@onready var inventory_interface := $UI/InventoryInterface
 
 
 func _ready() -> void:
@@ -15,6 +15,10 @@ func _close_ui():
 	if inventory_interface.visible:
 		toggle_inventory_interface()
 
+
+#desc Toggles the visibility of the inventory interface.
+#desc If an [param external_inventory_owner] is provided, an additional inventory will open to display the contens.
+#desc If [param keep_open] is provided and the inventory is visible, it will stay visible.
 func toggle_inventory_interface(external_inventory_owner = null, keep_open = false) -> void:
 	if inventory_interface.visible and keep_open:
 		pass

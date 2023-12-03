@@ -3,10 +3,10 @@ extends PanelContainer
 signal slot_clicked(index: int, button: int, double: bool)
 
 
-@onready var texture_rect = $MarginContainer/TextureRect
-@onready var quantity_label = $QuantityLabel
+@onready var texture_rect := $MarginContainer/TextureRect
+@onready var quantity_label := $QuantityLabel
 
-
+#desc Sets the data for this slot
 func set_slot_data(slot_data: SlotData) -> void:
 	var item_data = slot_data.item_data
 	texture_rect.texture = item_data.texture
