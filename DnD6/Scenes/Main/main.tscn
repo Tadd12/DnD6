@@ -13,12 +13,12 @@
 
 [sub_resource type="Resource" id="Resource_08hhm"]
 script = ExtResource("5_6trh0")
-item_data = ExtResource("4_fbk3w")
+itemData = ExtResource("4_fbk3w")
 quantity = 1
 
 [sub_resource type="Resource" id="Resource_t18a4"]
 script = ExtResource("3_t4bc7")
-slot_datas = Array[ExtResource("5_6trh0")]([SubResource("Resource_08hhm")])
+slotDatas = Array[ExtResource("5_6trh0")]([SubResource("Resource_08hhm")])
 
 [node name="Main" type="Node"]
 script = ExtResource("1_de7d4")
@@ -27,13 +27,13 @@ script = ExtResource("1_de7d4")
 
 [node name="Chest" parent="Game" instance=ExtResource("2_p0vww")]
 position = Vector2(874, 294)
-inventory_data = SubResource("Resource_t18a4")
+inventoryData = SubResource("Resource_t18a4")
 
 [node name="Player" parent="Game" instance=ExtResource("6_clbfb")]
 position = Vector2(481, 436)
 speed = 150
 characterName = "Angela"
-inventory_data = ExtResource("7_jotid")
+inventoryData = ExtResource("7_jotid")
 
 [node name="UI" type="CanvasLayer" parent="."]
 

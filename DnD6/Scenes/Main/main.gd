@@ -5,22 +5,22 @@ extends Node
 
 
 func _ready() -> void:
-	player.toggle_inventory.connect(toggle_inventory_interface)
-	inventory_interface.set_player_inventory(player.inventory_data)
+	player.toggleInventory.connect(toggleInventory_interface)
+	inventory_interface.set_playerInventory(player.inventoryData)
 	player.close_ui.connect(_close_ui)	
 	for node in get_tree().get_nodes_in_group("external_inventory"):
-		node.toggle_inventory.connect(toggle_inventory_interface)
+		node.toggleInventory.connect(toggleInventory_interface)
 
 func _close_ui():
 	if inventory_interface.visible:
-		toggle_inventory_interface()
+		toggleInventory_interface()
 
 
 #desc Toggles the visibility of the inventory interface.
-#desc If an [param external_inventory_owner] is provided, an additional inventory will open to display the contens.
-#desc If [param keep_open] is provided and the inventory is visible, it will stay visible.
-func toggle_inventory_interface(external_inventory_owner = null, keep_open = false) -> void:
-	if inventory_interface.visible and keep_open:
+#desc If an [param externalInventoryOwner] is provided, an additional inventory will open to display the contens.
+#desc If [param keepOpen] is provided and the inventory is visible, it will stay visible.
+func toggleInventory_interface(externalInventoryOwner = null, keepOpen = false) -> void:
+	if inventory_interface.visible and keepOpen:
 		pass
 	else:
 		inventory_interface.visible = not inventory_interface.visible
@@ -30,9 +30,9 @@ func toggle_inventory_interface(external_inventory_owner = null, keep_open = fal
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-		inventory_interface.drop_grabbed_slot()
+		inventory_interface.drop_grabbedSlot()
 	
-	if external_inventory_owner and inventory_interface.visible:
-		inventory_interface.set_external_inventory(external_inventory_owner)
+	if externalInventoryOwner and inventory_interface.visible:
+		inventory_interface.set_externalInventory(externalInventoryOwner)
 	else:
-		inventory_interface.clear_external_inventory()
+		inventory_interface.clear_externalInventory()

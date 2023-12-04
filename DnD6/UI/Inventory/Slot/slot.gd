@@ -1,22 +1,22 @@
 extends PanelContainer
 
-signal slot_clicked(index: int, button: int, double: bool)
+signal slotClicked(index: int, button: int, double: bool)
 
 
-@onready var texture_rect := $MarginContainer/TextureRect
-@onready var quantity_label := $QuantityLabel
+@onready var textureRect := $MarginContainer/TextureRect
+@onready var quantityLabel := $QuantityLabel
 
 #desc Sets the data for this slot
-func set_slot_data(slot_data: SlotData) -> void:
-	var item_data = slot_data.item_data
-	texture_rect.texture = item_data.texture
-	tooltip_text = "{0}\n{1}".format([item_data.name, item_data.description])
+func setSlotData(slotData: SlotData) -> void:
+	var itemData = slotData.itemData
+	textureRect.texture = itemData.texture
+	tooltip_text = "{0}\n{1}".format([itemData.name, itemData.description])
 	
-	if slot_data.quantity > 1:
-		quantity_label.text = "x{0}".format([slot_data.quantity])
-		quantity_label.show()
+	if slotData.quantity > 1:
+		quantityLabel.text = "x{0}".format([slotData.quantity])
+		quantityLabel.show()
 	else:
-		quantity_label.hide()
+		quantityLabel.hide()
 
 
 func _on_gui_input(event):
@@ -24,5 +24,5 @@ func _on_gui_input(event):
 			and (event.button_index == MOUSE_BUTTON_LEFT \
 			or event.button_index == MOUSE_BUTTON_RIGHT) \
 			and event.is_pressed():
-		slot_clicked.emit(get_index(), event.button_index, event.is_double_click())
+		slotClicked.emit(get_index(), event.button_index, event.is_double_click())
 		

@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export var characterName: String
 var race # : Race
 
-@export var inventory_data: InventoryData
+@export var inventoryData: InventoryData
 
 # Character specific semi static Properties
 ## Saves the main attributes of the Character

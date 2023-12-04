@@ -6,35 +6,35 @@ const Slot := preload("res://UI/Inventory/Slot/slot.tscn")
 
 
 func _ready():
-	var inventory_data := preload("res://UI/Inventory/test_inv.tres")
-	populate_item_grid(inventory_data)
+	var inventoryData := preload("res://UI/Inventory/test_inv.tres")
+	populate_item_grid(inventoryData)
 	
 	
 #desc Sets the data displayed in the inventory
-func set_inventory_data(inventory_data: InventoryData) -> void:
-	inventory_data.inventory_updated.connect(populate_item_grid)
-	populate_item_grid(inventory_data)
+func setInventoryData(inventoryData: InventoryData) -> void:
+	inventoryData.inventoryUpdated.connect(populate_item_grid)
+	populate_item_grid(inventoryData)
 	
-	var calc_size: int =  min((inventory_data.slot_datas.size() + 4) / 5, 412)
+	var calc_size: int =  min((inventoryData.slotDatas.size() + 4) / 5, 412)
 	size.y = 4 + 68 * calc_size
 
 	
 #desc Clears the display of the inventory
-func clear_inventory_data(inventory_data: InventoryData) -> void:
-	inventory_data.inventory_updated.disconnect(populate_item_grid)
+func clearInventoryData(inventoryData: InventoryData) -> void:
+	inventoryData.inventoryUpdated.disconnect(populate_item_grid)
 
 	
 #desc Sets the data of the slots in the inventory
-func populate_item_grid(inventory_data: InventoryData) -> void:
+func populate_item_grid(inventoryData: InventoryData) -> void:
 	for child in item_grid.get_children():
 		child.queue_free()
 		
-	for slot_data in inventory_data.slot_datas:
+	for slotData in inventoryData.slotDatas:
 		var slot = Slot.instantiate()
 		item_grid.add_child(slot)
 		
-		slot.slot_clicked.connect(inventory_data.on_slot_clicked)
+		slot.slotClicked.connect(inventoryData.on_slotClicked)
 		
-		if slot_data:
-			slot.set_slot_data(slot_data)
+		if slotData:
+			slot.setSlotData(slotData)
 	
