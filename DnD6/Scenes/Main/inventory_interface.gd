@@ -13,13 +13,13 @@ func _physics_process(_delta: float) -> void:
 
 
 #desc Sets the player inventory view to [param inventoryData]
-func set_playerInventory(inventoryData: InventoryData) -> void:
+func setPlayerInventory(inventoryData: InventoryData) -> void:
 	inventoryData.inventoryInteract.connect(onInventoryInteract)
 	playerInventory.setInventoryData(inventoryData)
 
 	
 #desc Sets the external owner inventory view to the inventory owned by [param _externalInventoryOwner]
-func set_externalInventory(_externalInventoryOwner) -> void:
+func setExternalInventory(_externalInventoryOwner) -> void:
 	if externalInventoryOwner == _externalInventoryOwner:
 		return
 	externalInventoryOwner = _externalInventoryOwner
@@ -32,7 +32,7 @@ func set_externalInventory(_externalInventoryOwner) -> void:
 
 	
 #desc Clears the external inventory view and removes the refrence to the external owner
-func clear_externalInventory() -> void:
+func clearExternalInventory() -> void:
 	if externalInventoryOwner:
 		var inventoryData = externalInventoryOwner.inventoryData
 		
@@ -64,19 +64,20 @@ func onInventoryInteract(inventoryData: InventoryData, index: int, button: int, 
 			else:
 				pass
 		[_, MOUSE_BUTTON_RIGHT]:
-			grabbedSlotData = inventoryData.drop_single_slotData(grabbedSlotData, index)
+			grabbedSlotData = inventoryData.dropSingleSlotData(grabbedSlotData, index)
 		
-	update_grabbedSlot()
+	updateGrabbedSlot()
 
 #desc Toggles the visibility of the slot for a grabbed item
-func update_grabbedSlot() -> void:
+func updateGrabbedSlot() -> void:
 	if grabbedSlotData:
 		grabbedSlot.show()
 		grabbedSlot.setSlotData(grabbedSlotData)
 	else:
 		grabbedSlot.hide()
 
-func drop_grabbedSlot() -> void:
+#TODO: Make it so the item in the grabbedSlot is put into an inventory
+func dropGrabbedSlot() -> void:
 	if not grabbedSlot.visible:
 		return
 	

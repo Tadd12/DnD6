@@ -55,7 +55,7 @@ func dropSlotData(grabbedSlotData : SlotData, index: int) -> SlotData:
 #desc If the SlotData is not [code]null[/code], it will attempt to merge a new copy of [param grabbedSlotData] with the data.
 #desc If one of the above was successful, the amount of [param grabbedSlotData] will be lowered by [code]1[/code].
 #desc The modified value of [param grabbedSlotData] will be returned if the amount is over 0, else the return value is [code]null[/code]
-func drop_single_slotData(grabbedSlotData : SlotData, index: int) -> SlotData:
+func dropSingleSlotData(grabbedSlotData : SlotData, index: int) -> SlotData:
 	var slotData := slotDatas[index]
 	
 	if not slotData:
@@ -88,5 +88,5 @@ func mergeAllSlotData(grabbedSlotData: SlotData) -> SlotData:
 
 
 #desc Emits the inventoryInteract signal with the functio arguments and a refrence to self as the [InventoryData]
-func on_slotClicked(index: int, button: int, double: bool) -> void:
+func _onSlotClicked(index: int, button: int, double: bool) -> void:
 	inventoryInteract.emit(self, index, button, double)

@@ -1,10 +1,10 @@
 extends CharacterBase
 
 @export var speed := 200
-@onready var interact_area := $InteractArea
+@onready var interactArea := $InteractArea
 
 
-signal toggle_inventory
+signal toggleInventory
 signal close_ui
 
 # Called when the node enters the scene tree for the first time.
@@ -14,7 +14,7 @@ func _ready():
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("inventory"):
-		toggle_inventory.emit()
+		toggleInventory.emit()
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		close_ui.emit()
@@ -38,11 +38,11 @@ func _physics_process(delta):
 	
 
 #desc Checks if there is an interactable body within the [InteractArea].
-#desc If bodys are found, the [code]player_interact[/code] method is called on the closest one.
+#desc If bodys are found, the [code]playerInteract[/code] method is called on the closest one.
 func interact() -> void:
-	if interact_area.get_overlapping_bodies():
-		var closest = interact_area.get_overlapping_bodies() \
+	if interactArea.get_overlapping_bodies():
+		var closest = interactArea.get_overlapping_bodies() \
 			.map(func(body): 
 				return body.get_global_position().distance_to(get_global_position())) \
 			.min()
-		interact_area.get_overlapping_bodies()[0].player_interact()
+		interactArea.get_overlapping_bodies()[0].playerInteract()

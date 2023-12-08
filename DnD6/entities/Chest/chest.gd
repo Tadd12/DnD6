@@ -1,8 +1,8 @@
 extends StaticBody2D
 
-signal toggle_inventory(external_inventory_owner, keep_open)
+signal toggleInventory(externalInventoryOwner, keepOpen)
 
-@export var inventory_data: InventoryData
+@export var inventoryData: InventoryData
 
-func player_interact() -> void:
-	toggle_inventory.emit(self, true)
+func playerInteract() -> void:
+	toggleInventory.emit(self, true)

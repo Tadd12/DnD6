@@ -1,38 +1,38 @@
 extends Node
 
 @onready var player := $Game/Player
-@onready var inventory_interface := $UI/InventoryInterface
+@onready var inventoryInterface := $UI/InventoryInterface
 
 
 func _ready() -> void:
-	player.toggleInventory.connect(toggleInventory_interface)
-	inventory_interface.set_playerInventory(player.inventoryData)
-	player.close_ui.connect(_close_ui)	
+	player.toggleInventory.connect(toggleInventoryInterface)
+	inventoryInterface.setPlayerInventory(player.inventoryData)
+	player.close_ui.connect(_closeUi)	
 	for node in get_tree().get_nodes_in_group("external_inventory"):
-		node.toggleInventory.connect(toggleInventory_interface)
+		node.toggleInventory.connect(toggleInventoryInterface)
 
-func _close_ui():
-	if inventory_interface.visible:
-		toggleInventory_interface()
+func _closeUi():
+	if inventoryInterface.visible:
+		toggleInventoryInterface()
 
 
 #desc Toggles the visibility of the inventory interface.
 #desc If an [param externalInventoryOwner] is provided, an additional inventory will open to display the contens.
 #desc If [param keepOpen] is provided and the inventory is visible, it will stay visible.
-func toggleInventory_interface(externalInventoryOwner = null, keepOpen = false) -> void:
-	if inventory_interface.visible and keepOpen:
+func toggleInventoryInterface(externalInventoryOwner = null, keepOpen = false) -> void:
+	if inventoryInterface.visible and keepOpen:
 		pass
 	else:
-		inventory_interface.visible = not inventory_interface.visible
+		inventoryInterface.visible = not inventoryInterface.visible
 	
 	
-	if inventory_interface.visible:
+	if inventoryInterface.visible:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-		inventory_interface.drop_grabbedSlot()
+		inventoryInterface.dropGrabbedSlot()
 	
-	if externalInventoryOwner and inventory_interface.visible:
-		inventory_interface.set_externalInventory(externalInventoryOwner)
+	if externalInventoryOwner and inventoryInterface.visible:
+		inventoryInterface.setExternalInventory(externalInventoryOwner)
 	else:
-		inventory_interface.clear_externalInventory()
+		inventoryInterface.clearExternalInventory()
