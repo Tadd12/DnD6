@@ -24,3 +24,14 @@ static func DiceCheck(ValueToBeBeaten:int, type:=20, offset:=0, critSuccess:=20,
 		return 3
 	else:
 		return 2
+
+static func loadDataFromDB(colums: Array, table:String, selectCondition:String,
+						   dbPath:String = "res://Databases/Objects.db") -> Array:
+	var db = SQLite.new()
+	db.path = dbPath
+	db.open_db()
+
+	var Rows: Array = db.select_rows(table, selectCondition, colums)
+	db.close_db()
+
+	return Rows
