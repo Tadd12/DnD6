@@ -46,3 +46,4 @@ func interact() -> void:
 				return body.get_global_position().distance_to(get_global_position())) \
 			.min()
 		interactArea.get_overlapping_bodies()[0].playerInteract()
+

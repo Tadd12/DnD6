@@ -87,6 +87,6 @@ func mergeAllSlotData(grabbedSlotData: SlotData) -> SlotData:
 	return grabbedSlotData
 
 
-#desc Emits the inventoryInteract signal with the functio arguments and a refrence to self as the [InventoryData]
+#desc Emits the inventoryInteract signal with the function arguments and a refrence to self as the [InventoryData]
 func _onSlotClicked(index: int, button: int, double: bool) -> void:
 	inventoryInteract.emit(self, index, button, double)
