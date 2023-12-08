@@ -40,15 +40,15 @@ func grabHalfSlotData(index: int) -> SlotData:
 func dropSlotData(grabbedSlotData : SlotData, index: int) -> SlotData:
 	var slotData := slotDatas[index]
 	
-	var return_slotData: SlotData
+	var returnSlotData: SlotData
 	if slotData and slotData.canMergeWith(grabbedSlotData):
 		slotData.mergeWith(grabbedSlotData)
 	else:
 		slotDatas[index] = grabbedSlotData
-		return_slotData = slotData
+		returnSlotData = slotData
 		
 	inventoryUpdated.emit(self)
-	return return_slotData
+	return returnSlotData
 	
 	
 #desc If the SlotData at [param index] is [code]null[/code], it is set to a copy of [param grabbedSlotData] with the amount [code]1[/code].
@@ -59,9 +59,9 @@ func dropSingleSlotData(grabbedSlotData : SlotData, index: int) -> SlotData:
 	var slotData := slotDatas[index]
 	
 	if not slotData:
-		slotDatas[index] = grabbedSlotData.get_single_slotData()
+		slotDatas[index] = grabbedSlotData.getSingleSlotData()
 	elif slotData.canMergeWith(grabbedSlotData):
-		slotData.mergeWith(grabbedSlotData.get_single_slotData())
+		slotData.mergeWith(grabbedSlotData.getSingleSlotData())
 	
 	
 	inventoryUpdated.emit(self)

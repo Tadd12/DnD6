@@ -18,20 +18,20 @@ func mergeWith(other_slotData: SlotData) -> void:
 	
 #desc Returns a copy of this [SlotData] instace with the quantity set to [code]1[/code].
 #desc The quantity of this [SelotData] gets reduced by [code]1[/code]
-func get_single_slotData() -> SlotData:
-	var new_slotData := duplicate()
-	new_slotData.quantity = 1
+func getSingleSlotData() -> SlotData:
+	var newSlotData := duplicate()
+	newSlotData.quantity = 1
 	quantity -= 1
-	return new_slotData
+	return newSlotData
 
 
 #desc Returns a copy of this [SlotData] instace with the quantity set to [param amount].
 #desc The quantity of this [SelotData] gets reduced by [param amount]
 func getMultipleSlotData(amount: int) -> SlotData:
-	var new_slotData := duplicate()
-	new_slotData.quantity = amount
+	var newSlotData := duplicate()
+	newSlotData.quantity = amount
 	quantity -= amount
-	return new_slotData
+	return newSlotData
 
 	
 #desc Sets the quantity to [param value].
