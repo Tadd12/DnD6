@@ -7,13 +7,13 @@ const Slot := preload("res://UI/Inventory/Slot/slot.tscn")
 
 func _ready():
 	var inventoryData := preload("res://UI/Inventory/test_inv.tres")
-	populateItemGrid(inventoryData)
+	refreshItemGrid(inventoryData)
 	
 	
 #desc Sets the data displayed in the inventory
 func setInventoryData(inventoryData: InventoryData) -> void:
-	inventoryData.inventoryUpdated.connect(populateItemGrid)
-	populateItemGrid(inventoryData)
+	inventoryData.inventoryUpdated.connect(refreshItemGrid)
+	refreshItemGrid(inventoryData)
 	
 	var calc_size: int =  min((inventoryData.slotDatas.size() + 4) / 5, 412)
 	size.y = 4 + 68 * calc_size
@@ -21,11 +21,11 @@ func setInventoryData(inventoryData: InventoryData) -> void:
 	
 #desc Clears the display of the inventory
 func clearInventoryData(inventoryData: InventoryData) -> void:
-	inventoryData.inventoryUpdated.disconnect(populateItemGrid)
+	inventoryData.inventoryUpdated.disconnect(refreshItemGrid)
 
 	
 #desc Sets the data of the slots in the inventory
-func populateItemGrid(inventoryData: InventoryData) -> void:
+func refreshItemGrid(inventoryData: InventoryData) -> void:
 	for child in itemGrid.get_children():
 		child.queue_free()
 		

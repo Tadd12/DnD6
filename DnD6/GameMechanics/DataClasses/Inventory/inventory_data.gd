@@ -2,7 +2,7 @@ extends Resource
 class_name InventoryData
 
 signal inventoryUpdated(inventoryData: InventoryData)
-signal inventoryInteract(inventoryData: InventoryData, index: int, button: int, double: bool)
+signal inventoryInteract(inventoryData: InventoryData, index: int, button: int, doubleClicked: bool)
 
 @export var slotDatas: Array[SlotData]
 
@@ -72,7 +72,8 @@ func dropSingleSlotData(grabbedSlotData : SlotData, index: int) -> SlotData:
 		return null
 
 		
-
+#desc Merges all [SlotData] in the open inventory with the [param grabbedSlotData].
+#desc It returns the [SlotData] with the added quantity
 func mergeAllSlotData(grabbedSlotData: SlotData) -> SlotData:
 	for i in range(slotDatas.size()):
 		var slotData := slotDatas[i]
@@ -88,5 +89,5 @@ func mergeAllSlotData(grabbedSlotData: SlotData) -> SlotData:
 
 
 #desc Emits the inventoryInteract signal with the function arguments and a refrence to self as the [InventoryData]
-func _onSlotClicked(index: int, button: int, double: bool) -> void:
-	inventoryInteract.emit(self, index, button, double)
+func _onSlotClicked(index: int, button: int, doubleClicked: bool) -> void:
+	inventoryInteract.emit(self, index, button, doubleClicked)

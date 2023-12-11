@@ -1,6 +1,6 @@
 extends PanelContainer
 
-signal slotClicked(index: int, button: int, double: bool)
+signal slotClicked(index: int, button: int, doubleClicked: bool)
 
 
 @onready var textureRect := $MarginContainer/TextureRect
@@ -24,5 +24,5 @@ func _on_gui_input(event):
 			and (event.button_index == MOUSE_BUTTON_LEFT \
 			or event.button_index == MOUSE_BUTTON_RIGHT) \
 			and event.is_pressed():
-		slotClicked.emit(get_index(), event.button_index, event.is_double_click())
+		slotClicked.emit(get_index(), event.button_index, event.is_doubleClicked_click())
 		

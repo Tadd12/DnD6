@@ -18,7 +18,7 @@ func setPlayerInventory(inventoryData: InventoryData) -> void:
 	playerInventory.setInventoryData(inventoryData)
 
 	
-#desc Sets the external owner inventory view to the inventory owned by [param _externalInventoryOwner]
+#desc Sets the external inventory view to the inventory owned by [param _externalInventoryOwner]
 func setExternalInventory(_externalInventoryOwner) -> void:
 	if externalInventoryOwner == _externalInventoryOwner:
 		return
@@ -44,7 +44,7 @@ func clearExternalInventory() -> void:
 
 		
 #desc Gets called when the mouse interacts with a slot
-func onInventoryInteract(inventoryData: InventoryData, index: int, button: int, double: bool) -> void:
+func onInventoryInteract(inventoryData: InventoryData, index: int, button: int, doubleClicked: bool) -> void:
 
 	match [grabbedSlotData, button]:
 		[null, MOUSE_BUTTON_LEFT]:
@@ -55,7 +55,7 @@ func onInventoryInteract(inventoryData: InventoryData, index: int, button: int, 
 			else:
 				grabbedSlotData = inventoryData.grabSlotData(index)
 		[_, MOUSE_BUTTON_LEFT]:
-			if not double:
+			if not doubleClicked:
 				grabbedSlotData = inventoryData.dropSlotData(grabbedSlotData, index)
 			else:
 				grabbedSlotData = inventoryData.mergeAllSlotData(grabbedSlotData)

@@ -7,7 +7,7 @@ extends Node
 func _ready() -> void:
 	player.toggleInventory.connect(toggleInventoryInterface)
 	inventoryInterface.setPlayerInventory(player.inventoryData)
-	player.close_ui.connect(_closeUi)	
+	player.closeUi.connect(_closeUi)	
 	for node in get_tree().get_nodes_in_group("external_inventory"):
 		node.toggleInventory.connect(toggleInventoryInterface)
 
