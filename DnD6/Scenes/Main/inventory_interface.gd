@@ -50,6 +50,7 @@ func onInventoryInteract(inventoryData: InventoryData, index: int, button: int, 
 		[null, MOUSE_BUTTON_LEFT]:
 			if Input.is_physical_key_pressed(KEY_SHIFT) \
 					and externalInventoryOwner:
+				# TODO: Implement to send the item to the other inventory
 				pass
 			else:
 				grabbedSlotData = inventoryData.grabSlotData(index)
@@ -62,6 +63,7 @@ func onInventoryInteract(inventoryData: InventoryData, index: int, button: int, 
 			if Input.is_physical_key_pressed(KEY_SHIFT):
 				grabbedSlotData = inventoryData.grabHalfSlotData(index)
 			else:
+				# TODO: Implement a small option gui (use/remove/info options)
 				pass
 		[_, MOUSE_BUTTON_RIGHT]:
 			grabbedSlotData = inventoryData.dropSingleSlotData(grabbedSlotData, index)

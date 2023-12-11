@@ -25,7 +25,7 @@ func grabHalfSlotData(index: int) -> SlotData:
 	var slotData := slotDatas[index]
 	
 	if slotData:
-		var data = slotData.getMultipleSlotData((slotData.quantity + 1) / 2)
+		var data := slotData.getMultipleSlotData((slotData.quantity + 1) / 2)
 		if slotData.quantity < 1:
 			slotDatas[index] = null
 		inventoryUpdated.emit(self)
