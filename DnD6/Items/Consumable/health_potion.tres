@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dj7uldprsccjv"]
 
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Item/item_data.gd" id="1_k7r0h"]
-[ext_resource type="Texture2D" uid="uid://c07j2nmxxvcjv" path="res://Sprites/ItemSprites/HealthPotion.png" id="2_qx7bi"]
+[ext_resource type="Texture2D" uid="uid://c07j2nmxxvcjv" path="res://Sprites/ItemSprites/HealthPotionW20.png" id="2_qx7bi"]
 
 [resource]
 script = ExtResource("1_k7r0h")
