@@ -5,11 +5,11 @@ extends CharacterBase
 
 
 signal toggleInventory
-signal close_ui
+signal closeUi
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Player ready")
+	pass
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -17,7 +17,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		toggleInventory.emit()
 	
 	if Input.is_action_just_pressed("ui_cancel"):
-		close_ui.emit()
+		closeUi.emit()
 		
 	if Input.is_action_just_pressed("interact"):
 		interact()
