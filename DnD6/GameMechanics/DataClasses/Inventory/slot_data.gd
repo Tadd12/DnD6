@@ -1,13 +1,12 @@
 extends Resource
 class_name SlotData
 
-
 @export var itemData: ItemData
-@export var quantity: int = 1: set = setQuantity
+@export var quantity := 1: set = setQuantity
 
 #desc Returns if the [SlotData] can be merged with the [param otherSlotData].
 func canMergeWith(otherSlotData: SlotData) -> bool:
-	return itemData == otherSlotData.itemData \
+	return (itemData == otherSlotData.itemData) \
 			and itemData.stackable
 
 			
@@ -38,7 +37,7 @@ func getMultipleSlotData(amount: int) -> SlotData:
 #desc Throws an Error if the quantity is less than [code]1[/code] or the item is not stackable.
 func setQuantity(value: int) -> void:
 	quantity = value
-	if quantity > 1 and not itemData.stackable:
+	if (quantity > 1) and not itemData.stackable:
 		quantity = 1
 		push_error("{0} is not stackable. Setting quantity to 1".format([itemData.name]))
 	

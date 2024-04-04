@@ -1,7 +1,7 @@
 extends Node
 
 @onready var player := $Game/Player
-@onready var inventoryInterface := $UI/InventoryInterface
+@onready var inventoryInterface := $UI/InventoryInterface as InventoryInterface
 
 
 func _ready() -> void:

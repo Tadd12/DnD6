@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dq8rje35fw4dj"]
+[gd_scene load_steps=14 format=3 uid="uid://dq8rje35fw4dj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_de7d4"]
 [ext_resource type="PackedScene" uid="uid://bbqcdi08wxjux" path="res://Entities/Chest/chest.tscn" id="2_p0vww"]
@@ -7,9 +7,10 @@
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/slot_data.gd" id="5_6trh0"]
 [ext_resource type="PackedScene" uid="uid://c0encdvisgifm" path="res://Entities/Player/player.tscn" id="6_clbfb"]
 [ext_resource type="Resource" uid="uid://dwunllkb0brcb" path="res://UI/Inventory/test_inv.tres" id="7_jotid"]
-[ext_resource type="Script" path="res://Scenes/Main/inventory_interface.gd" id="8_1flgu"]
+[ext_resource type="Script" path="res://UI/Inventory/inventory_interface.gd" id="8_1flgu"]
 [ext_resource type="PackedScene" uid="uid://buj5lerpiexgg" path="res://UI/Inventory/Inventory/inventory.tscn" id="9_ua287"]
 [ext_resource type="PackedScene" uid="uid://do238lkg6ua3k" path="res://UI/Inventory/Slot/slot.tscn" id="10_umsah"]
+[ext_resource type="PackedScene" uid="uid://cdql12p8e0aj8" path="res://UI/Inventory/ItemOptions/item_options.tscn" id="11_n8a6i"]
 
 [sub_resource type="Resource" id="Resource_08hhm"]
 script = ExtResource("5_6trh0")
@@ -79,8 +80,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("10_umsah")]
 visible = false
-modulate = Color(1, 1, 1, 0.54902)
+modulate = Color(1, 1, 1, 0.784314)
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
+
+[node name="ItemOptions" parent="UI/InventoryInterface" instance=ExtResource("11_n8a6i")]
+visible = false
+layout_mode = 0

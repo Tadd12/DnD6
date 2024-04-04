@@ -1,12 +1,14 @@
 extends Control
+class_name InventoryInterface
 
 var grabbedSlotData: SlotData
 var externalInventoryOwner
 
-@onready var playerInventory := $PlayerInventory
-@onready var grabbedSlot := $GrabbedSlot
-@onready var externalInventory := $ExternalInventory
- 
+@onready var playerInventory := $PlayerInventory as Inventory
+@onready var grabbedSlot := $GrabbedSlot as Slot
+@onready var externalInventory := $ExternalInventory as Inventory
+@onready var itemOptions := $ItemOptions as ItemOptions
+
 func _physics_process(_delta: float) -> void:
 	if grabbedSlot.visible:
 		grabbedSlot.global_position = get_global_mouse_position() + Vector2(5, 5)
@@ -42,10 +44,19 @@ func clearExternalInventory() -> void:
 		externalInventory.hide()
 		externalInventoryOwner = null
 
-		
+func showItemOptions(inventoryData: InventoryData, index: int) -> void:
+	if not itemOptions.setOptions(inventoryData, index):
+		itemOptions.hide()
+		return
+	itemOptions.show()
+	itemOptions.global_position = get_global_mouse_position() + Vector2(5, 5)	
+
 #desc Gets called when the mouse interacts with a slot
 func onInventoryInteract(inventoryData: InventoryData, index: int, button: int, doubleClicked: bool) -> void:
-
+	
+	if itemOptions.visible:
+		itemOptions.hide()
+	
 	match [grabbedSlotData, button]:
 		[null, MOUSE_BUTTON_LEFT]:
 			if Input.is_physical_key_pressed(KEY_SHIFT) \
@@ -63,8 +74,7 @@ func onInventoryInteract(inventoryData: InventoryData, index: int, button: int, 
 			if Input.is_physical_key_pressed(KEY_SHIFT):
 				grabbedSlotData = inventoryData.grabHalfSlotData(index)
 			else:
-				# TODO: Implement a small option gui (use/remove/info options)
-				pass
+				showItemOptions(inventoryData, index)
 		[_, MOUSE_BUTTON_RIGHT]:
 			grabbedSlotData = inventoryData.dropSingleSlotData(grabbedSlotData, index)
 		

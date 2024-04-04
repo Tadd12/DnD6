@@ -1,12 +1,13 @@
 extends PanelContainer
+class_name Inventory
 
-const Slot := preload("res://UI/Inventory/Slot/slot.tscn")
+const SlotScene := preload("res://UI/Inventory/Slot/slot.tscn")
 
 @onready var itemGrid := $MarginContainer/ScrollContainer/ItemGrid
 
 
 func _ready():
-	var inventoryData := preload("res://UI/Inventory/test_inv.tres")
+	var inventoryData := preload("res://UI/Inventory/test_inv.tres") as InventoryData
 	refreshItemGrid(inventoryData)
 	
 	
@@ -28,13 +29,11 @@ func clearInventoryData(inventoryData: InventoryData) -> void:
 func refreshItemGrid(inventoryData: InventoryData) -> void:
 	for child in itemGrid.get_children():
 		child.queue_free()
-		
+
 	for slotData in inventoryData.slotDatas:
-		var slot = Slot.instantiate()
+		var slot := SlotScene.instantiate() as Slot
 		itemGrid.add_child(slot)
 		
 		slot.slotClicked.connect(inventoryData._onSlotClicked)
-		
 		if slotData:
 			slot.setSlotData(slotData)
-	
