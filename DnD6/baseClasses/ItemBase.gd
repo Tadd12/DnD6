@@ -40,14 +40,20 @@ func _openWorldUsage(user: CharacterBase) -> bool:
 func _encounterUsage(user: CharacterBase) -> bool:
 	return false
 
-static func _loadFromDB(id=null, sid=null):
-	if id != null:
-		var a = MiscFunctions.loadDataFromDB(['ItemID', 'Weight', 'Icon', 'NameEnglish Name'],
-			'ItemView', 'ItemID == %d' % id)[0]
-		return new(a['Name'], a['Weight'], null, a['Icon'])
-	elif sid != null:
-		pass
-	else:
-		assert(false, "only id or sid must be set")
+static func _loadFromDB(sid, type='C'):
+	var Table: String = 'ItemView'
+	match type:
+		"C":
+			Table += 'Consumable'
+		"W":
+			Table += 'Weapon'
+		"A":
+			Table += 'Armor'
+		"S":
+			Table += 'Shield'
+
+	var a = MiscFunctions.loadDataFromDB(['SID', 'Weight', 'InventoryIcon', 'NameEnglish Name'],
+		'ItemView', 'SID == "%s"' % sid)[0]
+	return new(a['Name'], a['Weight'], null, a['InventoryIcon'])
 
 # static

@@ -14,9 +14,8 @@ func _init():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Ready")
-	self.inventory = [ItemBase._loadFromDB(2),
-					  ItemBase._loadFromDB(3),
-					  ItemBase._loadFromDB(1)]
+	self.inventory = [ItemBase._loadFromDB("ITEM_POSION_APPLE"),
+					  ItemBase._loadFromDB("ITEM_FIRE_SWORD")]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
