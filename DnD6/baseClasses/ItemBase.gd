@@ -24,7 +24,7 @@ func _init(pName, pWeight, effects=null, icon=null):
 				Image.load_from_file(icon))
 
 
-func getMetadata():
+func getMetadata() -> Dictionary:
 	return {'Name': itemName,
 			'Weight': weight}
 
