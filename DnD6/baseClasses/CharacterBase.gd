@@ -1,14 +1,12 @@
 class_name CharacterBase
-extends CharacterBody2D
+extends Node2D
 ## This is the BaseClass for all Characters
 ## like NPC, the Player and MainCharacters
 
 
 # Character specific static Properties
-@export var characterName: String
+var characterName: String
 var race # : Race
-
-@export var inventoryData: InventoryData
 
 # Character specific semi static Properties
 ## Saves the main attributes of the Character
@@ -22,8 +20,7 @@ var attributes := {'strength': 0,
 ## Saves the main attributes of the Character
 var skills := {}  # Skill(str): Bonus(int)  0 = No bonus but available
 
-
-
+var inventory := []
 var maxHP := 10
 ## Level(int): Number(int)
 var maxSpellPoints := {}  
@@ -85,7 +82,7 @@ var armorClass: int:
 
 ## init [br]
 ## 
-func create(pName:String, strength:int, dexterity:int, intelligence:int, wisdom:int,
+func _init(pName:String, strength:int, dexterity:int, intelligence:int, wisdom:int,
 		   constitution:int, charisma:int, pSkills:Dictionary, pRace, hp:int):
 	self.characterName = pName
 	self.attributes = {'strength': strength, 
@@ -107,7 +104,8 @@ func TalkTo(Char):
 ## Takes item 
 func TakeItem(item):
 	# TODO: remove item from Map/Chest
-	pass
+	inventory.append(item)
+
 
 ## Reset all Actions the can only be used ones per Short Break 
 func TakeAShortBreak():
