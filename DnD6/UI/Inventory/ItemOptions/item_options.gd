@@ -2,6 +2,7 @@ extends PanelContainer
 class_name ItemOptions
 
 var infoButton : Button
+var useButton : Button
 var removeButton : Button
 var removeAllButton : Button
 var inventoryData: InventoryData
@@ -14,12 +15,18 @@ func _ready():
 	infoButton.text = "Info"
 	infoButton.add_theme_font_size_override("button_font_size", 10)
 	vBoxContainer.add_child(infoButton)
+	
+	useButton = Button.new()
+	useButton.text = "Consume"
+	useButton.pressed.connect(useItemOnOwner)
+	useButton.add_theme_font_size_override("button_font_size", 10)
+	vBoxContainer.add_child(useButton)
 
 	removeButton = Button.new()
 	removeButton.text = "Remove One"
 	removeButton.pressed.connect(removeOneItem)
 	removeButton.add_theme_font_size_override("button_font_size", 10)
-	vBoxContainer.add_child(removeButton)	
+	vBoxContainer.add_child(removeButton)
 
 	removeAllButton = Button.new()
 	removeAllButton.text = "Remove All"
@@ -39,6 +46,13 @@ func removeAllItems() -> void:
 	inventoryData.slotDatas[index] = null
 	hide()
 	inventoryData.inventoryUpdated.emit(inventoryData)
+
+func useItemOnOwner() -> void:
+	var slotData := inventoryData.slotDatas[index]
+	var owner := inventoryData.Owner
+	slotData.itemData.UseOnCharacter(owner)
+	removeOneItem()
+	
 
 func setOptions(_inventoryData: InventoryData, _index: int) -> bool:
 	# TODO: Implement Item Data and show Options

@@ -1,25 +1,26 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=8 format=3 uid="uid://dwunllkb0brcb"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=9 format=3 uid="uid://e00sn3ed61x5"]
 
-[ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/inventory_data.gd" id="1_ibxqn"]
-[ext_resource type="Resource" uid="uid://bwrjqrs6aful7" path="res://Items/Consumable/apple.tres" id="2_e6kli"]
+[ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/inventory_data.gd" id="1_0twho"]
+[ext_resource type="Resource" uid="uid://bshuhll043u5m" path="res://Items/Consumable/apple.tres" id="2_aisdd"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/slot_data.gd" id="3_hqmix"]
-[ext_resource type="Resource" uid="uid://dj7uldprsccjv" path="res://Items/Consumable/health_potion.tres" id="4_c3bpf"]
+[ext_resource type="Resource" uid="uid://d20inubdtb5ng" path="res://Items/Consumable/health_potion.tres" id="4_yjyj2"]
+[ext_resource type="Resource" uid="uid://csxwkukhhradr" path="res://Items/Consumable/Poision.tres" id="5_iftua"]
 
-[sub_resource type="Resource" id="Resource_dk1fb"]
+[sub_resource type="Resource" id="Resource_wysef"]
 script = ExtResource("3_hqmix")
-itemData = ExtResource("2_e6kli")
-quantity = 5
-
-[sub_resource type="Resource" id="Resource_rfjws"]
-script = ExtResource("3_hqmix")
-itemData = ExtResource("2_e6kli")
+itemData = ExtResource("2_aisdd")
 quantity = 80
 
-[sub_resource type="Resource" id="Resource_b440j"]
+[sub_resource type="Resource" id="Resource_gq556"]
 script = ExtResource("3_hqmix")
-itemData = ExtResource("4_c3bpf")
+itemData = ExtResource("4_yjyj2")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_4moqb"]
+script = ExtResource("3_hqmix")
+itemData = ExtResource("5_iftua")
 quantity = 1
 
 [resource]
-script = ExtResource("1_ibxqn")
-slotDatas = Array[ExtResource("3_hqmix")]([SubResource("Resource_dk1fb"), null, null, SubResource("Resource_rfjws"), SubResource("Resource_b440j"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+script = ExtResource("1_0twho")
+slotDatas = Array[ExtResource("3_hqmix")]([SubResource("Resource_wysef"), SubResource("Resource_gq556"), null, null, SubResource("Resource_4moqb"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
