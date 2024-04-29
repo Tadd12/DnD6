@@ -1,7 +1,7 @@
 extends Resource
 class_name SlotData
 
-@export var itemData: ItemData
+@export var itemData: ItemBase
 @export var quantity := 1: set = setQuantity
 
 #desc Returns if the [SlotData] can be merged with the [param otherSlotData].
