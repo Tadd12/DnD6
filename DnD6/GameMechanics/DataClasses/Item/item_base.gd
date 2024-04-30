@@ -17,13 +17,13 @@ class_name ItemBase
 
 func UseOnCharacter(character: CharacterBase) -> void:
 	for effect in activeEffects:
-		if is_instance_of(effect, onCharacterEffectBase):
+		if is_instance_of(effect, CharacterEffectBase):
 			effect.activate(character)
 	return
 
 func UseOnItem(item: ItemBase) -> void:
 	for effect in activeEffects:
-		if is_instance_of(effect, onCharacterEffectBase):
+		if is_instance_of(effect, CharacterEffectBase):
 			item.activeEffects.append(effect)
 		else:
 			effect.activate(item)

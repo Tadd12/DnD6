@@ -21,16 +21,16 @@ extends CharacterBody2D
 }
 
 ## Saves the main attributes of the Character
-var skills: Dictionary = {}  # Skill(str): Bonus(int)  0 = No bonus but available
+var skills := {}  # Skill(str): Bonus(int)  0 = No bonus but available
 
 @export var maxHP := 10
 ## Level(int): Number(int)
-@export var maxSpellPoints: Dictionary = {}  
+@export var maxSpellPoints := {}  
 
 ## A internal class to save the current armor
 class ClassArmor:
 	func _init():
-		var armor = {}
+		var armor := {}
 		for type in ArmorBase.ARMOR_TYPE:
 			armor[type] = null
 	
@@ -45,7 +45,7 @@ class ClassArmor:
 		pass
 		
 	func getArmor() -> Array:
-		var arrayArmor = []
+		var arrayArmor := []
 		for a in self.armor:
 			arrayArmor.append(self.armor[a])
 		return arrayArmor
@@ -104,7 +104,6 @@ func TakeAShortBreak():
 func nextRound():
 	tempAction = 1
 	tempBonusAction = 1
-
 	for effect in currentEffects:
 		effect.nextRound(self)
 

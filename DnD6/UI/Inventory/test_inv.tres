@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=9 format=3 uid="uid://e00sn3ed61x5"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=9 format=3 uid="uid://dwunllkb0brcb"]
 
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/inventory_data.gd" id="1_0twho"]
-[ext_resource type="Resource" uid="uid://bshuhll043u5m" path="res://Items/Consumable/apple.tres" id="2_aisdd"]
+[ext_resource type="Resource" uid="uid://bwrjqrs6aful7" path="res://Items/Consumable/apple.tres" id="2_aisdd"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/slot_data.gd" id="3_hqmix"]
-[ext_resource type="Resource" uid="uid://d20inubdtb5ng" path="res://Items/Consumable/health_potion.tres" id="4_yjyj2"]
-[ext_resource type="Resource" uid="uid://csxwkukhhradr" path="res://Items/Consumable/Poision.tres" id="5_iftua"]
+[ext_resource type="Resource" uid="uid://dj7uldprsccjv" path="res://Items/Consumable/health_potion.tres" id="4_yjyj2"]
+[ext_resource type="Resource" uid="uid://cd2gnqottmrtt" path="res://Items/Consumable/Poision.tres" id="5_iftua"]
 
 [sub_resource type="Resource" id="Resource_wysef"]
 script = ExtResource("3_hqmix")

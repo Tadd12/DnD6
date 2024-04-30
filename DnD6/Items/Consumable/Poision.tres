@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ConsumableBase" load_steps=7 format=3 uid="uid://csxwkukhhradr"]
+[gd_resource type="Resource" script_class="ConsumableBase" load_steps=7 format=3 uid="uid://cd2gnqottmrtt"]
 
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Item/consumable_base.gd" id="1_743wc"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Dice.gd" id="1_sw3ex"]
-[ext_resource type="Script" path="res://GameMechanics/DataClasses/Effects/on_character_effect.gd" id="2_7tvhv"]
-[ext_resource type="Texture2D" uid="uid://c4pugtuh03tm1" path="res://sprites/ItemSprites/Posion.png" id="3_6ayg6"]
+[ext_resource type="Script" path="res://GameMechanics/DataClasses/Effects/character_effect_base.gd" id="2_7tvhv"]
+[ext_resource type="Texture2D" uid="uid://c4pugtuh03tm1" path="res://Sprites/ItemSprites/Posion.png" id="3_6ayg6"]
 
 [sub_resource type="Resource" id="Resource_xe1yl"]
 script = ExtResource("1_sw3ex")

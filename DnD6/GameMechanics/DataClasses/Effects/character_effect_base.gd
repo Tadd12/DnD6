@@ -6,7 +6,7 @@ class_name CharacterEffectBase
 @export var attributeEffectAttr: String
 @export var attributeEffectValue: DnDDice = null
 ## 1 means no time effect just one call
-@export var numberOfRounds: int = 1
+@export var numberOfRounds := 1
 var roundsLeft: int
 
 ## the function that should be called when the effect

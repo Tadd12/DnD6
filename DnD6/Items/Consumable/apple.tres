@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="ConsumableBase" load_steps=3 format=3 uid="uid://bshuhll043u5m"]
+[gd_resource type="Resource" script_class="ConsumableBase" load_steps=3 format=3 uid="uid://bwrjqrs6aful7"]
 
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Item/consumable_base.gd" id="1_agjyl"]
-[ext_resource type="Texture2D" uid="uid://7hvyyfm5s2yc" path="res://sprites/ItemSprites/Apple.png" id="1_xfgwn"]
+[ext_resource type="Texture2D" uid="uid://7hvyyfm5s2yc" path="res://Sprites/ItemSprites/Apple.png" id="1_xfgwn"]
 
 [resource]
 script = ExtResource("1_agjyl")
