@@ -11,13 +11,13 @@ func ThrowSum() -> int:
 	var result: int = 0
 	for i in range(self.numberOfDice):
 		result += _rollOneDice()
-	return result
+	return result + offset
 
 ## Computes all dices results and returns the best
 func ThrowBest() -> int:
 	var result: Array[int] = []
 	for i in range(self.numberOfDice):
-		result.append(_rollOneDice())
+		result.append(_rollOneDice() + offset)
 	result.sort()
 	return result[0]
 
@@ -37,4 +37,4 @@ func ThrowDisadvantage() -> int:
 
 ## simulate a dice roll
 func _rollOneDice() -> int:
-	return randi() % self.numberOfDiceFaces + offset
+	return randi() % self.numberOfDiceFaces + 1
