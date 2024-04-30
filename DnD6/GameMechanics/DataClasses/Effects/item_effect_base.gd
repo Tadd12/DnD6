@@ -1,5 +1,5 @@
 extends EffectBase
-class_name onItemEffectBase
+class_name ItemEffectBase
 
 @export var attributeEffect: DnDDice = null
 

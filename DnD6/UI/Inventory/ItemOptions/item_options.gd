@@ -16,6 +16,7 @@ func _ready():
 	infoButton.add_theme_font_size_override("button_font_size", 10)
 	vBoxContainer.add_child(infoButton)
 	
+	# TODO: Make this only visible when the Item is consumeable
 	useButton = Button.new()
 	useButton.text = "Consume"
 	useButton.pressed.connect(useItemOnOwner)

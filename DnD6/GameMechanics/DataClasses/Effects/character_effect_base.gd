@@ -1,5 +1,5 @@
 extends EffectBase
-class_name onCharacterEffectBase
+class_name CharacterEffectBase
 
 @export var healEffect: DnDDice = null
 @export var damageEffect: DnDDice = null
