@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpp1xy432cx62"]
+[gd_scene load_steps=3 format=3 uid="uid://cb5pr21ycc8k1"]
 
 [ext_resource type="Texture2D" uid="uid://bh7644ei8f4g6" path="res://Sprites/ItemSprites/mushroom_item.png" id="1_fhl4s"]
+[ext_resource type="Script" path="res://Scenes/Views/conversation_view.gd" id="1_xthdy"]
 
-[node name="Control" type="Control"]
+[node name="ConversationView" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,8 +11,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
+script = ExtResource("1_xthdy")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="CharacterIconLeft" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -23,7 +25,7 @@ texture = ExtResource("1_fhl4s")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="CharacterIconRight" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -38,7 +40,7 @@ texture = ExtResource("1_fhl4s")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="ConversationText" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -55,3 +57,8 @@ scale = Vector2(9.37752, 2.14127)
 theme_override_font_sizes/normal_font_size = 16
 text = "Test Text"
 scroll_active = false
+
+[node name="TextTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="timeout" from="TextTimer" to="." method="incrementText"]
