@@ -6,7 +6,7 @@ extends Node
 
 func _ready() -> void:
 	player.toggleInventory.connect(toggleInventoryInterface)
-	player.inventoryData.Owner = player
+	player.inventoryData.owner = player
 	inventoryInterface.setPlayerInventory(player.inventoryData)
 	player.closeUi.connect(_closeUi)	
 	for node in get_tree().get_nodes_in_group("externalInventory"):

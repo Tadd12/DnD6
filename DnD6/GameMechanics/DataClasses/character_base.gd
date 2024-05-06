@@ -11,14 +11,13 @@ extends CharacterBody2D
 
 # Character specific semi static Properties
 ## Saves the main attributes of the Character
-@export var attributes := {
-	'strength': 0, 
-	'dexterity': 0,
-	'intelligence': 0,
- 	'wisdom': 0,
-	'constitution': 0,
-	'charisma': 0
-}
+@export_group("Stats")
+@export var strength := 0.0
+@export var dexterity := 0.0
+@export var intelligence := 0.0
+@export var charisma := 0
+@export var wisdom := 0.0
+@export var constitution := 0
 
 ## Saves the main attributes of the Character
 var skills := {}  # Skill(str): Bonus(int)  0 = No bonus but available
@@ -80,7 +79,7 @@ var healthPoints: int:
 ## The armor class of the Character
 var armorClass: int:
 	get:
-		return armor.getArmorPoints() + attributes['dexterity']
+		return armor.getArmorPoints() + dexterity
 
 
 ## Triggers a dialog sequence with a character
@@ -131,6 +130,6 @@ func UseSpellOnMap(Coordinates, Spell):
 
 ## A function to be called if HP reaches 0
 func onDeath():
-	print(self.name + " died.")
+	print(name + " died.")
 
 # Static funcions

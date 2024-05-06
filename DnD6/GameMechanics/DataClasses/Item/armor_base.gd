@@ -14,7 +14,6 @@ enum ARMOR_TYPE {
  	LIGHT_ARMOR,
 	MIDDLE_ARMOR,
 	HEAVY_ARMOR,
-	SHIELD,
 }
 
 @export var armorType: ARMOR_TYPE

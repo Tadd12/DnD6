@@ -7,11 +7,12 @@ enum WEAPON_CLASS {
 	JAVELIN,
 	MAGICAL,
 	AXE,
-	HAMMER
+	HAMMER,
+	SHIELD
 }
 
 @export var attackBonus: int
-@export var standardDamageDice: DnDDice
+@export var standardDamageDice: Dice
 @export var weaponRange: int
 @export var weaponClass: WEAPON_CLASS
 @export var twoHanded: bool

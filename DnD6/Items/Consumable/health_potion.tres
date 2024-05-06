@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ConsumableBase" load_steps=7 format=3 uid="uid://dj7uldprsccjv"]
 
-[ext_resource type="Resource" uid="uid://b5biiyk4ac8we" path="res://Sprites/ItemSprites/HealthPotionW20.png" id="1_3eaxe"]
-[ext_resource type="Script" path="res://GameMechanics/DataClasses/Dice.gd" id="1_3qanu"]
+[ext_resource type="Texture2D" uid="uid://b5biiyk4ac8we" path="res://Sprites/ItemSprites/HealthPotionW20.png" id="1_3eaxe"]
+[ext_resource type="Script" path="res://GameMechanics/DataClasses/dice.gd" id="1_3qanu"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Item/consumable_base.gd" id="1_d8eqh"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Effects/character_effect_base.gd" id="2_ds72g"]
 
@@ -14,14 +14,14 @@ offset = 2
 [sub_resource type="Resource" id="Resource_d72mo"]
 script = ExtResource("2_ds72g")
 healEffect = SubResource("Resource_7fwyp")
-attributeEffectAttr = ""
+effectAttr = ""
 numberOfRounds = 1
 name = "Normal Health Potion Effect"
 desciption = ""
 
 [resource]
 script = ExtResource("1_d8eqh")
-ConsumableType = 0
+consumableType = 0
 usableInFigth = true
 usableOnPlayer = true
 usableOnItem = true

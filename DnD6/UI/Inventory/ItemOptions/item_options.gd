@@ -50,8 +50,8 @@ func removeAllItems() -> void:
 
 func useItemOnOwner() -> void:
 	var slotData := inventoryData.slotDatas[index]
-	var owner := inventoryData.Owner
-	slotData.itemData.UseOnCharacter(owner)
+	var owner := inventoryData.owner
+	slotData.itemData.useOnCharacter(owner)
 	removeOneItem()
 	
 

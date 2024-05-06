@@ -6,7 +6,7 @@ enum CONSUMABLE_TYPE {
 	POTION
 }
 
-@export var ConsumableType: CONSUMABLE_TYPE
+@export var consumableType: CONSUMABLE_TYPE
 @export var usableInFigth: bool
 @export var usableOnPlayer: bool
 @export var usableOnItem: bool

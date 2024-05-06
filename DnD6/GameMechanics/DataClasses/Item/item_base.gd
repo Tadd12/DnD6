@@ -15,7 +15,7 @@ class_name ItemBase
 @export var passivEffects: Array[EffectBase]
 @export var activeEffects: Array[EffectBase]
 
-func UseOnCharacter(character: CharacterBase) -> void:
+func useOnCharacter(character: CharacterBase) -> void:
 	for effect in activeEffects:
 		if is_instance_of(effect, CharacterEffectBase):
 			effect.activate(character)

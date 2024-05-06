@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://bbqcdi08wxjux"]
 
-[ext_resource type="Texture2D" uid="uid://cftcyk802ri2l" path="res://sprites/ItemSprites/chest.png" id="1_oohyu"]
+[ext_resource type="Texture2D" uid="uid://cftcyk802ri2l" path="res://Sprites/ItemSprites/chest.png" id="1_oohyu"]
 [ext_resource type="Script" path="res://Entities/Chest/chest.gd" id="1_qj5ra"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/inventory_data.gd" id="2_rauo2"]
-[ext_resource type="Texture2D" uid="uid://cpopgbhfpksd2" path="res://sprites/ItemSprites/Weapons/BattleAxe2.png" id="3_lpkh3"]
+[ext_resource type="Texture2D" uid="uid://cpopgbhfpksd2" path="res://Sprites/ItemSprites/Weapons/BattleAxe2.png" id="3_lpkh3"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Item/weapon_base.gd" id="4_b0spa"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/slot_data.gd" id="4_o0wd5"]
 

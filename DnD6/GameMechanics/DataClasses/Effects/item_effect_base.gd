@@ -1,8 +1,8 @@
 extends EffectBase
 class_name ItemEffectBase
 
-@export var attributeEffect: DnDDice
+@export var attributeEffect: Dice
 
 ## -1 == unlimited use
 @export var numberOfUses := -1
-var UsesLeft: int
+var usesLeft: int
