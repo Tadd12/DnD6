@@ -6,7 +6,10 @@ var answerable := false
 var answers : Dictionary = {}
 var conversation : Array[Variant]
 
-func loadConversation(path: String) -> void:
+func _init(path: String):
+	loadConversation(path)
+
+func loadConversation(path: String) -> ConversationTree:
 	# TODO: Load Conversation from path
 	conversation = [
 		"Text",
@@ -17,6 +20,7 @@ func loadConversation(path: String) -> void:
 			"Answer3" : 4
 		},
 	]
+	return self
 
 func getNext() -> Variant:
 	if currentIndex > conversation.size():
@@ -26,12 +30,13 @@ func getNext() -> Variant:
 	assert(not conversation[currentIndex] is Dictionary, "The current index points to an answer " +
 		"dict. Check if the Question was prefixed with '?' and that no answer points to an answer dict")
 	var value: String = conversation[currentIndex]
-	if value.begins_with("?"):
-		answerable = true
+	answerable = value.begins_with("?")
+	if answerable:
+		value = value.substr(1)
 		answers = conversation[currentIndex + 1]
 		currentIndex = -1
-	answerable = false
-	currentIndex += 1
+	else:
+		currentIndex += 1
 	text = value
 	return value
 
