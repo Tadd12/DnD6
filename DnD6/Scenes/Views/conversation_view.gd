@@ -3,7 +3,6 @@ extends Control
 @onready var characterIconLeft := $CharacterIconLeft
 @onready var characterIconRight := $CharacterIconRight
 @onready var conversationText := $ConversationText
-@onready var textTimer := $TextTimer
 
 @export var test := false
 
@@ -20,7 +19,7 @@ func createView(iconLeft: Texture2D, conversationPath: String, iconRight:Texture
 func startConversation() -> void:
 	set_visible(true)
 	setText(conversationTree.getNext())
-	_incrementText()
+	$TextTimer.start()
 	
 func addAnswers() -> void:
 	# TODO: Add clickable answers
@@ -31,8 +30,8 @@ func addAnswers() -> void:
 func _incrementText() -> void:
 	if conversationText.get_visible_characters() < conversationText.text.length():
 		conversationText.set_visible_characters(conversationText.get_visible_characters() + 1)
-		textTimer.start()
 	else:
+		$TextTimer.stop()
 		addAnswers()
 		textRendered = true
 	
@@ -46,9 +45,11 @@ func setText(text: String) -> void:
 func endConversation() -> void:
 	set_visible(false)
 	
-func _unhandled_input(event: InputEvent) -> void:
+func _gui_input(event: InputEvent) -> void:
 	if textRendered:
 		setText(conversationTree.getNext())
+		$TextTimer.start()
+		accept_event()
 	
 func _ready() -> void:
 	if test:
