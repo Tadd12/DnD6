@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cb5pr21ycc8k1"]
+[gd_scene load_steps=3 format=3 uid="uid://c11fsjadtfkkr"]
 
 [ext_resource type="Texture2D" uid="uid://bh7644ei8f4g6" path="res://Sprites/ItemSprites/mushroom_item.png" id="1_fhl4s"]
 [ext_resource type="Script" path="res://Scenes/Views/conversation_view.gd" id="1_xthdy"]
@@ -12,6 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
 script = ExtResource("1_xthdy")
+test = true
 
 [node name="CharacterIconLeft" type="TextureRect" parent="."]
 layout_mode = 1
@@ -59,6 +60,6 @@ text = "Test Text"
 scroll_active = false
 
 [node name="TextTimer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.04
 
-[connection signal="timeout" from="TextTimer" to="." method="incrementText"]
+[connection signal="timeout" from="TextTimer" to="." method="_incrementText"]

@@ -5,40 +5,52 @@ extends Control
 @onready var conversationText := $ConversationText
 @onready var textTimer := $TextTimer
 
-signal textFinishedRendering()
+@export var test := false
 
 var conversationTree: ConversationTree = null
-var waiting := false
 
-func createView(_iconLeft: Texture2D, _conversationTree: ConversationTree, _iconRight:Texture2D=null) -> void:
-	characterIconLeft.texture = _iconLeft
-	characterIconRight.texture = _iconRight
-	conversationTree = _conversationTree
+var textRendered := false
+
+func createView(iconLeft: Texture2D, conversationPath: String, iconRight:Texture2D=null) -> void:
+	characterIconLeft.texture = iconLeft
+	characterIconRight.texture = iconRight
+	conversationTree = ConversationTree.new(conversationPath)
 	
 	
 func startConversation() -> void:
+	set_visible(true)
 	setText(conversationTree.getNext())
-	incrementText()
+	_incrementText()
 	
-func addAnswers():
+func addAnswers() -> void:
 	# TODO: Add clickable answers
 	if not conversationTree.answerable:
 		return
 	pass
 
-func incrementText() -> void:
+func _incrementText() -> void:
 	if conversationText.get_visible_characters() < conversationText.text.length():
 		conversationText.set_visible_characters(conversationText.get_visible_characters() + 1)
 		textTimer.start()
 	else:
-		textFinishedRendering.emit()
+		addAnswers()
+		textRendered = true
 	
 	
 func setText(text: String) -> void:
 	conversationText.set_visible_characters(0)
-	
+	textRendered = false
 	conversationText.text = text
 	
 
 func endConversation() -> void:
-	pass
+	set_visible(false)
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if textRendered:
+		setText(conversationTree.getNext())
+	
+func _ready() -> void:
+	if test:
+		createView(null, "")
+		startConversation()
