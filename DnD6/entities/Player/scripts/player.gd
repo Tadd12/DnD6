@@ -3,13 +3,15 @@ extends CharacterBase
 @export var speed := 200
 @onready var interactArea := $InteractArea
 
+var timeBetweenRounds: int = 10_000
+var timeSinceLastRound: int
 
 signal toggleInventory
 signal closeUi
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	timeSinceLastRound = Time.get_ticks_msec()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -36,6 +38,11 @@ func _physics_process(delta):
 	velocity = vel.normalized() * speed
 	move_and_slide()
 	
+	if not inFight:
+		if Time.get_ticks_msec() - timeSinceLastRound > timeBetweenRounds:
+			nextRound()
+			timeSinceLastRound = Time.get_ticks_msec()
+
 
 #desc Checks if there is an interactable body within the [InteractArea].
 #desc If bodys are found, the [code]playerInteract[/code] method is called on the closest one.
