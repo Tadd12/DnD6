@@ -10,7 +10,7 @@ signal slotClicked(index: int, button: int, doubleClicked: bool)
 #desc Sets the data for the slot
 func setSlotData(slotData: SlotData) -> void:
 	var itemData := slotData.itemData
-	textureRect.texture = itemData.texture as Texture2D
+	textureRect.texture = itemData.inventoryIcon as Texture2D
 	tooltip_text = "{0}\n{1}".format([itemData.name, itemData.description])
 	
 	if slotData.quantity > 1:

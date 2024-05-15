@@ -3,36 +3,34 @@ extends CharacterBody2D
 ## This is the BaseClass for all Characters
 ## like NPC, the Player and MainCharacters
 
-
 # Character specific static Properties
 @export var characterName: String
-var race # : Race
+# @export var race # : Race
 
 @export var inventoryData: InventoryData
 
 # Character specific semi static Properties
 ## Saves the main attributes of the Character
-var attributes := {'strength': 0, 
-				   'dexterity': 0,
-				   'intelligence': 0,
-				   'wisdom': 0,
-				   'constitution': 0,
-				   'charisma': 0}
+@export_group("Stats")
+@export var strength := 0.0
+@export var dexterity := 0.0
+@export var intelligence := 0.0
+@export var charisma := 0
+@export var wisdom := 0.0
+@export var constitution := 0
 
 ## Saves the main attributes of the Character
 var skills := {}  # Skill(str): Bonus(int)  0 = No bonus but available
 
-
-
-var maxHP := 10
+@export var maxHP := 10
 ## Level(int): Number(int)
-var maxSpellPoints := {}  
+@export var maxSpellPoints := {}  
 
 ## A internal class to save the current armor
 class ClassArmor:
 	func _init():
-		var armor = {}
-		for type in ArmorBase.ArmorType:
+		var armor := {}
+		for type in ArmorBase.ARMOR_TYPE:
 			armor[type] = null
 	
 	## Computes the ArmorPoints by the currently worn armor
@@ -41,12 +39,12 @@ class ClassArmor:
 		# TODO after creating ArmorBaseClass
 		return 10 # Standard if no armor is selected
 
-	func setArmor(armor:ArmorBase, type:ArmorBase.ArmorType):
+	func setArmor(armor: ArmorBase, type: ArmorBase.ARMOR_TYPE):
 		# TODO: Check armorType
 		pass
 		
 	func getArmor() -> Array:
-		var arrayArmor = []
+		var arrayArmor := []
 		for a in self.armor:
 			arrayArmor.append(self.armor[a])
 		return arrayArmor
@@ -57,7 +55,7 @@ var maxActions := 1
 var maxBonusActions := 1
 
 # Character specific Temporary Properties
-var currentEffects := []
+var currentEffects : Array[EffectBase] = []
 var inFight := false
 var spellPoints := {}
 
@@ -81,23 +79,8 @@ var healthPoints: int:
 ## The armor class of the Character
 var armorClass: int:
 	get:
-		return armor.getArmorPoints() + attributes['dexterity']
+		return armor.getArmorPoints() + dexterity
 
-## init [br]
-## 
-func create(pName:String, strength:int, dexterity:int, intelligence:int, wisdom:int,
-		   constitution:int, charisma:int, pSkills:Dictionary, pRace, hp:int):
-	self.characterName = pName
-	self.attributes = {'strength': strength, 
-				  'dexterity': dexterity,
-				  'intelligence': intelligence,
-				  'wisdom': wisdom,
-				  'constitution': constitution,
-				  'charisma': charisma}
-	self.skills = pSkills
-	self.race = pRace
-	self.maxHP = hp
-	self.healthPoints = hp
 
 ## Triggers a dialog sequence with a character
 func TalkTo(Char):
@@ -120,6 +103,8 @@ func TakeAShortBreak():
 func nextRound():
 	tempAction = 1
 	tempBonusAction = 1
+	for effect in currentEffects:
+		effect.nextRound(self)
 
 ## Attack a Character or a Object on the Map [br]
 ## CharObj: ([CharacterBase] or MapObject) the Character or a Object on the Map [br]
@@ -145,6 +130,6 @@ func UseSpellOnMap(Coordinates, Spell):
 
 ## A function to be called if HP reaches 0
 func onDeath():
-	pass
+	print(name + " died.")
 
 # Static funcions

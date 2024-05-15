@@ -1,11 +1,34 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dj7uldprsccjv"]
+[gd_resource type="Resource" script_class="ConsumableBase" load_steps=7 format=3 uid="uid://dj7uldprsccjv"]
 
-[ext_resource type="Script" path="res://GameMechanics/DataClasses/Item/item_data.gd" id="1_k7r0h"]
-[ext_resource type="Texture2D" uid="uid://c07j2nmxxvcjv" path="res://Sprites/ItemSprites/HealthPotionW20.png" id="2_qx7bi"]
+[ext_resource type="Texture2D" uid="uid://b5biiyk4ac8we" path="res://Sprites/ItemSprites/HealthPotionW20.png" id="1_3eaxe"]
+[ext_resource type="Script" path="res://GameMechanics/DataClasses/dice.gd" id="1_3qanu"]
+[ext_resource type="Script" path="res://GameMechanics/DataClasses/Item/consumable_base.gd" id="1_d8eqh"]
+[ext_resource type="Script" path="res://GameMechanics/DataClasses/Effects/character_effect_base.gd" id="2_ds72g"]
+
+[sub_resource type="Resource" id="Resource_7fwyp"]
+script = ExtResource("1_3qanu")
+numberOfDiceFaces = 4
+numberOfDice = 2
+offset = 2
+
+[sub_resource type="Resource" id="Resource_d72mo"]
+script = ExtResource("2_ds72g")
+healEffect = SubResource("Resource_7fwyp")
+effectAttr = ""
+numberOfRounds = 1
+name = "Normal Health Potion Effect"
+desciption = ""
 
 [resource]
-script = ExtResource("1_k7r0h")
+script = ExtResource("1_d8eqh")
+consumableType = 0
+usableInFigth = true
+usableOnPlayer = true
+usableOnItem = true
 name = "Health Potion"
-description = "Recovers some hp"
+description = "Average Health Potion (4 - 10 HP)"
+weight = 0.5
 stackable = false
-texture = ExtResource("2_qx7bi")
+inventoryIcon = ExtResource("1_3eaxe")
+passivEffects = Array[Resource("res://GameMechanics/DataClasses/Effects/effect_base.gd")]([])
+activeEffects = Array[Resource("res://GameMechanics/DataClasses/Effects/effect_base.gd")]([SubResource("Resource_d72mo")])

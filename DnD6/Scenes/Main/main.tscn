@@ -1,25 +1,63 @@
-[gd_scene load_steps=14 format=3 uid="uid://dq8rje35fw4dj"]
+[gd_scene load_steps=24 format=3 uid="uid://dq8rje35fw4dj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_de7d4"]
 [ext_resource type="PackedScene" uid="uid://bbqcdi08wxjux" path="res://Entities/Chest/chest.tscn" id="2_p0vww"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/inventory_data.gd" id="3_t4bc7"]
-[ext_resource type="Resource" uid="uid://dj7uldprsccjv" path="res://Items/Consumable/health_potion.tres" id="4_fbk3w"]
+[ext_resource type="Texture2D" uid="uid://b5biiyk4ac8we" path="res://Sprites/ItemSprites/HealthPotionW20.png" id="4_v61bh"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/slot_data.gd" id="5_6trh0"]
-[ext_resource type="PackedScene" uid="uid://c0encdvisgifm" path="res://Entities/Player/player.tscn" id="6_clbfb"]
-[ext_resource type="Resource" uid="uid://dwunllkb0brcb" path="res://UI/Inventory/test_inv.tres" id="7_jotid"]
+[ext_resource type="Script" path="res://GameMechanics/DataClasses/Item/item_base.gd" id="5_qh3wt"]
+[ext_resource type="PackedScene" uid="uid://bq144jxvl1bx5" path="res://Entities/Player/player.tscn" id="6_clbfb"]
+[ext_resource type="Resource" uid="uid://bahmkqsvnxf1g" path="res://Items/Weapons/battleAxe.tres" id="7_1v8h0"]
 [ext_resource type="Script" path="res://UI/Inventory/inventory_interface.gd" id="8_1flgu"]
 [ext_resource type="PackedScene" uid="uid://buj5lerpiexgg" path="res://UI/Inventory/Inventory/inventory.tscn" id="9_ua287"]
+[ext_resource type="Resource" uid="uid://bwrjqrs6aful7" path="res://Items/Consumable/apple.tres" id="10_cj1oo"]
 [ext_resource type="PackedScene" uid="uid://do238lkg6ua3k" path="res://UI/Inventory/Slot/slot.tscn" id="10_umsah"]
 [ext_resource type="PackedScene" uid="uid://cdql12p8e0aj8" path="res://UI/Inventory/ItemOptions/item_options.tscn" id="11_n8a6i"]
+[ext_resource type="Resource" uid="uid://dj7uldprsccjv" path="res://Items/Consumable/health_potion.tres" id="11_sjqeq"]
+[ext_resource type="Resource" uid="uid://cqncauctlfyly" path="res://Items/Consumable/Poision.tres" id="12_k7ore"]
 
-[sub_resource type="Resource" id="Resource_08hhm"]
+[sub_resource type="Resource" id="Resource_quew0"]
+script = ExtResource("5_qh3wt")
+name = "Health Potion"
+description = ""
+weight = 0.2
+stackable = true
+inventoryIcon = ExtResource("4_v61bh")
+passivEffects = Array[Resource("res://GameMechanics/DataClasses/Effects/effect_base.gd")]([])
+activeEffects = Array[Resource("res://GameMechanics/DataClasses/Effects/effect_base.gd")]([])
+
+[sub_resource type="Resource" id="Resource_xmi6m"]
 script = ExtResource("5_6trh0")
-itemData = ExtResource("4_fbk3w")
+itemData = SubResource("Resource_quew0")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_qlclo"]
+script = ExtResource("5_6trh0")
+itemData = ExtResource("7_1v8h0")
 quantity = 1
 
 [sub_resource type="Resource" id="Resource_t18a4"]
 script = ExtResource("3_t4bc7")
-slotDatas = Array[ExtResource("5_6trh0")]([SubResource("Resource_08hhm")])
+slotDatas = Array[ExtResource("5_6trh0")]([SubResource("Resource_xmi6m"), SubResource("Resource_qlclo"), null, null, null])
+
+[sub_resource type="Resource" id="Resource_wysef"]
+script = ExtResource("5_6trh0")
+itemData = ExtResource("10_cj1oo")
+quantity = 80
+
+[sub_resource type="Resource" id="Resource_gq556"]
+script = ExtResource("5_6trh0")
+itemData = ExtResource("11_sjqeq")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_4moqb"]
+script = ExtResource("5_6trh0")
+itemData = ExtResource("12_k7ore")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_658lh"]
+script = ExtResource("3_t4bc7")
+slotDatas = Array[ExtResource("5_6trh0")]([SubResource("Resource_wysef"), SubResource("Resource_gq556"), null, null, SubResource("Resource_4moqb"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 
 [node name="Main" type="Node"]
 script = ExtResource("1_de7d4")
@@ -32,9 +70,7 @@ inventoryData = SubResource("Resource_t18a4")
 
 [node name="Player" parent="Game" instance=ExtResource("6_clbfb")]
 position = Vector2(481, 436)
-speed = 150
-characterName = "Angela"
-inventoryData = ExtResource("7_jotid")
+inventoryData = SubResource("Resource_658lh")
 
 [node name="UI" type="CanvasLayer" parent="."]
 

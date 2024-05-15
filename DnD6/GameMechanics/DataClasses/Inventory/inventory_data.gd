@@ -5,6 +5,7 @@ signal inventoryUpdated(inventoryData: InventoryData)
 signal inventoryInteract(inventoryData: InventoryData, index: int, button: int, doubleClicked: bool)
 
 @export var slotDatas: Array[SlotData]
+var owner: CharacterBase = null: set = setOwner
 
 #desc Returns the contens of the slot at the [param index] and removes the contents from the slot.
 func grabSlotData(index: int) -> SlotData:
@@ -87,6 +88,8 @@ func mergeAllSlotData(grabbedSlotData: SlotData) -> SlotData:
 	
 	return grabbedSlotData
 
+func setOwner(newOwner: CharacterBase):
+	owner = newOwner
 
 #desc Emits the inventoryInteract signal with the function arguments and a refrence to self as the [InventoryData]
 func _onSlotClicked(index: int, button: int, doubleClicked: bool) -> void:
