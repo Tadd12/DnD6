@@ -85,16 +85,7 @@ offset_top = 627.0
 offset_right = 652.0
 offset_bottom = 707.0
 
-[node name="AnswerButton4" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 278.0
-offset_top = 622.0
-offset_right = 456.0
-offset_bottom = 702.0
-
 [connection signal="timeout" from="TextTimer" to="." method="_incrementText"]
 [connection signal="pressed" from="AnswerButton1" to="." method="_selectAnswer" binds= [0]]
 [connection signal="pressed" from="AnswerButton2" to="." method="_selectAnswer" binds= [1]]
 [connection signal="pressed" from="AnswerButton3" to="." method="_selectAnswer" binds= [2]]
-[connection signal="pressed" from="AnswerButton4" to="." method="_selectAnswer" binds= [3]]
