@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c07j2nmxxvcjv"
-path="res://.godot/imported/HealthPosionW20.png-00ebca55e50b182ff6446dc4a08658c7.ctex"
+uid="uid://bp18y1fu6u3d4"
+path="res://.godot/imported/Map.webp-6d02888f2f1f06cc060901986834beb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ItemSprites/HealthPosionW20.png"
-dest_files=["res://.godot/imported/HealthPosionW20.png-00ebca55e50b182ff6446dc4a08658c7.ctex"]
+source_file="res://Assets/Pictures/Map.webp"
+dest_files=["res://.godot/imported/Map.webp-6d02888f2f1f06cc060901986834beb1.ctex"]
 
 [params]
 
