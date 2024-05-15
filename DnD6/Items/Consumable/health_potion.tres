@@ -9,3 +9,4 @@ name = "Health Potion"
 description = "Recovers some hp"
 stackable = false
 texture = ExtResource("2_qx7bi")
+type = Array[int]([])
