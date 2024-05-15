@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_agjyl")
-ConsumableType = 0
+consumableType = 0
 usableInFigth = true
 usableOnPlayer = true
 usableOnItem = false
