@@ -1,12 +1,12 @@
-[gd_scene load_steps=24 format=3 uid="uid://dq8rje35fw4dj"]
+[gd_scene load_steps=25 format=3 uid="uid://dq8rje35fw4dj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_de7d4"]
-[ext_resource type="PackedScene" uid="uid://bbqcdi08wxjux" path="res://Entities/Chest/chest.tscn" id="2_p0vww"]
+[ext_resource type="PackedScene" uid="uid://bbqcdi08wxjux" path="res://entities/Chest/chest.tscn" id="2_p0vww"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/inventory_data.gd" id="3_t4bc7"]
-[ext_resource type="Texture2D" uid="uid://cf0etbd7iai8d" path="res://Sprites/ItemSprites/HealthPotionW20.png" id="4_v61bh"]
+[ext_resource type="Texture2D" uid="uid://b5biiyk4ac8we" path="res://sprites/ItemSprites/HealthPotionW20.png" id="4_v61bh"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/slot_data.gd" id="5_6trh0"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Item/item_base.gd" id="5_qh3wt"]
-[ext_resource type="PackedScene" uid="uid://bq144jxvl1bx5" path="res://Entities/Player/player.tscn" id="6_clbfb"]
+[ext_resource type="PackedScene" uid="uid://bq144jxvl1bx5" path="res://entities/Player/player.tscn" id="6_clbfb"]
 [ext_resource type="Resource" uid="uid://bahmkqsvnxf1g" path="res://Items/Weapons/battleAxe.tres" id="7_1v8h0"]
 [ext_resource type="Script" path="res://UI/Inventory/inventory_interface.gd" id="8_1flgu"]
 [ext_resource type="PackedScene" uid="uid://buj5lerpiexgg" path="res://UI/Inventory/Inventory/inventory.tscn" id="9_ua287"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://do238lkg6ua3k" path="res://UI/Inventory/Slot/slot.tscn" id="10_umsah"]
 [ext_resource type="PackedScene" uid="uid://cdql12p8e0aj8" path="res://UI/Inventory/ItemOptions/item_options.tscn" id="11_n8a6i"]
 [ext_resource type="Resource" uid="uid://dj7uldprsccjv" path="res://Items/Consumable/health_potion.tres" id="11_sjqeq"]
+[ext_resource type="PackedScene" uid="uid://c5bk3tvb8llgr" path="res://Scenes/Village/Village.tscn" id="12_1hyka"]
 [ext_resource type="Resource" uid="uid://cqncauctlfyly" path="res://Items/Consumable/Poision.tres" id="12_k7ore"]
 
 [sub_resource type="Resource" id="Resource_quew0"]
@@ -64,13 +65,20 @@ script = ExtResource("1_de7d4")
 
 [node name="Game" type="Node2D" parent="."]
 
+[node name="Village" parent="Game" instance=ExtResource("12_1hyka")]
+
 [node name="Chest" parent="Game" instance=ExtResource("2_p0vww")]
-position = Vector2(874, 294)
+position = Vector2(2233, 1646)
 inventoryData = SubResource("Resource_t18a4")
 
 [node name="Player" parent="Game" instance=ExtResource("6_clbfb")]
-position = Vector2(481, 436)
+position = Vector2(2000, 1500)
+scale = Vector2(0.4, 0.4)
+safe_margin = 0.001
 inventoryData = SubResource("Resource_658lh")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Game/Player"]
+remote_path = NodePath("../../../Camera2D")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -125,3 +133,14 @@ offset_bottom = 64.0
 [node name="ItemOptions" parent="UI/InventoryInterface" instance=ExtResource("11_n8a6i")]
 visible = false
 layout_mode = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2000, 1500)
+scale = Vector2(0.4, 0.4)
+zoom = Vector2(1.3, 1.3)
+limit_left = 0
+limit_top = 0
+limit_right = 4100
+limit_bottom = 2266
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
