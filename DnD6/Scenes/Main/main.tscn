@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_de7d4"]
 [ext_resource type="PackedScene" uid="uid://bbqcdi08wxjux" path="res://Entities/Chest/chest.tscn" id="2_p0vww"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/inventory_data.gd" id="3_t4bc7"]
-[ext_resource type="Texture2D" uid="uid://cf0etbd7iai8d" path="res://Sprites/ItemSprites/HealthPotionW20.png" id="4_v61bh"]
+[ext_resource type="Texture2D" uid="uid://bfv3bjkstxk3q" path="res://Sprites/ItemSprites/HealthPotionW20.png" id="4_v61bh"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/slot_data.gd" id="5_6trh0"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Item/item_base.gd" id="5_qh3wt"]
 [ext_resource type="PackedScene" uid="uid://bq144jxvl1bx5" path="res://Entities/Player/player.tscn" id="6_clbfb"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cdql12p8e0aj8" path="res://UI/Inventory/ItemOptions/item_options.tscn" id="11_n8a6i"]
 [ext_resource type="Resource" uid="uid://dj7uldprsccjv" path="res://Items/Consumable/health_potion.tres" id="11_sjqeq"]
 [ext_resource type="Resource" uid="uid://cqncauctlfyly" path="res://Items/Consumable/Poision.tres" id="12_k7ore"]
-[ext_resource type="PackedScene" uid="uid://c11fsjadtfkkr" path="res://Scenes/Views/dialog_view.tscn" id="16_y7kvg"]
+[ext_resource type="PackedScene" uid="uid://c11fsjadtfkkr" path="res://UI/Dialog/dialog_view.tscn" id="16_y7kvg"]
 
 [sub_resource type="Resource" id="Resource_quew0"]
 script = ExtResource("5_qh3wt")
