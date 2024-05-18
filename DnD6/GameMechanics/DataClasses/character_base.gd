@@ -18,7 +18,7 @@ extends CharacterBody2D
 @export var charisma := 0
 @export var wisdom := 0.0
 @export var constitution := 0
-@export_group("")
+
 ## Saves the main attributes of the Character
 var skills := {}  # Skill(str): Bonus(int)  0 = No bonus but available
 
@@ -107,7 +107,7 @@ func nextRound():
 		effect.nextRound(self)
 
 ## Attack a Character or a Object on the Map [br]
-## CharObj: ([CharacterBase] or MapObject) the Character or a Object on the Map
+## CharObj: ([CharacterBase] or MapObject) the Character or a Object on the Map [br]
 ## Attack: (Attack) The Attack to be used [br]
 ## Returns: ([int]) If the attack succeded or failed (1: crit. fail, 2: fail, 3: success, 4: crit. success)
 func Attack(CharObj, Attack) -> int:

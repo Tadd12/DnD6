@@ -11,7 +11,7 @@ func _ready():
 	refreshItemGrid(inventoryData)
 	
 	
-## Sets the data displayed in the inventory
+#desc Sets the data displayed in the inventory
 func setInventoryData(inventoryData: InventoryData) -> void:
 	inventoryData.inventoryUpdated.connect(refreshItemGrid)
 	refreshItemGrid(inventoryData)
@@ -20,12 +20,12 @@ func setInventoryData(inventoryData: InventoryData) -> void:
 	size.y = 4 + 68 * calc_size
 
 	
-## Clears the display of the inventory
+#desc Clears the display of the inventory
 func clearInventoryData(inventoryData: InventoryData) -> void:
 	inventoryData.inventoryUpdated.disconnect(refreshItemGrid)
 
 	
-## Sets the data of the slots in the inventory
+#desc Sets the data of the slots in the inventory
 func refreshItemGrid(inventoryData: InventoryData) -> void:
 	for child in itemGrid.get_children():
 		child.queue_free()
