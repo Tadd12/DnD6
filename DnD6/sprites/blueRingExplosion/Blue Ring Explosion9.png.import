@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://thvdb3b42nwl"
-path="res://.godot/imported/Blue Ring Explosion9.png-18518b8af42181d70765a1c7f73af130.ctex"
+path="res://.godot/imported/Blue Ring Explosion9.png-02e728f62ad05663b6c9d7cf57edb44c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/blueRingExplosion/Blue Ring Explosion9.png"
-dest_files=["res://.godot/imported/Blue Ring Explosion9.png-18518b8af42181d70765a1c7f73af130.ctex"]
+source_file="res://Sprites/blueRingExplosion/Blue Ring Explosion9.png"
+dest_files=["res://.godot/imported/Blue Ring Explosion9.png-02e728f62ad05663b6c9d7cf57edb44c.ctex"]
 
 [params]
 

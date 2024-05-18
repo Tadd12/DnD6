@@ -17,9 +17,9 @@ func _closeUi():
 		toggleInventoryInterface()
 
 
-#desc Toggles the visibility of the inventory interface.
-#desc If an [param externalInventoryOwner] is provided, an additional inventory will open to display the contens.
-#desc If [param keepOpen] is provided and the inventory is visible, it will stay visible.
+## Toggles the visibility of the inventory interface.
+## If an [param externalInventoryOwner] is provided, an additional inventory will open to display the contens.
+## If [param keepOpen] is provided and the inventory is visible, it will stay visible.
 func toggleInventoryInterface(externalInventoryOwner = null, keepOpen = false) -> void:
 	if inventoryInterface.visible and keepOpen:
 		pass

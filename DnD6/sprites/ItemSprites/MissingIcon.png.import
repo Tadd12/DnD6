@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbd687i6q11hw"
-path="res://.godot/imported/MissingIcon.png-fde9a1896f5e2b63e8242ab40a8d273e.ctex"
+path="res://.godot/imported/MissingIcon.png-f3436f93553576db38513a1fa6599549.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ItemSprites/MissingIcon.png"
-dest_files=["res://.godot/imported/MissingIcon.png-fde9a1896f5e2b63e8242ab40a8d273e.ctex"]
+source_file="res://Sprites/ItemSprites/MissingIcon.png"
+dest_files=["res://.godot/imported/MissingIcon.png-f3436f93553576db38513a1fa6599549.ctex"]
 
 [params]
 
