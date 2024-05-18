@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Startmenu/Startmenu.gd" id="1_7tbw0"]
 [ext_resource type="FontFile" uid="uid://ckebikq00hup7" path="res://addons/font/Cormorant_Upright/CormorantUpright-Regular.ttf" id="2_156g5"]
-[ext_resource type="Texture2D" uid="uid://b7wnxeysyd2bw" path="res://sprites/Backgrounds/StartBackground.webp" id="2_s3mi1"]
+[ext_resource type="Texture2D" uid="uid://b7wnxeysyd2bw" path="res://Sprites/Backgrounds/StartBackground.webp" id="2_s3mi1"]
 [ext_resource type="FontFile" uid="uid://bhlcuw44hdqtb" path="res://addons/font/Cormorant_Upright/CormorantUpright-SemiBold.ttf" id="3_okkn1"]
 
 [node name="Startmenu" type="Control"]

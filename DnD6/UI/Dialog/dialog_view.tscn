@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c11fsjadtfkkr"]
+[gd_scene load_steps=5 format=3 uid="uid://c11fsjadtfkkr"]
 
 [ext_resource type="Script" path="res://UI/Dialog/dialog_view.gd" id="1_ib506"]
 [ext_resource type="Texture2D" uid="uid://bh7644ei8f4g6" path="res://Sprites/ItemSprites/mushroom_item.png" id="2_12fu4"]
+[ext_resource type="FontFile" uid="uid://ckebikq00hup7" path="res://addons/font/Cormorant_Upright/CormorantUpright-Regular.ttf" id="3_j4xqb"]
+[ext_resource type="FontFile" uid="uid://bqsxww7ykd1aj" path="res://addons/font/Cormorant_Upright/CormorantUpright-Bold.ttf" id="4_s3s85"]
 
 [node name="DialogView" type="Control"]
 layout_mode = 3
@@ -54,6 +56,8 @@ offset_right = 369.0
 offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("3_j4xqb")
+theme_override_fonts/bold_font = ExtResource("4_s3s85")
 theme_override_font_sizes/normal_font_size = 41
 text = "Test Text"
 scroll_active = false
@@ -68,6 +72,8 @@ offset_left = 863.0
 offset_top = 626.0
 offset_right = 1041.0
 offset_bottom = 706.0
+theme_override_fonts/font = ExtResource("3_j4xqb")
+theme_override_font_sizes/font_size = 32
 
 [node name="AnswerButton2" type="Button" parent="."]
 visible = false
@@ -76,6 +82,8 @@ offset_left = 670.0
 offset_top = 631.0
 offset_right = 848.0
 offset_bottom = 711.0
+theme_override_fonts/font = ExtResource("3_j4xqb")
+theme_override_font_sizes/font_size = 32
 
 [node name="AnswerButton3" type="Button" parent="."]
 visible = false
@@ -84,6 +92,8 @@ offset_left = 474.0
 offset_top = 627.0
 offset_right = 652.0
 offset_bottom = 707.0
+theme_override_fonts/font = ExtResource("3_j4xqb")
+theme_override_font_sizes/font_size = 32
 
 [connection signal="timeout" from="TextTimer" to="." method="_incrementText"]
 [connection signal="pressed" from="AnswerButton1" to="." method="_selectAnswer" binds= [0]]
