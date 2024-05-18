@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ConsumableBase" load_steps=7 format=3 uid="uid://dj7uldprsccjv"]
 
-[ext_resource type="Texture2D" uid="uid://b5biiyk4ac8we" path="res://Sprites/ItemSprites/HealthPotionW20.png" id="1_3eaxe"]
+[ext_resource type="Texture2D" uid="uid://b5biiyk4ac8we" path="res://sprites/ItemSprites/HealthPotionW20.png" id="1_3eaxe"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/dice.gd" id="1_3qanu"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Item/consumable_base.gd" id="1_d8eqh"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Effects/character_effect_base.gd" id="2_ds72g"]

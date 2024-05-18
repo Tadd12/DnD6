@@ -1,0 +1,491 @@
+[gd_scene load_steps=38 format=3 uid="uid://c5bk3tvb8llgr"]
+
+[ext_resource type="Texture2D" uid="uid://crfn0sy7mqv0" path="res://sprites/Backgrounds/VillageMap.jpg" id="1_fwuu8"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2qhjg"]
+a = Vector2(129.258, -139.283)
+b = Vector2(-284.251, 115.628)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5d48k"]
+a = Vector2(-284.656, -46.5561)
+b = Vector2(-34.177, 248.417)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4jfym"]
+a = Vector2(152.252, 154.863)
+b = Vector2(345.252, -40.1365)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kmin6"]
+a = Vector2(687.386, 353.767)
+b = Vector2(116.386, 63.7671)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0rlhm"]
+a = Vector2(-199.909, -631.519)
+b = Vector2(-496.909, 27.4807)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gdpp6"]
+a = Vector2(-64.3504, -317.003)
+b = Vector2(378.65, 212.997)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_do7py"]
+a = Vector2(125.176, 89.7659)
+b = Vector2(-508.824, 81.7659)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sb3ba"]
+a = Vector2(-256.495, -63.0342)
+b = Vector2(-33.4946, 87.9658)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kal64"]
+a = Vector2(10.2463, -65.34)
+b = Vector2(-145.496, 37.1361)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_v2nh6"]
+a = Vector2(370.698, 152.237)
+b = Vector2(-145.197, -161.22)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ltrfw"]
+a = Vector2(196.481, -162.738)
+b = Vector2(-261.011, 68.3354)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sry5x"]
+a = Vector2(-150.235, 6.45044)
+b = Vector2(-73.3372, 115.959)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bcgp0"]
+a = Vector2(-146.455, -20.0964)
+b = Vector2(-341.133, 102.473)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pacif"]
+a = Vector2(26.5654, -124.864)
+b = Vector2(-29.8911, 118.266)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4bf72"]
+a = Vector2(158.049, -130.324)
+b = Vector2(-56.9514, -138.324)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yofia"]
+a = Vector2(30.9795, -162.432)
+b = Vector2(-228.021, 37.5682)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lgy2j"]
+a = Vector2(-716.784, -276.006)
+b = Vector2(-201.784, 62.9938)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4er4m"]
+a = Vector2(-214, -21.9999)
+b = Vector2(148.999, 36.0003)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4dwel"]
+a = Vector2(-26.6633, 86.5695)
+b = Vector2(189.336, 206.569)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8r054"]
+a = Vector2(-109.931, -117.972)
+b = Vector2(-177.932, 166.028)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_upgdn"]
+a = Vector2(-209.028, -80.8196)
+b = Vector2(171.972, 172.18)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0oaeh"]
+a = Vector2(-259.521, 112.38)
+b = Vector2(144.479, -16.6198)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lww81"]
+a = Vector2(4.27869, 34.8905)
+b = Vector2(60.2787, 208.89)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_y3tww"]
+a = Vector2(24.4869, 138.499)
+b = Vector2(4.48694, -114.501)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kk8rl"]
+a = Vector2(198.465, -82.6335)
+b = Vector2(94.4653, -22.6336)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5725m"]
+a = Vector2(188.213, 18.6949)
+b = Vector2(196.213, -77.3051)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kayrw"]
+a = Vector2(174.414, -34.2427)
+b = Vector2(43.4141, -151.243)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b0vli"]
+a = Vector2(74.7058, 55.7639)
+b = Vector2(193.706, -46.2361)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7ee5k"]
+a = Vector2(59.5399, -43.6755)
+b = Vector2(146.171, -116.012)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_f5a6q"]
+a = Vector2(-210.432, -58.5513)
+b = Vector2(118.573, 62.0089)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rd5te"]
+a = Vector2(-65.2412, 187.896)
+b = Vector2(151.824, -168.761)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4ndjd"]
+a = Vector2(133.141, 122.575)
+b = Vector2(246.141, 7.57483)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qqynn"]
+a = Vector2(304.575, 22.063)
+b = Vector2(143.575, -81.937)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_g23la"]
+a = Vector2(-56.0577, -8.12921)
+b = Vector2(124.992, 59.1835)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3j07"]
+size = Vector2(40.7371, 1394.55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jwge"]
+size = Vector2(4161.5, 45.5)
+
+[node name="Village" type="Node2D"]
+
+[node name="VillageMap" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 4000.0
+offset_bottom = 2286.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.02734, 0.995354)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_fwuu8")
+expand_mode = 1
+
+[node name="OuterMapCollisions" type="StaticBody2D" parent="VillageMap"]
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(624.262, 1417.98)
+rotation = -2.14675
+shape = SubResource("SegmentShape2D_2qhjg")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(217.884, 1485.04)
+rotation = -2.14675
+shape = SubResource("SegmentShape2D_5d48k")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(720.061, 1435.81)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_4jfym")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(389.952, 1046.09)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_kmin6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(3397.03, 1823.99)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_0rlhm")
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(395.536, 2051.53)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_gdpp6")
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(1199.04, 2119.08)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_do7py")
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(1344.73, 2128.93)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_sb3ba")
+
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(1241.53, 2030.47)
+shape = SubResource("SegmentShape2D_kal64")
+
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(1395.03, 2125.34)
+shape = SubResource("SegmentShape2D_v2nh6")
+
+[node name="CollisionShape2D33" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(2146.46, 2195.18)
+shape = SubResource("SegmentShape2D_ltrfw")
+
+[node name="CollisionShape2D41" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(2616.8, 2033.03)
+shape = SubResource("SegmentShape2D_sry5x")
+
+[node name="CollisionShape2D40" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(2696.73, 2161.04)
+shape = SubResource("SegmentShape2D_bcgp0")
+
+[node name="CollisionShape2D37" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(2317.35, 2156.3)
+shape = SubResource("SegmentShape2D_pacif")
+
+[node name="CollisionShape2D43" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(2766.32, 1975.5)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_4bf72")
+
+[node name="CollisionShape2D42" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(2687.54, 2001.73)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_yofia")
+
+[node name="CollisionShape2D44" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(3403.73, 1140.3)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_lgy2j")
+
+[node name="CollisionShape2D47" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(2430.55, 431.002)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_4er4m")
+
+[node name="CollisionShape2D46" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(2593.75, 379.192)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_4dwel")
+
+[node name="CollisionShape2D45" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(2881.16, 701.23)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_8r054")
+
+[node name="CollisionShape2D49" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(1672.31, 364.513)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_upgdn")
+
+[node name="CollisionShape2D48" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(2088.42, 423.588)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_0oaeh")
+
+[node name="CollisionShape2D54" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(1303.09, 676.251)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_lww81")
+
+[node name="CollisionShape2D55" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(1410.94, 727.883)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_y3tww")
+
+[node name="CollisionShape2D53" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(1321.41, 642.619)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_kk8rl")
+
+[node name="CollisionShape2D52" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(1329.44, 542.827)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_5725m")
+
+[node name="CollisionShape2D51" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(1348.71, 506.596)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_kayrw")
+
+[node name="CollisionShape2D50" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(1290.02, 330.773)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_b0vli")
+
+[node name="CollisionShape2D59" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(470.956, 992.082)
+shape = SubResource("SegmentShape2D_7ee5k")
+
+[node name="CollisionShape2D58" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(812.959, 941.654)
+shape = SubResource("SegmentShape2D_f5a6q")
+
+[node name="CollisionShape2D57" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(994.826, 816.771)
+shape = SubResource("SegmentShape2D_rd5te")
+
+[node name="CollisionShape2D61" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(447.621, 1034.23)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_4ndjd")
+
+[node name="CollisionShape2D60" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(390.742, 1023.69)
+scale = Vector2(0.973388, 1.00467)
+shape = SubResource("SegmentShape2D_qqynn")
+
+[node name="CollisionShape2D56" type="CollisionShape2D" parent="VillageMap/OuterMapCollisions"]
+position = Vector2(1190.05, 660.159)
+shape = SubResource("SegmentShape2D_g23la")
+
+[node name="InnerMapCollision" type="StaticBody2D" parent="VillageMap"]
+scale = Vector2(1, 1)
+
+[node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(2536.69, 1434.07)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-1.01611, 3.60938, 18.4517, -6.43726, -61.3662, -62.6987, -96.4082, -29.5447, -38.0049, 15.6654)
+
+[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(2161.89, 1384.43)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(20.498, -10.7407, 88.635, 53.558, 227.83, -29.8295, 111.996, -102.166)
+
+[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(2291.77, 1593.66)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(1.53247, 2.75891, -58.8176, -34.4138, -80.2322, -120.815, -10.1482, -83.6426, 85.2439, -139.904, 150.461, -86.6566)
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(2513.29, 1689.85)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(128.478, -84.7584, 37.9526, -158.099, -121.683, -42.5624, -0.98291, 1.64294)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(2290.38, 1868.68)
+polygon = PackedVector2Array(129.053, 65.421, 241.966, -5.9104, 105.692, -116.424, -21.8218, -22.9897)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(2497.71, 1301.3)
+polygon = PackedVector2Array(-5.83936, 3.76184, 68.1382, 56.0045, 125.568, 51.9858, 172.291, 68.0605, 284.23, -0.256836, 74.9519, -141.915)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(2087.77, 1079.35)
+polygon = PackedVector2Array(-3.75195, -2.35095, 256.143, 165.429, 352.508, 105.149, 354.455, 3.67712, 155.884, -108.846)
+
+[node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1732.41, 1306.67)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(29.4227, -6.62512, 125.788, 86.809, 193.925, 72.7437, 99.5067, -5.62036)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(2797.85, 1244.98)
+polygon = PackedVector2Array(-9.09619, -5.21704, 29.8394, 25.9276, 98.9497, 10.8577, 58.0674, -27.3197)
+
+[node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1613.52, 1088.74)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(0.354614, -3.70044, 35.3965, 32.4677, 111.321, 7.35095, 70.4385, -46.9011)
+
+[node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1858.44, 938.542)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-0.246948, -6.21014, 175.936, 79.1866, 238.233, 48.0419, 84.4377, -67.4949)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1872.74, 1239.61)
+polygon = PackedVector2Array(-3.83276, 0.148071, 171.377, 99.6102, 294.024, 14.2134, 121.734, -100.319)
+
+[node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1562.2, 1305.32)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(20.53, 16.8192, 56.5454, -7.29285, 16.6365, -84.6522, -91.4095, -4.27881, -37.8733, 40.9312)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1481.64, 1352.93)
+polygon = PackedVector2Array(0.828735, 16.4302, 42.6843, -6.67725, -49.7875, -230.718, -353.484, -13.7102, -329.15, 17.4346, -219.157, -47.8685, -89.6963, -53.8966)
+
+[node name="CollisionPolygon2D26" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1085.55, 1299.39)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-1.2002, -3.37024, 43.5756, 42.8446, 230.466, -94.7949, 180.823, -93.7903, 173.036, -118.907, 36.7618, -59.6316)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(700.528, 1742.7)
+polygon = PackedVector2Array(219.324, 55.6543, 76.2357, 61.6823, -115.522, 31.5422, -209.94, -2.61646, -278.077, -49.8358, -253.743, -133.223, -159.324, -130.209, -31.8104, -133.223, 26.5929, -109.111, 173.574, -32.7565, 215.43, 5.4209)
+
+[node name="CollisionPolygon2D31" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1468.84, 1980.2)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(211.942, -142.716, -5.05835, 1.28357, 179.942, 80.2836, 386.942, -34.7164)
+
+[node name="CollisionPolygon2D30" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1279.03, 1857.63)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(0.264404, 0.621704, 117.264, 62.6217, 355.264, -71.3783, 251.264, -152.378)
+
+[node name="CollisionPolygon2D29" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1009.4, 1656.7)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-1.22705, 12.1273, 218.773, -105.873, 22.3879, -236.097, -138.227, -67.8727)
+
+[node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1216.73, 1827.49)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-0.319946, -3.48682, -141.32, -104.487, 60.6801, -233.487, 212.68, -148.487)
+
+[node name="CollisionPolygon2D27" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1644.05, 1691.86)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-0.267822, -3.28845, -264.268, -157.288, 45.7322, -337.288, 252.732, -202.288)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1287.79, 1504.99)
+polygon = PackedVector2Array(136.834, -67.9751, 1.83447, 9.0249, -111.94, -64.2986, -29.1655, -131.975)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1912.71, 2123.87)
+polygon = PackedVector2Array(5.59534, -0.439453, 209.595, -112.439, 114.595, -184.439, -94.4047, -48.4395, -1.40466, -2.43945)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1844.57, 1749.13)
+polygon = PackedVector2Array(-174.793, -13.3704, 64.2073, 143.63, 175.207, 70.6296, 377.207, 199.63, 411.207, 170.63, 295.207, 84.6296, 472.207, -24.3704, 439.207, -53.3704, 321.207, 25.6296, 275.207, -14.3704, 399.207, -89.3704, 283.207, -170.37, 318.207, -196.37, 257.207, -368.37, 112.207, -277.37, 177.207, -231.37)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(2799.46, 1558.24)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-4.32373, 1.13416, -114.324, -73.8658, 17.6763, -181.866, 145.676, -99.8658)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(2608.68, 1792.33)
+polygon = PackedVector2Array(8.8877, -5.1377, -39.1123, -58.1377, 91.8877, -148.138, 153.888, -93.1377)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(719.333, 1082.03)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-54.641, 18.1235, 61.359, 29.1235, 196.624, 101.471, 317.324, 102.476, 401.036, 90.42, 524.656, 34.1587, 580.352, 13.1875, 573.325, -45.2101, 706.679, -74.3455, 754.359, -63.8765, 806.359, 5.12354, 830.359, 33.1235, 853.359, 9.12354, 836.359, -31.8765, 875.359, -19.8765, 914.011, -67.3128, 716.413, -213.994, 662.359, -194.876, 638.359, -264.876, 570.359, -199.876, 536.359, -198.876, 488.359, -136.876, 410.359, -113.876, 315.359, -48.8765, 295.359, 4.12354, 125.359, 17.1235, 1.35901, -58.8765, -32.641, -38.8765, -82.641, 14.1235)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1014.32, 1257.64)
+polygon = PackedVector2Array(-25.321, -2.63599, -8.32104, 19.364, 56.679, 1.36401, 12.679, -30.636)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1741.39, 962.472)
+polygon = PackedVector2Array(12.3274, 29.6867, -98.6726, -82.3133, -178.673, -165.313, -184.673, -250.313, -42.6726, -401.313, 56.3274, -343.313, 113.327, -341.313, 341.327, -414.313, 480.327, -465.313, 520.762, -452.1, 488.641, -312.452, 442.327, -309.313, 313.327, -281.313, 136.327, -212.313, 35.3274, -175.313, -93.6726, -205.313)
+
+[node name="CollisionPolygon2D33" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(1443.53, 1152.35)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(21.4146, 51.2382, -74.0515, -59.0461, -74.0515, -76.0461, -7.05151, -94.0461, 14.9485, -77.0461)
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
+position = Vector2(2266.05, 767.566)
+polygon = PackedVector2Array(-8.60645, -5.08789, 64.3936, -251.088, 251.394, -213.088, 374.394, -147.088, 406.394, -82.0879, 362.394, 27.9121, 325.394, 136.912, 255.394, 111.912, 312.394, 17.9121, 319.394, -40.0879, 292.394, -90.0879, 223.394, -97.0879, 172.394, -59.0879, 163.394, 0.912109, 165.394, 46.9121)
+
+[node name="CameraLimit" type="StaticBody2D" parent="VillageMap"]
+position = Vector2(-11.6807, -20.0934)
+scale = Vector2(0.973388, 1.00467)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="VillageMap/CameraLimit"]
+position = Vector2(0, 1143)
+scale = Vector2(1.34092, 1.67253)
+shape = SubResource("RectangleShape2D_c3j07")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="VillageMap/CameraLimit"]
+position = Vector2(4120, 1143)
+scale = Vector2(1.34092, 1.67253)
+shape = SubResource("RectangleShape2D_c3j07")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VillageMap/CameraLimit"]
+position = Vector2(2060, -4)
+shape = SubResource("RectangleShape2D_0jwge")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="VillageMap/CameraLimit"]
+position = Vector2(2040.5, 2286)
+shape = SubResource("RectangleShape2D_0jwge")
