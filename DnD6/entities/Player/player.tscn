@@ -1,13 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://bq144jxvl1bx5"]
 
 [ext_resource type="Script" path="res://Entities/Player/scripts/player.gd" id="1_aqogx"]
-[ext_resource type="Texture2D" uid="uid://cukgev1cx1df" path="res://Sprites/Character/MageFemaleSprite.png" id="2_8tdp2"]
+[ext_resource type="Texture2D" uid="uid://cukgev1cx1df" path="res://sprites/Character/MageFemaleSprite.png" id="2_8tdp2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ja4m2"]
 radius = 172.012
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7b4ur"]
-size = Vector2(122, 133)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cinph"]
+radius = 24.0
+height = 66.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_aqogx")
@@ -23,5 +24,5 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_ja4m2")
 
 [node name="PlayerShape" type="CollisionShape2D" parent="."]
-position = Vector2(3, 3.5)
-shape = SubResource("RectangleShape2D_7b4ur")
+position = Vector2(8, 28)
+shape = SubResource("CapsuleShape2D_cinph")
