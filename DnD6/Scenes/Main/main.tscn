@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dq8rje35fw4dj"]
+[gd_scene load_steps=25 format=3 uid="uid://dq8rje35fw4dj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_de7d4"]
 [ext_resource type="PackedScene" uid="uid://bbqcdi08wxjux" path="res://Entities/Chest/chest.tscn" id="2_p0vww"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cdql12p8e0aj8" path="res://UI/Inventory/ItemOptions/item_options.tscn" id="11_n8a6i"]
 [ext_resource type="Resource" uid="uid://dj7uldprsccjv" path="res://Items/Consumable/health_potion.tres" id="11_sjqeq"]
 [ext_resource type="Resource" uid="uid://cqncauctlfyly" path="res://Items/Consumable/Poision.tres" id="12_k7ore"]
+[ext_resource type="PackedScene" uid="uid://c11fsjadtfkkr" path="res://Scenes/Views/dialog_view.tscn" id="16_y7kvg"]
 
 [sub_resource type="Resource" id="Resource_quew0"]
 script = ExtResource("5_qh3wt")
@@ -125,3 +126,6 @@ offset_bottom = 64.0
 [node name="ItemOptions" parent="UI/InventoryInterface" instance=ExtResource("11_n8a6i")]
 visible = false
 layout_mode = 0
+
+[node name="DialogView" parent="UI" instance=ExtResource("16_y7kvg")]
+visible = false

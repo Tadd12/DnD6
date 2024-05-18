@@ -15,9 +15,9 @@ extends CharacterBody2D
 @export var strength := 0.0
 @export var dexterity := 0.0
 @export var intelligence := 0.0
-@export var charisma := 0
+@export var charisma := 0.0
 @export var wisdom := 0.0
-@export var constitution := 0
+@export var constitution := 0.0
 @export_group("")
 ## Saves the main attributes of the Character
 var skills := {}  # Skill(str): Bonus(int)  0 = No bonus but available
