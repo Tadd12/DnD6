@@ -14,13 +14,13 @@ func _physics_process(_delta: float) -> void:
 		grabbedSlot.global_position = get_global_mouse_position() + Vector2(5, 5)
 
 
-## Sets the player inventory view to [param inventoryData]
+#desc Sets the player inventory view to [param inventoryData]
 func setPlayerInventory(inventoryData: InventoryData) -> void:
 	inventoryData.inventoryInteract.connect(onInventoryInteract)
 	playerInventory.setInventoryData(inventoryData)
 
 	
-## Sets the external inventory view to the inventory owned by [param _externalInventoryOwner]
+#desc Sets the external inventory view to the inventory owned by [param _externalInventoryOwner]
 func setExternalInventory(_externalInventoryOwner) -> void:
 	if externalInventoryOwner == _externalInventoryOwner:
 		return
@@ -33,7 +33,7 @@ func setExternalInventory(_externalInventoryOwner) -> void:
 	externalInventory.show()
 
 	
-## Clears the external inventory view and removes the refrence to the external owner
+#desc Clears the external inventory view and removes the refrence to the external owner
 func clearExternalInventory() -> void:
 	if externalInventoryOwner:
 		var inventoryData = externalInventoryOwner.inventoryData
@@ -51,7 +51,7 @@ func showItemOptions(inventoryData: InventoryData, index: int) -> void:
 	itemOptions.show()
 	itemOptions.global_position = get_global_mouse_position() + Vector2(5, 5)	
 
-## Gets called when the mouse interacts with a slot
+#desc Gets called when the mouse interacts with a slot
 func onInventoryInteract(inventoryData: InventoryData, index: int, button: int, doubleClicked: bool) -> void:
 	
 	if itemOptions.visible:
@@ -80,7 +80,7 @@ func onInventoryInteract(inventoryData: InventoryData, index: int, button: int, 
 		
 	updateGrabbedSlot()
 
-## Toggles the visibility of the slot for a grabbed item
+#desc Toggles the visibility of the slot for a grabbed item
 func updateGrabbedSlot() -> void:
 	if grabbedSlotData:
 		grabbedSlot.show()

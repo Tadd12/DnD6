@@ -1,4 +1,5 @@
 [remap]
+
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bunobxjs6evym"
@@ -8,6 +9,7 @@ metadata={
 }
 
 [deps]
+
 source_file="res://Sprites/ItemSprites/HealthPotionW20.png"
 dest_files=["res://.godot/imported/HealthPotionW20.png-0ca0ce9fc08e650b3f1d3010bc1ef500.ctex"]
 
