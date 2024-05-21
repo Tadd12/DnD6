@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://c5bk3tvb8llgr"]
 
-[ext_resource type="Texture2D" uid="uid://crfn0sy7mqv0" path="res://sprites/Backgrounds/VillageMap.jpg" id="1_fwuu8"]
+[ext_resource type="Texture2D" uid="uid://crfn0sy7mqv0" path="res://Sprites/Backgrounds/VillageMap.jpg" id="1_fwuu8"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2qhjg"]
 a = Vector2(129.258, -139.283)
@@ -325,26 +325,21 @@ position = Vector2(1190.05, 660.159)
 shape = SubResource("SegmentShape2D_g23la")
 
 [node name="InnerMapCollision" type="StaticBody2D" parent="VillageMap"]
-scale = Vector2(1, 1)
 
 [node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(2536.69, 1434.07)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-1.01611, 3.60938, 18.4517, -6.43726, -61.3662, -62.6987, -96.4082, -29.5447, -38.0049, 15.6654)
 
 [node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(2161.89, 1384.43)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(20.498, -10.7407, 88.635, 53.558, 227.83, -29.8295, 111.996, -102.166)
 
 [node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(2291.77, 1593.66)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(1.53247, 2.75891, -58.8176, -34.4138, -80.2322, -120.815, -10.1482, -83.6426, 85.2439, -139.904, 150.461, -86.6566)
 
 [node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(2513.29, 1689.85)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(128.478, -84.7584, 37.9526, -158.099, -121.683, -42.5624, -0.98291, 1.64294)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
@@ -361,7 +356,6 @@ polygon = PackedVector2Array(-3.75195, -2.35095, 256.143, 165.429, 352.508, 105.
 
 [node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(1732.41, 1306.67)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(29.4227, -6.62512, 125.788, 86.809, 193.925, 72.7437, 99.5067, -5.62036)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
@@ -370,12 +364,10 @@ polygon = PackedVector2Array(-9.09619, -5.21704, 29.8394, 25.9276, 98.9497, 10.8
 
 [node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(1613.52, 1088.74)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(0.354614, -3.70044, 35.3965, 32.4677, 111.321, 7.35095, 70.4385, -46.9011)
 
 [node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(1858.44, 938.542)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-0.246948, -6.21014, 175.936, 79.1866, 238.233, 48.0419, 84.4377, -67.4949)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
@@ -384,7 +376,6 @@ polygon = PackedVector2Array(-3.83276, 0.148071, 171.377, 99.6102, 294.024, 14.2
 
 [node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(1562.2, 1305.32)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(20.53, 16.8192, 56.5454, -7.29285, 16.6365, -84.6522, -91.4095, -4.27881, -37.8733, 40.9312)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
@@ -393,7 +384,6 @@ polygon = PackedVector2Array(0.828735, 16.4302, 42.6843, -6.67725, -49.7875, -23
 
 [node name="CollisionPolygon2D26" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(1085.55, 1299.39)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-1.2002, -3.37024, 43.5756, 42.8446, 230.466, -94.7949, 180.823, -93.7903, 173.036, -118.907, 36.7618, -59.6316)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
@@ -402,27 +392,22 @@ polygon = PackedVector2Array(219.324, 55.6543, 76.2357, 61.6823, -115.522, 31.54
 
 [node name="CollisionPolygon2D31" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(1468.84, 1980.2)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(211.942, -142.716, -5.05835, 1.28357, 179.942, 80.2836, 386.942, -34.7164)
 
 [node name="CollisionPolygon2D30" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(1279.03, 1857.63)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(0.264404, 0.621704, 117.264, 62.6217, 355.264, -71.3783, 251.264, -152.378)
 
 [node name="CollisionPolygon2D29" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(1009.4, 1656.7)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-1.22705, 12.1273, 218.773, -105.873, 22.3879, -236.097, -138.227, -67.8727)
 
 [node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(1216.73, 1827.49)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-0.319946, -3.48682, -141.32, -104.487, 60.6801, -233.487, 212.68, -148.487)
 
 [node name="CollisionPolygon2D27" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(1644.05, 1691.86)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-0.267822, -3.28845, -264.268, -157.288, 45.7322, -337.288, 252.732, -202.288)
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
@@ -439,7 +424,6 @@ polygon = PackedVector2Array(-174.793, -13.3704, 64.2073, 143.63, 175.207, 70.62
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(2799.46, 1558.24)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-4.32373, 1.13416, -114.324, -73.8658, 17.6763, -181.866, 145.676, -99.8658)
 
 [node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
@@ -448,7 +432,6 @@ polygon = PackedVector2Array(8.8877, -5.1377, -39.1123, -58.1377, 91.8877, -148.
 
 [node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(719.333, 1082.03)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-54.641, 18.1235, 61.359, 29.1235, 196.624, 101.471, 317.324, 102.476, 401.036, 90.42, 524.656, 34.1587, 580.352, 13.1875, 573.325, -45.2101, 706.679, -74.3455, 754.359, -63.8765, 806.359, 5.12354, 830.359, 33.1235, 853.359, 9.12354, 836.359, -31.8765, 875.359, -19.8765, 914.011, -67.3128, 716.413, -213.994, 662.359, -194.876, 638.359, -264.876, 570.359, -199.876, 536.359, -198.876, 488.359, -136.876, 410.359, -113.876, 315.359, -48.8765, 295.359, 4.12354, 125.359, 17.1235, 1.35901, -58.8765, -32.641, -38.8765, -82.641, 14.1235)
 
 [node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
@@ -461,7 +444,6 @@ polygon = PackedVector2Array(12.3274, 29.6867, -98.6726, -82.3133, -178.673, -16
 
 [node name="CollisionPolygon2D33" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]
 position = Vector2(1443.53, 1152.35)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(21.4146, 51.2382, -74.0515, -59.0461, -74.0515, -76.0461, -7.05151, -94.0461, 14.9485, -77.0461)
 
 [node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="VillageMap/InnerMapCollision"]

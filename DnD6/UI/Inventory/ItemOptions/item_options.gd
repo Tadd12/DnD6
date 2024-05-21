@@ -3,6 +3,7 @@ class_name ItemOptions
 
 var infoButton : Button
 var useButton : Button
+var equipButton: Button
 var removeButton : Button
 var removeAllButton : Button
 var inventoryData: InventoryData
@@ -14,15 +15,17 @@ func _ready():
 	infoButton = Button.new()
 	infoButton.text = "Info"
 	infoButton.add_theme_font_size_override("button_font_size", 10)
-	vBoxContainer.add_child(infoButton)
 	
-	# TODO: Make this only visible when the Item is consumeable
 	useButton = Button.new()
 	useButton.text = "Consume"
 	useButton.pressed.connect(useItemOnOwner)
 	useButton.add_theme_font_size_override("button_font_size", 10)
 	vBoxContainer.add_child(useButton)
 
+	equipButton = Button.new()
+	equipButton.text = "Equip"
+	equipButton.add_theme_font_size_override("button_font_size", 10)
+	
 	removeButton = Button.new()
 	removeButton.text = "Remove One"
 	removeButton.pressed.connect(removeOneItem)
@@ -56,13 +59,25 @@ func useItemOnOwner() -> void:
 	
 
 func setOptions(_inventoryData: InventoryData, _index: int) -> bool:
-	# TODO: Implement Item Data and show Options
+	for button in vBoxContainer.get_children():
+		vBoxContainer.remove_child(button)
 	inventoryData = _inventoryData
 	index = _index
 	var slotData := inventoryData.slotDatas[index]
 	if not slotData:
 		return false
 	var itemData := slotData.itemData
-	#...
+
+	vBoxContainer.add_child(infoButton)
+	
+	if itemData is ArmorBase or itemData is WeaponBase:
+		vBoxContainer.add_child(equipButton)
+	if itemData is ConsumableBase:
+		vBoxContainer.add_child(useButton)
+	vBoxContainer.add_child(removeButton)
+	if itemData.stackable and slotData.quantity > 1:
+		vBoxContainer.add_child(removeAllButton)
+	reset_size()
+		
 	return true
 	
