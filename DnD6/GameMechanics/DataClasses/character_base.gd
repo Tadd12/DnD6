@@ -29,7 +29,7 @@ var skills := {}  # Skill(str): Bonus(int)  0 = No bonus but available
 @export var maxSpellPoints := {}  
 
 ## A internal class to save the current armor
-class ClassArmor:
+class ClassArmor extends RefCounted:
 	func _init():
 		var armor := {}
 		for type in ArmorBase.ARMOR_TYPE:

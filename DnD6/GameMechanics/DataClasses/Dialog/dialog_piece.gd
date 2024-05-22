@@ -1,3 +1,4 @@
+extends RefCounted
 class_name DialogPiece
 
 var text: String

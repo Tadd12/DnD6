@@ -1,5 +1,6 @@
-class_name Dice
 extends Resource
+class_name Dice
+
 
 @export var numberOfDiceFaces := 6
 @export var numberOfDice := 1

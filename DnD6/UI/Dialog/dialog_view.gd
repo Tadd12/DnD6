@@ -21,10 +21,10 @@ var moreDialog := true
 
 ## Sets a new dialog and icons.
 ## To start the set dialog, call startConversation()
-func createView(iconLeft: Texture2D, dialogName: String, iconRight:Texture2D=null) -> void:
+func createView(iconLeft: Texture2D, dialogName: String, iconRight:Texture2D=null, dialogBegin:int=0) -> void:
 	characterIconLeft.texture = iconLeft
 	characterIconRight.texture = iconRight
-	dialog = Dialog.new(dialogName)
+	dialog = Dialog.new(dialogName, dialogBegin)
 	
 	
 ## Starts the created conversation with the given dialog

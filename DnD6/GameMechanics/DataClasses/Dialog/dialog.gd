@@ -1,3 +1,4 @@
+extends RefCounted
 class_name Dialog
 
 var nextId: int
