@@ -14,7 +14,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
 script = ExtResource("1_ib506")
-testDialog = true
 
 [node name="CharacterIconLeft" type="TextureRect" parent="."]
 layout_mode = 1

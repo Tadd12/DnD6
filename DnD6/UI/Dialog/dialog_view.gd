@@ -1,4 +1,5 @@
 extends Control
+class_name DialogView
 
 @onready var characterIconLeft := $CharacterIconLeft
 @onready var characterIconRight := $CharacterIconRight
@@ -8,8 +9,7 @@ extends Control
 ## When set to true it will call the test dialog
 @export var testDialog := false
 
-signal dialogFinished(returnCode: int)
-signal questionAnswered(code: int)
+signal questionAnswered(code: int, finished: bool)
 
 var dialog: Dialog = null
 
@@ -31,14 +31,21 @@ func createView(iconLeft: Texture2D, dialogName: String, iconRight:Texture2D=nul
 func startConversation() -> void:
 	set_visible(true)
 	_setNextText()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	
 ## Function to end the dialog.
 ## Emits the dialogFinished signal
 func endConversation() -> void:
 	print_debug("Dialog Finsihed")
+		
 	set_visible(false)
-	dialogFinished.emit(dialog.nextId)
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	
+	questionAnswered.emit(dialog.nextId, true)
+	
+	for conn in questionAnswered.get_connections():
+		questionAnswered.disconnect(conn["callable"])
 
 	
 ## Gets called by the Timer Node to increment the characters currently shown
@@ -63,7 +70,7 @@ func _setNextText() -> void:
 ## Internal function to display answers
 func _addAnswers() -> void:
 	if piece.answers.is_empty():
-		moreDialog = false
+		endConversation()
 
 	for index in piece.answers.size():
 		var butt := buttons[index]
@@ -75,16 +82,9 @@ func _addAnswers() -> void:
 func _selectAnswer(index: int):
 	dialog.selectAnswer(index)
 	# TODO: Add codes to answers that impact something. 0 is a placeholder
-	questionAnswered.emit(0)
+	questionAnswered.emit(0, false)
 	_setNextText()
-
 	
-func _gui_input(event: InputEvent) -> void:
-	if not moreDialog:
-		endConversation()
-	if not event.is_pressed():
-		return
-	accept_event()
 	
 func _ready() -> void:
 	if testDialog:

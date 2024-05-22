@@ -9,6 +9,8 @@ extends CharacterBody2D
 
 @export var inventoryData: InventoryData
 
+@export var icon: Texture2D
+
 # Character specific semi static Properties
 ## Saves the main attributes of the Character
 @export_group("Stats")
