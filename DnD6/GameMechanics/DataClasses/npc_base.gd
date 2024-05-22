@@ -1,5 +1,6 @@
 extends CharacterBase
 class_name NpcBase
+## Special class for Npcs
 
 signal startDialog(dialogName: String, npc: NpcBase)
 

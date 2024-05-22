@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://o1k8opy83his"]
 
 [ext_resource type="Script" path="res://Scenes/Startmenu/Startmenu.gd" id="1_7tbw0"]
-[ext_resource type="FontFile" uid="uid://ckebikq00hup7" path="res://Fonts/CormorantUpright/CormorantUpright-Regular.ttf" id="2_156g5"]
+[ext_resource type="FontFile" uid="uid://nnncykot0465" path="res://Fonts/CormorantUpright/CormorantUpright-Regular.ttf" id="2_156g5"]
 [ext_resource type="Texture2D" uid="uid://b7wnxeysyd2bw" path="res://Sprites/Backgrounds/StartBackground.webp" id="2_s3mi1"]
-[ext_resource type="FontFile" uid="uid://bhlcuw44hdqtb" path="res://Fonts/CormorantUpright/CormorantUpright-SemiBold.ttf" id="3_okkn1"]
+[ext_resource type="FontFile" uid="uid://cu5vdyt44sv5b" path="res://Fonts/CormorantUpright/CormorantUpright-SemiBold.ttf" id="3_okkn1"]
 
 [node name="Startmenu" type="Control"]
 layout_mode = 3

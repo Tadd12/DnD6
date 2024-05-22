@@ -1,4 +1,4 @@
 extends NpcBase
 
-func dialogCallback(code: int, dialogFinished) -> void:
+func dialogCallback(code: int, dialogFinished: bool) -> void:
 	pass
