@@ -1,7 +1,10 @@
 extends PlayableBase
+class_name Player
 
 @export var speed := 200
 @onready var interactArea := $InteractArea
+
+var moveable := true
 
 var timeBetweenRounds: int = 10_000
 var timeSinceLastRound: int
@@ -36,7 +39,8 @@ func _physics_process(delta):
 	if Input.is_action_pressed("right"):
 		vel.x += 1
 	velocity = vel.normalized() * speed
-	move_and_slide()
+	if moveable:
+		move_and_slide()
 	
 	if not inFight:
 		if Time.get_ticks_msec() - timeSinceLastRound > timeBetweenRounds:
@@ -48,9 +52,10 @@ func _physics_process(delta):
 #desc If bodys are found, the [code]playerInteract[/code] method is called on the closest one.
 func interact() -> void:
 	if interactArea.get_overlapping_bodies():
-		var closest = interactArea.get_overlapping_bodies().map(
+		var bodies: Array[Node2D] = interactArea.get_overlapping_bodies()
+		bodies.sort_custom(
 			func(body):	
 				return body.get_global_position().distance_to(get_global_position())
-		).min()
-		closest.playerInteract()
+		)
+		bodies[-1].playerInteract()
 
