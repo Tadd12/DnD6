@@ -1,4 +1,4 @@
-extends CharacterBase
+extends PlayableBase
 
 @export var speed := 200
 @onready var interactArea := $InteractArea
@@ -48,9 +48,9 @@ func _physics_process(delta):
 #desc If bodys are found, the [code]playerInteract[/code] method is called on the closest one.
 func interact() -> void:
 	if interactArea.get_overlapping_bodies():
-		var closest = interactArea.get_overlapping_bodies() \
-			.map(func(body): 
-				return body.get_global_position().distance_to(get_global_position())) \
-			.min()
-		interactArea.get_overlapping_bodies()[0].playerInteract()
+		var closest = interactArea.get_overlapping_bodies().map(
+			func(body):	
+				return body.get_global_position().distance_to(get_global_position())
+		).min()
+		closest.playerInteract()
 
