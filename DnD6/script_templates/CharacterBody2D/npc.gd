@@ -3,6 +3,6 @@
 extends NpcBase
 
 
-func dialogCallback(code: int, dialogFinished: bool) -> void:
-    ## Add what happens from the dialog
+func _dialogCallback(code: int, dialogFinished: bool) -> void:
+    ## Replace with dialog logic (optional)
     pass

@@ -14,6 +14,7 @@ func playerInteract():
 	
 ## This function is called when the dialog gives a callback code.
 ## This function should handle all possible codes in the dialog
-func dialogCallback(code: int, dialogFinished: bool) -> void:
+func _dialogCallback(code: int, dialogFinished: bool) -> void:
+    ## Replace with dialog logic (optional)
 	pass
 	

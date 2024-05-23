@@ -60,7 +60,7 @@ func toggleInventoryInterface(externalInventoryOwner = null, keepOpen = false) -
 func _makeDialog(dialogName: String, startIndex: int, npc: NpcBase) -> void:
 	_closeUi()
 	dialogView.createView(player.icon, dialogName, npc.icon, startIndex)
-	dialogView.questionAnswered.connect(npc.dialogCallback)
+	dialogView.questionAnswered.connect(npc._dialogCallback)
 	dialogView.questionAnswered.connect(func(_code, finished):
 		if finished:
 			player.moveable = true
