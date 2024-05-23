@@ -9,7 +9,8 @@ func _ready() -> void:
 	setupInventorySystem()
 	setupDialogSystem()
 	
-	
+
+## Connects all signals for the inventory system
 func setupInventorySystem() -> void:
 	player.toggleInventory.connect(toggleInventoryInterface)
 	player.inventoryData.owner = player
@@ -19,9 +20,11 @@ func setupInventorySystem() -> void:
 		node.toggleInventory.connect(toggleInventoryInterface)
 	
 	
+	
+## Connects all signals for the dialog system
 func setupDialogSystem() -> void:
 	for node in get_tree().get_nodes_in_group("npc") as Array[NpcBase]:
-		node.startDialog.connect(makeDialog)
+		node.startDialog.connect(_makeDialog)
 		
 
 
@@ -30,9 +33,9 @@ func _closeUi() -> void:
 		toggleInventoryInterface()
 
 
-#desc Toggles the visibility of the inventory interface.
-#desc If an [param externalInventoryOwner] is provided, an additional inventory will open to display the contens.
-#desc If [param keepOpen] is provided and the inventory is visible, it will stay visible.
+## Toggles the visibility of the inventory interface.
+## If an [param externalInventoryOwner] is provided, an additional inventory will open to display the contens.
+## If [param keepOpen] is provided and the inventory is visible, it will stay visible.
 func toggleInventoryInterface(externalInventoryOwner = null, keepOpen = false) -> void:
 	if inventoryInterface.visible and keepOpen:
 		pass
@@ -53,7 +56,8 @@ func toggleInventoryInterface(externalInventoryOwner = null, keepOpen = false) -
 
 	
 	
-func makeDialog(dialogName: String, startIndex: int, npc: NpcBase) -> void:
+## Starts a the dialog between the player and the npc
+func _makeDialog(dialogName: String, startIndex: int, npc: NpcBase) -> void:
 	_closeUi()
 	dialogView.createView(player.icon, dialogName, npc.icon, startIndex)
 	dialogView.questionAnswered.connect(npc.dialogCallback)

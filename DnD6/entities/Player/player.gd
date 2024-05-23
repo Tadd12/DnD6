@@ -1,4 +1,4 @@
-extends PlayableBase
+extends CharacterBase
 class_name Player
 
 @export var speed := 200
@@ -15,6 +15,31 @@ signal closeUi
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timeSinceLastRound = Time.get_ticks_msec()
+
+
+var inFight := false
+
+## Triggers a dialog sequence with a character
+func talkTo(Char):
+	# Trigger talking Sequence
+	pass
+
+## Takes item 
+func takeItem(item):
+	# TODO: remove item from Map/Chest
+	pass
+
+## Reset all Actions the can only be used ones per Short Break 
+func takeAShortBreak():
+	if not inFight:
+		healthPoints = healthPoints + maxHP/2
+
+
+## Carries out a Spell  [br]
+## Coordinates: () the Destination of the Spell [br]
+## Spell: (Spell) The Spell to be used
+func useSpellOnMap(Coordinates, Spell):
+	pass
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -48,8 +73,8 @@ func _physics_process(delta):
 			timeSinceLastRound = Time.get_ticks_msec()
 
 
-#desc Checks if there is an interactable body within the [InteractArea].
-#desc If bodys are found, the [code]playerInteract[/code] method is called on the closest one.
+## Checks if there is an interactable body within the [InteractArea].
+## If bodys are found, the [code]playerInteract[/code] method is called on the closest one.
 func interact() -> void:
 	if interactArea.get_overlapping_bodies():
 		var bodies: Array[Node2D] = interactArea.get_overlapping_bodies()

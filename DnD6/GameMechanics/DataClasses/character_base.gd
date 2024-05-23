@@ -9,6 +9,7 @@ extends CharacterBody2D
 
 @export var inventoryData: InventoryData
 
+## Icon that gets displayed in dialogs
 @export var icon: Texture2D
 
 # Character specific semi static Properties
@@ -29,9 +30,10 @@ var skills := {}  # Skill(str): Bonus(int)  0 = No bonus but available
 @export var maxSpellPoints := {}  
 
 ## A internal class to save the current armor
-class ClassArmor extends RefCounted:
+class Armor extends RefCounted:
+	var armor := {}
+	
 	func _init():
-		var armor := {}
 		for type in ArmorBase.ARMOR_TYPE:
 			armor[type] = null
 	
@@ -46,12 +48,9 @@ class ClassArmor extends RefCounted:
 		pass
 		
 	func getArmor() -> Array:
-		var arrayArmor := []
-		for a in self.armor:
-			arrayArmor.append(self.armor[a])
-		return arrayArmor
+		return armor.values()
 
-var equippedArmor := ClassArmor.new()
+var equippedArmor := Armor.new()
 
 var maxActions := 1
 var maxBonusActions := 1
@@ -78,7 +77,7 @@ var healthPoints: int:
 			onDeath()
 
 ## The armor class of the Character
-var armor: int:
+var armorClass: int:
 	get:
 		return equippedArmor.getArmorPoints() + dexterity
 
