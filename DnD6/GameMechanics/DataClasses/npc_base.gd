@@ -4,17 +4,17 @@ class_name NpcBase
 
 signal startDialog(dialogName: String, startIndex: int, npc: NpcBase)
 
-@export var dialogName: String
-@export var dialogStartIndex := 0
+@export var dialogueName: String
+@export var dialogueStart := "start"
 
 ## Executed when the Player interacts with Npc
 func playerInteract():
-	startDialog.emit(dialogName, dialogStartIndex, self)
+	startDialog.emit(dialogueName, dialogueStart, self)
 	
 	
 ## This function is called when the dialog gives a callback code.
 ## This function should handle all possible codes in the dialog
 func _dialogCallback(code: int, dialogFinished: bool) -> void:
-    ## Replace with dialog logic (optional)
+	## Replace with dialog logic (optional)
 	pass
 	

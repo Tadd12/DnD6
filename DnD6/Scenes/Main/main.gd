@@ -2,12 +2,13 @@ extends Node
 
 @onready var player := $Game/Player as Player
 @onready var inventoryInterface := $UI/InventoryInterface as InventoryInterface
-@onready var dialogView := $UI/DialogView as DialogView
+@onready var dialogueView := $UI/DialogueView as DialogueView
 
 
 func _ready() -> void:
 	setupInventorySystem()
 	setupDialogSystem()
+	GlobalGameState.player = player
 	
 
 ## Connects all signals for the inventory system
@@ -57,13 +58,6 @@ func toggleInventoryInterface(externalInventoryOwner = null, keepOpen = false) -
 	
 	
 ## Starts a the dialog between the player and the npc
-func _makeDialog(dialogName: String, startIndex: int, npc: NpcBase) -> void:
+func _makeDialog(dialogName: String, start: String, npc: NpcBase) -> void:
 	_closeUi()
-	dialogView.createView(player.icon, dialogName, npc.icon, startIndex)
-	dialogView.questionAnswered.connect(npc._dialogCallback)
-	dialogView.questionAnswered.connect(func(_code, finished):
-		if finished:
-			player.moveable = true
-	)
-	dialogView.startConversation()
-	player.moveable = false
+	dialogueView.createView(player.icon, dialogName, npc.icon, start)
