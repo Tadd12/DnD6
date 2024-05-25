@@ -1,5 +1,4 @@
 extends NpcBase
 
-func _dialogCallback(code: int, dialogFinished: bool) -> void:
-    ## Replace with dialog logic (optional)
-	pass
+func _onDialogSignal(value) -> void:
+	print("Signal recieved with values: {0}".format([value]))
