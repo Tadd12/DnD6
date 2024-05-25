@@ -35,7 +35,7 @@ func startConversation() -> void:
 func endConversation() -> void:
 	print_debug("Dialog Finsihed")
 	for connection in customSignal.get_connections():
-		customSignal.disconnect(connection)
+		customSignal.disconnect(connection.callable)
 	set_visible(false)
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	GlobalGameState.player.moveable = true
