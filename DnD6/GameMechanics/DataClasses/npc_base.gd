@@ -12,9 +12,9 @@ func playerInteract():
 	startDialog.emit(dialogueName, dialogueStart, self)
 	
 	
-## This function is called when the dialog gives a callback code.
-## This function should handle all possible codes in the dialog
-func _dialogCallback(code: int, dialogFinished: bool) -> void:
+## This function is called when the dialog emits a custom signal.
+## This function should handle all possible signals in the dialog
+func _onDialogSignal(value) -> void:
 	## Replace with dialog logic (optional)
 	pass
 	

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c11fsjadtfkkr"]
 
-[ext_resource type="Script" path="res://UI/Dialog/dialogue_view.gd" id="1_ib506"]
+[ext_resource type="Script" path="res://UI/Dialogue/dialogue_view.gd" id="1_ib506"]
 [ext_resource type="Texture2D" uid="uid://bh7644ei8f4g6" path="res://Sprites/ItemSprites/mushroom_item.png" id="2_12fu4"]
 [ext_resource type="FontFile" uid="uid://nnncykot0465" path="res://Fonts/CormorantUpright/CormorantUpright-Regular.ttf" id="3_j4xqb"]
 [ext_resource type="FontFile" uid="uid://yjw3ay3g87xq" path="res://Fonts/CormorantUpright/CormorantUpright-Bold.ttf" id="4_s3s85"]
@@ -109,4 +109,5 @@ texture = ExtResource("2_12fu4")
 expand_mode = 1
 
 [connection signal="timeout" from="TextTimer" to="." method="_incrementText"]
+[connection signal="custom_signal_received" from="EzDialogue" to="." method="_onCustomDialogSignalRecieved"]
 [connection signal="dialogue_generated" from="EzDialogue" to="." method="_onDialogGenerated"]

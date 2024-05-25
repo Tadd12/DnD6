@@ -58,6 +58,8 @@ func toggleInventoryInterface(externalInventoryOwner = null, keepOpen = false) -
 	
 	
 ## Starts a the dialog between the player and the npc
-func _makeDialog(dialogName: String, start: String, npc: NpcBase) -> void:
+func _makeDialog(dialogueName: String, start: String, npc: NpcBase) -> void:
 	_closeUi()
-	dialogueView.createView(player.icon, dialogName, npc.icon, start)
+	dialogueView.customSignal.connect(npc._onDialogSignal)
+	dialogueView.createView(player.icon, dialogueName, npc.icon, start)
+	

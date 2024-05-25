@@ -7,10 +7,12 @@ class_name DialogueView
 @onready var buttonBox := $HBoxContainer/VBoxContainer/HBoxContainer/ButtonBox
 @onready var ezDialogue := $EzDialogue
 
-var answerButton := preload("res://UI/Dialog/answer_button.tscn")
+var answerButton := preload("res://UI/Dialogue/answer_button.tscn")
 var buttons: Array[Button] = []
 
 var currentResponse: DialogueResponse
+
+signal customSignal(value)
 
 ## Sets a new dialogue and icons.
 ## To start the set dialogue, call startConversation()
@@ -32,7 +34,8 @@ func startConversation() -> void:
 ## Emits the dialogFinished signal
 func endConversation() -> void:
 	print_debug("Dialog Finsihed")
-		
+	for connection in customSignal.get_connections():
+		customSignal.disconnect(connection)
 	set_visible(false)
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	GlobalGameState.player.moveable = true
@@ -78,10 +81,14 @@ func _addAnswers() -> void:
 
 
 ## Internal function that gets called by the Buttons to submit the index
-func _selectAnswer(index: int):
+func _selectAnswer(index: int) -> void:
 	ezDialogue.next(index)
 	
 	
 func _onDialogGenerated(response: DialogueResponse):
 	currentResponse = response
 	_setNextText()
+
+
+func _onCustomDialogSignalRecieved(value) -> void:
+	customSignal.emit(value)

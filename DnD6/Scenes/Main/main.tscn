@@ -12,7 +12,7 @@
 [ext_resource type="Resource" uid="uid://dj7uldprsccjv" path="res://Items/Consumable/health_potion.tres" id="11_sjqeq"]
 [ext_resource type="PackedScene" uid="uid://c5bk3tvb8llgr" path="res://Scenes/Village/Village.tscn" id="12_1hyka"]
 [ext_resource type="Resource" uid="uid://cqncauctlfyly" path="res://Items/Consumable/Poision.tres" id="12_k7ore"]
-[ext_resource type="PackedScene" uid="uid://c11fsjadtfkkr" path="res://UI/Dialog/dialogue_view.tscn" id="17_smx8p"]
+[ext_resource type="PackedScene" uid="uid://c11fsjadtfkkr" path="res://UI/Dialogue/dialogue_view.tscn" id="17_smx8p"]
 
 [sub_resource type="Resource" id="Resource_wysef"]
 script = ExtResource("5_6trh0")

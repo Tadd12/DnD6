@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dl6ivtrrjj557"]
 
-[ext_resource type="FontFile" uid="uid://nnncykot0465" path="res://Fonts/CormorantUpright/CormorantUpright-Regular.ttf" id="1_av8de"]
-[ext_resource type="Script" path="res://UI/Dialog/answer_button.gd" id="2_utcq7"]
+[ext_resource type="FontFile" uid="uid://nnncykot0465" path="res://Fonts/CormorantUpright/CormorantUpright-Regular.ttf" id="1_kgouy"]
+[ext_resource type="Script" path="res://UI/Dialogue/answer_button.gd" id="2_2cfns"]
 
 [node name="AnswerButton" type="Button"]
 anchors_preset = 15
@@ -11,10 +11,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("1_av8de")
+theme_override_fonts/font = ExtResource("1_kgouy")
 theme_override_font_sizes/font_size = 20
 text = "Test Button"
 text_overrun_behavior = 3
-script = ExtResource("2_utcq7")
+script = ExtResource("2_2cfns")
 
 [connection signal="pressed" from="." to="." method="_onPressed"]
