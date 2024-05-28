@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csvrotl63d2m2"
-path="res://.godot/imported/Blue Ring Explosion18.png-f03b1afecb7301ea3cb1a7484b4e8ee8.ctex"
+uid="uid://pvd7yscg48yw"
+path="res://.godot/imported/diceSymbol.png-8ebb6b1dcd4c6043312d914acf5f3557.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/blueRingExplosion/Blue Ring Explosion18.png"
-dest_files=["res://.godot/imported/Blue Ring Explosion18.png-f03b1afecb7301ea3cb1a7484b4e8ee8.ctex"]
+source_file="res://Sprites/Character/Helvina/diceSymbol.png"
+dest_files=["res://.godot/imported/diceSymbol.png-8ebb6b1dcd4c6043312d914acf5f3557.ctex"]
 
 [params]
 
