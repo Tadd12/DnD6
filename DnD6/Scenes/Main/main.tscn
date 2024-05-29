@@ -1,12 +1,12 @@
 [gd_scene load_steps=25 format=3 uid="uid://dq8rje35fw4dj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_de7d4"]
-[ext_resource type="PackedScene" uid="uid://bbqcdi08wxjux" path="res://Entities/Chest/chest.tscn" id="2_p0vww"]
+[ext_resource type="PackedScene" uid="uid://bbqcdi08wxjux" path="res://entities/Chest/chest.tscn" id="2_p0vww"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/inventory_data.gd" id="3_t4bc7"]
-[ext_resource type="Texture2D" uid="uid://bunobxjs6evym" path="res://Sprites/ItemSprites/HealthPotionW20.png" id="4_v61bh"]
+[ext_resource type="Texture2D" uid="uid://bunobxjs6evym" path="res://sprites/ItemSprites/HealthPotionW20.png" id="4_v61bh"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/slot_data.gd" id="5_6trh0"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Item/item_base.gd" id="5_qh3wt"]
-[ext_resource type="PackedScene" uid="uid://bq144jxvl1bx5" path="res://Entities/Player/player.tscn" id="6_clbfb"]
+[ext_resource type="PackedScene" uid="uid://bq144jxvl1bx5" path="res://entities/Player/player.tscn" id="6_clbfb"]
 [ext_resource type="Resource" uid="uid://bahmkqsvnxf1g" path="res://Items/Weapons/battleAxe.tres" id="7_1v8h0"]
 [ext_resource type="Script" path="res://UI/Inventory/inventory_interface.gd" id="8_1flgu"]
 [ext_resource type="PackedScene" uid="uid://buj5lerpiexgg" path="res://UI/Inventory/Inventory/inventory.tscn" id="9_ua287"]
@@ -100,7 +100,7 @@ anchor_right = 0.93125
 anchor_bottom = 0.794444
 offset_left = 0.0
 offset_top = 0.0
-offset_right = 24.0
+offset_right = 36.0
 offset_bottom = -35.9999
 grow_horizontal = 1
 grow_vertical = 1

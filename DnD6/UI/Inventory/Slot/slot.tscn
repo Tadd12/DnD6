@@ -1,11 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://do238lkg6ua3k"]
+[gd_scene load_steps=4 format=3 uid="uid://do238lkg6ua3k"]
 
+[ext_resource type="Texture2D" uid="uid://vrptv50uw0gt" path="res://sprites/UI/InventoryElement.png" id="1_0n3b6"]
 [ext_resource type="Script" path="res://UI/Inventory/Slot/slot.gd" id="1_2upa5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l8g3b"]
+texture = ExtResource("1_0n3b6")
 
 [node name="Slot" type="PanelContainer"]
 custom_minimum_size = Vector2(64, 64)
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_l8g3b")
 script = ExtResource("1_2upa5")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

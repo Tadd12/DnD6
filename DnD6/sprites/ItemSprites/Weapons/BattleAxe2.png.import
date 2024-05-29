@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpopgbhfpksd2"
-path="res://.godot/imported/BattleAxe2.png-f281018c3af92383c898c6798aeea4fa.ctex"
+path="res://.godot/imported/BattleAxe2.png-080f38e85600409911c731d06ddca183.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/ItemSprites/Weapons/BattleAxe2.png"
-dest_files=["res://.godot/imported/BattleAxe2.png-f281018c3af92383c898c6798aeea4fa.ctex"]
+source_file="res://sprites/ItemSprites/Weapons/BattleAxe2.png"
+dest_files=["res://.godot/imported/BattleAxe2.png-080f38e85600409911c731d06ddca183.ctex"]
 
 [params]
 

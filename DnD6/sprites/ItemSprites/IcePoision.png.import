@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xj0fjj2mo575"
-path="res://.godot/imported/IcePoision.png-50fee09176410b167651af699166783e.ctex"
+path="res://.godot/imported/IcePoision.png-c958450c7decbdda10d24706047a4dda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/ItemSprites/IcePoision.png"
-dest_files=["res://.godot/imported/IcePoision.png-50fee09176410b167651af699166783e.ctex"]
+source_file="res://sprites/ItemSprites/IcePoision.png"
+dest_files=["res://.godot/imported/IcePoision.png-c958450c7decbdda10d24706047a4dda.ctex"]
 
 [params]
 
