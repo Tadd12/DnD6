@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="CharacterBase" load_steps=9 format=3 uid="uid://ctppf1w73706y"]
+
+[ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/inventory_data.gd" id="1_h3psd"]
+[ext_resource type="Resource" uid="uid://dj7uldprsccjv" path="res://Items/Consumable/health_potion.tres" id="2_lophn"]
+[ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/slot_data.gd" id="3_o75xy"]
+[ext_resource type="Resource" uid="uid://bwrjqrs6aful7" path="res://Items/Consumable/apple.tres" id="4_sxarp"]
+[ext_resource type="Script" path="res://GameMechanics/DataClasses/character_base.gd" id="5_wo2jh"]
+
+[sub_resource type="Resource" id="Resource_joutl"]
+script = ExtResource("3_o75xy")
+itemData = ExtResource("2_lophn")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_32i21"]
+script = ExtResource("3_o75xy")
+itemData = ExtResource("4_sxarp")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_qg5o7"]
+script = ExtResource("1_h3psd")
+slotDatas = Array[ExtResource("3_o75xy")]([SubResource("Resource_joutl"), SubResource("Resource_32i21"), null])
+
+[resource]
+script = ExtResource("5_wo2jh")
+characterName = "Helvina"
+decription = "Helvina is a gentle soul, compassionate and empathetic, with a deep love and connection to the natural world and all its inhabitants. As soon as danger approaches she can get a bit uncertain and flappy."
+inventoryData = SubResource("Resource_qg5o7")
+strength = 6.0
+dexterity = 16.0
+intelligence = 10.0
+charisma = 15.0
+wisdom = 8.0
+constitution = 9.0
+maxHP = 6
+maxSpellPoints = {}

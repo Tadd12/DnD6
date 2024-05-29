@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="CharacterBase" load_steps=9 format=3 uid="uid://dkek4rpn0kqhu"]
+
+[ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/inventory_data.gd" id="1_jtopv"]
+[ext_resource type="Resource" uid="uid://dj7uldprsccjv" path="res://Items/Consumable/health_potion.tres" id="2_n44ap"]
+[ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/slot_data.gd" id="3_4yi8c"]
+[ext_resource type="Resource" uid="uid://bwrjqrs6aful7" path="res://Items/Consumable/apple.tres" id="4_3m0a5"]
+[ext_resource type="Script" path="res://GameMechanics/DataClasses/character_base.gd" id="5_0lq6y"]
+
+[sub_resource type="Resource" id="Resource_mverd"]
+script = ExtResource("3_4yi8c")
+itemData = ExtResource("2_n44ap")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_8jxni"]
+script = ExtResource("3_4yi8c")
+itemData = ExtResource("4_3m0a5")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_hld75"]
+script = ExtResource("1_jtopv")
+slotDatas = Array[ExtResource("3_4yi8c")]([SubResource("Resource_mverd"), SubResource("Resource_8jxni")])
+
+[resource]
+script = ExtResource("5_0lq6y")
+characterName = "Brock"
+decription = "Brock is a warm-hearted powerful troll with a calm beeing. He becomes a bit clumsy when he is under pressure or have a strong will to effect. Music and beauty of levity makes him sensual and loving immediately."
+inventoryData = SubResource("Resource_hld75")
+strength = 17.0
+dexterity = 5.0
+intelligence = 10.0
+charisma = 7.0
+wisdom = 9.0
+constitution = 15.0
+maxHP = 10
+maxSpellPoints = {}

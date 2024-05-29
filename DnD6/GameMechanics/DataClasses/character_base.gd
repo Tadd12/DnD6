@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var characterName: String
 # @export var race # : Race
 
+@export var decription: String
 @export var inventoryData: InventoryData
 
 # Character specific semi static Properties
@@ -130,6 +131,6 @@ func UseSpellOnMap(Coordinates, Spell):
 
 ## A function to be called if HP reaches 0
 func onDeath():
-	print(name + " died.")
+	print(characterName + " died.")
 
 # Static funcions

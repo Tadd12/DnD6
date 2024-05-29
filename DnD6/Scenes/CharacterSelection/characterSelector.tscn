@@ -1,0 +1,170 @@
+[gd_scene load_steps=10 format=3 uid="uid://c05l70mtvo2o4"]
+
+[ext_resource type="Script" path="res://Scenes/CharacterSelection/characterSelector.gd" id="1_hghbp"]
+[ext_resource type="Texture2D" uid="uid://b7wnxeysyd2bw" path="res://Sprites/Backgrounds/StartBackground.webp" id="2_itthp"]
+[ext_resource type="FontFile" uid="uid://c3wpeaoj2djw" path="res://Fonts/CormorantUpright/CormorantUpright-SemiBold.ttf" id="3_qv5ld"]
+[ext_resource type="Texture2D" uid="uid://cu1cu8dj76l7s" path="res://Sprites/Character/Helvina/Helvina1.png" id="4_lgv0f"]
+[ext_resource type="Texture2D" uid="uid://cjgkchvfuaqhc" path="res://Sprites/Character/Brock/brock1.png" id="5_6mr4k"]
+[ext_resource type="Texture2D" uid="uid://dalljrvbo8a6q" path="res://Sprites/Character/Marjoulaine/Marjoulaine1.png" id="6_hfhiu"]
+[ext_resource type="Texture2D" uid="uid://bres4hwkk607l" path="res://Sprites/UI/diceSymbol2.png" id="7_h24dq"]
+[ext_resource type="FontFile" uid="uid://bie85rs0v7iry" path="res://Fonts/CormorantUpright/CormorantUpright-Regular.ttf" id="8_s6pk4"]
+[ext_resource type="FontFile" uid="uid://c3eybvvxq0kie" path="res://Fonts/CormorantUpright/CormorantUpright-Bold.ttf" id="9_7wfnp"]
+
+[node name="CharacterSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("1_hghbp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -3.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_itthp")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = -8.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.873763, 0.69, 0.465316, 1)
+theme_override_colors/font_shadow_color = Color(0.407843, 0.294118, 0.145098, 1)
+theme_override_fonts/font = ExtResource("3_qv5ld")
+theme_override_font_sizes/font_size = 62
+text = " Choose your Character"
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="HelvinaSelect" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+toggle_mode = true
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/HelvinaSelect"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_lgv0f")
+expand_mode = 1
+
+[node name="BrockSelect" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+toggle_mode = true
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/BrockSelect"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_6mr4k")
+expand_mode = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="MarjoulaineSelect" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+toggle_mode = true
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/MarjoulaineSelect"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_hfhiu")
+expand_mode = 1
+
+[node name="randomSelect" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+toggle_mode = true
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/randomSelect"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_h24dq")
+expand_mode = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+split_offset = 200
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="DescriptionDisplay" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(650, 600)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.87451, 0.690196, 0.466667, 1)
+theme_override_fonts/normal_font = ExtResource("8_s6pk4")
+theme_override_fonts/bold_font = ExtResource("9_7wfnp")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+language = "English"
+
+[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.690196, 0.466667, 1)
+theme_override_fonts/font = ExtResource("9_7wfnp")
+theme_override_font_sizes/font_size = 45
+disabled = true
+text = "Start Game"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/HelvinaSelect" to="." method="_onHelvinaSelectPressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/BrockSelect" to="." method="_onBrockSelectPressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/MarjoulaineSelect" to="." method="_onMarjoulaineSelectPressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2/randomSelect" to="." method="_onRandomSelectPressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/Button" to="." method="_onStartGamePressed"]
