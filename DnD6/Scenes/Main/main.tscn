@@ -1,13 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://dq8rje35fw4dj"]
+[gd_scene load_steps=18 format=3 uid="uid://dq8rje35fw4dj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_de7d4"]
-[ext_resource type="PackedScene" uid="uid://bbqcdi08wxjux" path="res://entities/Chest/chest.tscn" id="2_p0vww"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/inventory_data.gd" id="3_t4bc7"]
-[ext_resource type="Texture2D" uid="uid://bunobxjs6evym" path="res://Sprites/ItemSprites/HealthPotionW20.png" id="4_v61bh"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Inventory/slot_data.gd" id="5_6trh0"]
-[ext_resource type="Script" path="res://GameMechanics/DataClasses/Item/item_base.gd" id="5_qh3wt"]
-[ext_resource type="PackedScene" uid="uid://bq144jxvl1bx5" path="res://entities/Player/player.tscn" id="6_clbfb"]
-[ext_resource type="Resource" uid="uid://bahmkqsvnxf1g" path="res://Items/Weapons/battleAxe.tres" id="7_1v8h0"]
+[ext_resource type="PackedScene" uid="uid://bq144jxvl1bx5" path="res://Entities/Player/player.tscn" id="6_clbfb"]
 [ext_resource type="Script" path="res://UI/Inventory/inventory_interface.gd" id="8_1flgu"]
 [ext_resource type="PackedScene" uid="uid://buj5lerpiexgg" path="res://UI/Inventory/Inventory/inventory.tscn" id="9_ua287"]
 [ext_resource type="Resource" uid="uid://bwrjqrs6aful7" path="res://Items/Consumable/apple.tres" id="10_cj1oo"]
@@ -16,30 +12,7 @@
 [ext_resource type="Resource" uid="uid://dj7uldprsccjv" path="res://Items/Consumable/health_potion.tres" id="11_sjqeq"]
 [ext_resource type="PackedScene" uid="uid://c5bk3tvb8llgr" path="res://Scenes/Village/Village.tscn" id="12_1hyka"]
 [ext_resource type="Resource" uid="uid://cqncauctlfyly" path="res://Items/Consumable/Poision.tres" id="12_k7ore"]
-
-[sub_resource type="Resource" id="Resource_quew0"]
-script = ExtResource("5_qh3wt")
-name = "Health Potion"
-description = ""
-weight = 0.2
-stackable = true
-inventoryIcon = ExtResource("4_v61bh")
-passivEffects = Array[Resource("res://GameMechanics/DataClasses/Effects/effect_base.gd")]([])
-activeEffects = Array[Resource("res://GameMechanics/DataClasses/Effects/effect_base.gd")]([])
-
-[sub_resource type="Resource" id="Resource_xmi6m"]
-script = ExtResource("5_6trh0")
-itemData = SubResource("Resource_quew0")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_qlclo"]
-script = ExtResource("5_6trh0")
-itemData = ExtResource("7_1v8h0")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_t18a4"]
-script = ExtResource("3_t4bc7")
-slotDatas = Array[ExtResource("5_6trh0")]([SubResource("Resource_xmi6m"), SubResource("Resource_qlclo"), null, null, null])
+[ext_resource type="PackedScene" uid="uid://c11fsjadtfkkr" path="res://UI/Dialogue/dialogue_view.tscn" id="17_smx8p"]
 
 [sub_resource type="Resource" id="Resource_wysef"]
 script = ExtResource("5_6trh0")
@@ -66,10 +39,6 @@ script = ExtResource("1_de7d4")
 [node name="Game" type="Node2D" parent="."]
 
 [node name="Village" parent="Game" instance=ExtResource("12_1hyka")]
-
-[node name="Chest" parent="Game" instance=ExtResource("2_p0vww")]
-position = Vector2(2233, 1646)
-inventoryData = SubResource("Resource_t18a4")
 
 [node name="Player" parent="Game" instance=ExtResource("6_clbfb")]
 position = Vector2(2000, 1500)
@@ -133,6 +102,9 @@ offset_bottom = 64.0
 [node name="ItemOptions" parent="UI/InventoryInterface" instance=ExtResource("11_n8a6i")]
 visible = false
 layout_mode = 0
+
+[node name="DialogueView" parent="UI" instance=ExtResource("17_smx8p")]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2000, 1500)

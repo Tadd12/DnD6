@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfpb2u22dqse0"]
+
+[ext_resource type="Script" path="res://Entities/NPC/old_warrior.gd" id="1_56ctx"]
+[ext_resource type="Texture2D" uid="uid://c7uoh1jcrv11y" path="res://Sprites/Character/OldWarriorIcon.png" id="2_41lw5"]
+[ext_resource type="Texture2D" uid="uid://dhmul7cvygv5b" path="res://Sprites/Character/OldWarrior.png" id="2_rk4ra"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wiyj4"]
+radius = 35.0
+height = 168.0
+
+[node name="OldWarrior" type="CharacterBody2D" groups=["npc"]]
+script = ExtResource("1_56ctx")
+characterName = "Retired Adventurer"
+icon = ExtResource("2_41lw5")
+maxHP = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("2_rk4ra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 3
+shape = SubResource("CapsuleShape2D_wiyj4")
