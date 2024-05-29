@@ -16,9 +16,9 @@ func setInventoryData(inventoryData: InventoryData) -> void:
 	inventoryData.inventoryUpdated.connect(refreshItemGrid)
 	refreshItemGrid(inventoryData)
 	
-	var calcSize: int =  min((inventoryData.slotDatas.size() + 4) / 5, 412)
+	var calcSize: int =  min((inventoryData.slotDatas.size() + 4) / 5, 6)
 	var newSize := get_size()
-	newSize.y = 4 + 68 * calcSize
+	newSize.y = 12 + 68 * calcSize
 	set_size(newSize)
 
 	

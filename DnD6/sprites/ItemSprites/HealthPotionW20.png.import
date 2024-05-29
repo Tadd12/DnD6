@@ -13,8 +13,8 @@ metadata={
 source_file="res://Sprites/ItemSprites/HealthPotionW20.png"
 dest_files=["res://.godot/imported/HealthPotionW20.png-0ca0ce9fc08e650b3f1d3010bc1ef500.ctex"]
 
-
 [params]
+
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
