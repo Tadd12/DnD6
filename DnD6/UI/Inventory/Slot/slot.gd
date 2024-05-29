@@ -7,7 +7,7 @@ signal slotClicked(index: int, button: int, doubleClicked: bool)
 @onready var textureRect := $MarginContainer/TextureRect
 @onready var quantityLabel := $QuantityLabel
 
-#desc Sets the data for the slot
+## Sets the data for the slot
 func setSlotData(slotData: SlotData) -> void:
 	var itemData := slotData.itemData
 	textureRect.texture = itemData.inventoryIcon as Texture2D

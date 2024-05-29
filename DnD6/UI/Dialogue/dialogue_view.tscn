@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=3 uid="uid://c11fsjadtfkkr"]
+
+[ext_resource type="Script" path="res://UI/Dialogue/dialogue_view.gd" id="1_ib506"]
+[ext_resource type="Texture2D" uid="uid://bh7644ei8f4g6" path="res://Sprites/ItemSprites/mushroom_item.png" id="2_12fu4"]
+[ext_resource type="FontFile" uid="uid://nnncykot0465" path="res://Fonts/CormorantUpright/CormorantUpright-Regular.ttf" id="3_j4xqb"]
+[ext_resource type="FontFile" uid="uid://yjw3ay3g87xq" path="res://Fonts/CormorantUpright/CormorantUpright-Bold.ttf" id="4_s3s85"]
+[ext_resource type="Script" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="5_eekuv"]
+
+[node name="DialogueView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+mouse_filter = 1
+script = ExtResource("1_ib506")
+
+[node name="DialogBackground" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 262)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -262.0
+grow_horizontal = 2
+grow_vertical = 0
+expand_mode = 1
+
+[node name="TextTimer" type="Timer" parent="."]
+wait_time = 0.06
+
+[node name="EzDialogue" type="Node" parent="."]
+script = ExtResource("5_eekuv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 262)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -262.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="IconLeft" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("2_12fu4")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="TextBox" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_j4xqb")
+theme_override_fonts/bold_font = ExtResource("4_s3s85")
+theme_override_font_sizes/normal_font_size = 25
+text = "Test
+joabngiuabng
+"
+scroll_active = false
+scroll_following = true
+
+[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="ButtonBox" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="IconRight" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("2_12fu4")
+expand_mode = 1
+
+[connection signal="timeout" from="TextTimer" to="." method="_incrementText"]
+[connection signal="custom_signal_received" from="EzDialogue" to="." method="_onCustomDialogSignalRecieved"]
+[connection signal="dialogue_generated" from="EzDialogue" to="." method="_onDialogGenerated"]

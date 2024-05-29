@@ -1,6 +1,8 @@
-[gd_scene load_steps=38 format=3 uid="uid://c5bk3tvb8llgr"]
+[gd_scene load_steps=40 format=3 uid="uid://c5bk3tvb8llgr"]
 
 [ext_resource type="Texture2D" uid="uid://crfn0sy7mqv0" path="res://Sprites/Backgrounds/VillageMap.jpg" id="1_fwuu8"]
+[ext_resource type="PackedScene" uid="uid://bbqcdi08wxjux" path="res://Entities/Chest/chest.tscn" id="2_p1a77"]
+[ext_resource type="PackedScene" uid="uid://dhtswigbemtro" path="res://Entities/NPC/town_historian.tscn" id="3_ehpoc"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2qhjg"]
 a = Vector2(129.258, -139.283)
@@ -471,3 +473,12 @@ shape = SubResource("RectangleShape2D_0jwge")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="VillageMap/CameraLimit"]
 position = Vector2(2040.5, 2286)
 shape = SubResource("RectangleShape2D_0jwge")
+
+[node name="Chest" parent="." instance=ExtResource("2_p1a77")]
+position = Vector2(1974, 1387)
+scale = Vector2(0.5, 0.5)
+
+[node name="TownHistorian" parent="." instance=ExtResource("3_ehpoc")]
+position = Vector2(2125, 1328)
+scale = Vector2(0.3, 0.3)
+dialogueName = "seraphina"

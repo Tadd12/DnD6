@@ -81,3 +81,9 @@ func setOptions(_inventoryData: InventoryData, _index: int) -> bool:
 		
 	return true
 	
+func _exit_tree() -> void:
+	infoButton.queue_free()
+	useButton.queue_free()
+	equipButton.queue_free()
+	removeButton.queue_free()
+	removeAllButton.queue_free()

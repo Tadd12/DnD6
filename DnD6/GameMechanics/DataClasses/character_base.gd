@@ -9,6 +9,9 @@ extends CharacterBody2D
 
 @export var inventoryData: InventoryData
 
+## Icon that gets displayed in dialogs
+@export var icon: Texture2D
+
 # Character specific semi static Properties
 ## Saves the main attributes of the Character
 @export_group("Stats")
@@ -27,9 +30,10 @@ var skills := {}  # Skill(str): Bonus(int)  0 = No bonus but available
 @export var maxSpellPoints := {}  
 
 ## A internal class to save the current armor
-class ClassArmor:
+class Armor extends RefCounted:
+	var armor := {}
+	
 	func _init():
-		var armor := {}
 		for type in ArmorBase.ARMOR_TYPE:
 			armor[type] = null
 	
@@ -44,19 +48,15 @@ class ClassArmor:
 		pass
 		
 	func getArmor() -> Array:
-		var arrayArmor := []
-		for a in self.armor:
-			arrayArmor.append(self.armor[a])
-		return arrayArmor
+		return armor.values()
 
-var armor := ClassArmor.new()
+var equippedArmor := Armor.new()
 
 var maxActions := 1
 var maxBonusActions := 1
 
 # Character specific Temporary Properties
 var currentEffects : Array[EffectBase] = []
-var inFight := false
 var spellPoints := {}
 
 var tempAction := maxActions
@@ -79,23 +79,10 @@ var healthPoints: int:
 ## The armor class of the Character
 var armorClass: int:
 	get:
-		return armor.getArmorPoints() + dexterity
+		return equippedArmor.getArmorPoints() + dexterity
 
 
-## Triggers a dialog sequence with a character
-func TalkTo(Char):
-	# Trigger talking Sequence
-	pass
 
-## Takes item 
-func TakeItem(item):
-	# TODO: remove item from Map/Chest
-	pass
-
-## Reset all Actions the can only be used ones per Short Break 
-func TakeAShortBreak():
-	if not inFight:
-		healthPoints = healthPoints + maxHP/2
 
 
 # Fight specific functions
@@ -105,26 +92,20 @@ func nextRound():
 	tempBonusAction = 1
 	for effect in currentEffects:
 		effect.nextRound(self)
+		
 
 ## Attack a Character or a Object on the Map [br]
 ## CharObj: ([CharacterBase] or MapObject) the Character or a Object on the Map [br]
 ## Attack: (Attack) The Attack to be used [br]
 ## Returns: ([int]) If the attack succeded or failed (1: crit. fail, 2: fail, 3: success, 4: crit. success)
-func Attack(CharObj, Attack) -> int:
+func attack(CharObj, Attack) -> int:
 	return 0
 
 
 ## Use a Spell on a Character or a Object on the Map [br]
 ## CharObj: ([CharacterBase] or MapObject) the Character or a Object on the Map [br]
 ## Spell: (Spell) The Spell to be used
-func UseSpellOnCharacter(CharObj, Spell):
-	pass
-
-
-## Carries out a Spell  [br]
-## Coordinates: () the Destination of the Spell [br]
-## Spell: (Spell) The Spell to be used
-func UseSpellOnMap(Coordinates, Spell):
+func useSpellOnCharacter(CharObj, Spell):
 	pass
 
 
@@ -132,4 +113,3 @@ func UseSpellOnMap(Coordinates, Spell):
 func onDeath():
 	print(name + " died.")
 
-# Static funcions

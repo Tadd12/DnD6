@@ -1,6 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://bq144jxvl1bx5"]
 
+<<<<<<< HEAD
 [ext_resource type="Script" path="res://Entities/Player/scripts/player.gd" id="1_aqogx"]
+=======
+[ext_resource type="Script" path="res://Entities/Player/player.gd" id="1_6o8sm"]
+>>>>>>> refs/heads/add-npc-base
 [ext_resource type="Texture2D" uid="uid://cukgev1cx1df" path="res://Sprites/Character/MageFemaleSprite.png" id="2_8tdp2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ja4m2"]
@@ -11,7 +15,17 @@ radius = 24.0
 height = 66.0
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_aqogx")
+script = ExtResource("1_6o8sm")
+speed = null
+characterName = null
+strength = null
+dexterity = null
+intelligence = null
+charisma = null
+wisdom = null
+constitution = null
+maxHP = null
+maxSpellPoints = null
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.15, 0.15)

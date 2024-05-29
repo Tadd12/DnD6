@@ -14,6 +14,10 @@ config/name="DnD6"
 run/main_scene="res://Scenes/Startmenu/Startmenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
+[autoload]
+
+GlobalGameState="*res://GameMechanics/global_game_state.gd"
+
 [display]
 
 window/size/viewport_width=1280
@@ -24,6 +28,10 @@ window/stretch/mode="canvas_items"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ez_dialogue/plugin.cfg")
 
 [input]
 
