@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhtswigbemtro"]
 
-[ext_resource type="Texture2D" uid="uid://brxsi5sbufh7t" path="res://Sprites/Character/TownHistorian.png" id="1_a0shn"]
+[ext_resource type="Texture2D" uid="uid://dbufhll3jc4wx" path="res://Sprites/Character/TownHistorian.png" id="1_a0shn"]
 [ext_resource type="Script" path="res://Entities/NPC/town_historian.gd" id="1_edgvn"]
-[ext_resource type="Texture2D" uid="uid://blyluogpvhdi2" path="res://Sprites/Character/TownHistorianIcon.png" id="2_5jdsd"]
+[ext_resource type="Texture2D" uid="uid://17p851pnc7bq" path="res://Sprites/Character/TownHistorianIcon.png" id="2_5jdsd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sibvx"]
 radius = 34.0
@@ -11,7 +11,6 @@ height = 176.0
 [node name="TownHistorian" type="CharacterBody2D" groups=["npc"]]
 collision_layer = 3
 script = ExtResource("1_edgvn")
-dialogName = "test"
 characterName = "Seraphina"
 icon = ExtResource("2_5jdsd")
 maxHP = 3

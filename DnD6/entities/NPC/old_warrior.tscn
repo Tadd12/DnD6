@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bfpb2u22dqse0"]
 
 [ext_resource type="Script" path="res://Entities/NPC/old_warrior.gd" id="1_56ctx"]
-[ext_resource type="Texture2D" uid="uid://b37kq7imlskar" path="res://Sprites/Character/OldWarriorIcon.png" id="2_41lw5"]
-[ext_resource type="Texture2D" uid="uid://c7w3o6n1i3qgw" path="res://Sprites/Character/OldWarrior.png" id="2_rk4ra"]
+[ext_resource type="Texture2D" uid="uid://c7uoh1jcrv11y" path="res://Sprites/Character/OldWarriorIcon.png" id="2_41lw5"]
+[ext_resource type="Texture2D" uid="uid://dhmul7cvygv5b" path="res://Sprites/Character/OldWarrior.png" id="2_rk4ra"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wiyj4"]
 radius = 35.0
