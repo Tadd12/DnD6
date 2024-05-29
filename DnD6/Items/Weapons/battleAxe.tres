@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponBase" load_steps=3 format=3 uid="uid://bahmkqsvnxf1g"]
 
-[ext_resource type="Texture2D" uid="uid://cpopgbhfpksd2" path="res://sprites/ItemSprites/Weapons/BattleAxe2.png" id="1_p3q2u"]
+[ext_resource type="Texture2D" uid="uid://cpopgbhfpksd2" path="res://Sprites/ItemSprites/Weapons/BattleAxe2.png" id="1_p3q2u"]
 [ext_resource type="Script" path="res://GameMechanics/DataClasses/Item/weapon_base.gd" id="2_o6w3c"]
 
 [resource]
