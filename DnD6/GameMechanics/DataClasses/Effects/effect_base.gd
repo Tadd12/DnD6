@@ -6,7 +6,7 @@ extends Resource
 @export var icon: Texture
 
 func nextRound(character: CharacterBase):
-    pass
+	pass
 
 func activate(_var):
-    pass
+	pass
