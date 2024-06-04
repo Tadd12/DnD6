@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://UI/Dialogue/dialogue_view.gd" id="1_ib506"]
 [ext_resource type="Texture2D" uid="uid://bh7644ei8f4g6" path="res://Sprites/ItemSprites/mushroom_item.png" id="2_12fu4"]
-[ext_resource type="FontFile" uid="uid://nnncykot0465" path="res://Fonts/CormorantUpright/CormorantUpright-Regular.ttf" id="3_j4xqb"]
-[ext_resource type="FontFile" uid="uid://yjw3ay3g87xq" path="res://Fonts/CormorantUpright/CormorantUpright-Bold.ttf" id="4_s3s85"]
+[ext_resource type="FontFile" uid="uid://dt21nbax68wtx" path="res://Fonts/CormorantUpright/CormorantUpright-Regular.ttf" id="3_j4xqb"]
+[ext_resource type="FontFile" uid="uid://coa7co6f8iudc" path="res://Fonts/CormorantUpright/CormorantUpright-Bold.ttf" id="4_s3s85"]
 [ext_resource type="Script" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="5_eekuv"]
 
 [node name="DialogueView" type="Control"]

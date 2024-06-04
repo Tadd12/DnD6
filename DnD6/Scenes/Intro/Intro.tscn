@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqr41uml66f2p"]
+
+[ext_resource type="Texture2D" uid="uid://b7wnxeysyd2bw" path="res://Sprites/Backgrounds/StartBackground.webp" id="1_2sp5i"]
+[ext_resource type="Script" path="res://Scenes/Intro/Intro.gd" id="1_ypfpw"]
+[ext_resource type="FontFile" uid="uid://dt21nbax68wtx" path="res://Fonts/CormorantUpright/CormorantUpright-Regular.ttf" id="2_t8xm4"]
+
+[sub_resource type="Animation" id="Animation_lo2cx"]
+resource_name = "TextDisplay"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0u6yy"]
+_data = {
+"TextDisplay": SubResource("Animation_lo2cx")
+}
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ypfpw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.187176, 0.187176, 0.187176, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2sp5i")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="TextLabel" type="Label" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.690196, 0.466667, 1)
+theme_override_colors/font_shadow_color = Color(0.407843, 0.294118, 0.145098, 1)
+theme_override_fonts/font = ExtResource("2_t8xm4")
+theme_override_font_sizes/font_size = 40
+text = "We are in Keikoku. A town at the foot of a huge mountain, surrounded by dense forest and steep cliffs. It was once a vibrant city with a strong and balanced connection between the people of the city and the spirit of nature that surrounded and nourished it. Year after year, the inhabitants could rely on the riches of the mountain's mines. But the light that made the town shine attracted envious people, and the symbol of their connection, harmony and balance was taken from them. Now long forgotten and hopeless, Keikoku is just a shadow of what it once was.
+Only those whose home is not in this world can still influence its fate."
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer"]
+root_node = NodePath("../TextLabel")
+libraries = {
+"": SubResource("AnimationLibrary_0u6yy")
+}
