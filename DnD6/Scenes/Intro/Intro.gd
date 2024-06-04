@@ -28,5 +28,5 @@ func _input(event):
 		animationFinished = true
 
 # function is called when animation is finished
-func onAnimationFinished():
+func onAnimationFinished(_animationName: StringName):
 	animationFinished = true
